@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+<defs>
+<linearGradient id="gNavy" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#1E3F7C"/><stop offset="1" stop-color="#0E2145"/>
+</linearGradient>
+<linearGradient id="gGold" x1="0" y1="0" x2="0" y2="1">
+  <stop offset="0" stop-color="#E4C87E"/><stop offset="1" stop-color="#C8A24B"/>
+</linearGradient>
+</defs>
+<g transform="translate(0,0) scale(1.0)">
+<rect x="6" y="6" width="228" height="228" rx="50" fill="url(#gNavy)"/>
+<rect x="56" y="64" width="24" height="116" fill="#fff"/>
+<rect x="160" y="64" width="24" height="116" fill="#fff"/>
+<path d="M56,64 L80,64 L125,119 L111,136 Z" fill="#fff"/>
+<path d="M184,64 L160,64 L115,119 L129,136 Z" fill="#fff"/>
+<path d="M120,132 L135,149 L120,198 L105,149 Z" fill="url(#gGold)"/>
+<path d="M109,105 L120,117 L131,105 L120,94 Z" fill="#E4C87E"/>
+</g>
+</svg>

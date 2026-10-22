@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KwaliteitsMeesters — Klantportaal Veiligheidscultuur-indicator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..600;1,400..600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><rect width="120" height="120" rx="26" fill="%23163A64"/><path d="M28,86 L28,34 L40,34 L60,62 L80,34 L92,34 L92,86 L80,86 L80,54 L64,76 L56,76 L40,54 L40,86 Z" fill="white"/><path d="M46,62 L58,74 L82,42" fill="none" stroke="%23E8A33B" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></svg>'>
+<style>
+/* ============ klantportaal — variant 4-designtaal (Monad/parchment) ============ */
+:root{
+  /* Monad-tinten */
+  --parchment:#F6F3F1; --parch2:#EFEAE5; --white:#FFFFFF;
+  --offblack:#242424; --graphite:#4E4D4D; --smoke:#797776; --ash:#CECAC8; --ash2:#DDD8D3;
+  --navy:#163A64; --navy-d:#0F2947; --amber:#E8A33B; --amber-d:#B97C17;
+  --periwinkle:#CFDAF5; --gold:#ECDA98;
+  /* compatibiliteit: oude namen blijven bestaan voor markup/JS */
+  --cream:var(--parchment); --dark:#0C1E38; --dark2:#122A4C;
+  --ink:var(--offblack); --ink-soft:var(--graphite); --ink-mut:var(--smoke);
+  --line:var(--ash); --line2:var(--parch2);
+  --ser1:#2E5FA3; /* serie: operationele medewerkers */
+  --ser2:#C77F1F; /* serie: de sturende laag */
+  --st-rood:#B23A2E; --st-oranje:#D07A24; --st-lgroen:#6E9E4F; --st-groen:#2F7D4F;
+  --serif:'Lora',Georgia,serif; --sans:'Poppins',Arial,sans-serif;
+  --shadow:none;
+  --r-card:24px; --r-pill:100px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);color:var(--graphite);background:var(--parchment);font-size:15px;line-height:1.6;letter-spacing:-.01em;-webkit-font-smoothing:antialiased}
+svg{display:block}
+button{font-family:var(--sans)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 26px}
+::selection{background:var(--gold);color:var(--offblack)}
+
+/* ---------- login — licht, met washes ---------- */
+#login{position:fixed;inset:0;background:linear-gradient(160deg,#EDE9E4 0%,var(--parchment) 52%,#E9E7EE 100%);display:flex;align-items:center;justify-content:center;z-index:200;padding:24px;overflow:hidden}
+#login::before{content:"";position:absolute;right:-14%;top:-28%;width:820px;height:820px;border-radius:50%;background:radial-gradient(circle,rgba(207,218,245,.55),transparent 62%);pointer-events:none}
+#login::after{content:"";position:absolute;left:-12%;bottom:-36%;width:680px;height:680px;border-radius:50%;background:radial-gradient(circle,rgba(236,218,152,.4),transparent 62%);pointer-events:none;background-image:radial-gradient(circle,rgba(236,218,152,.4),transparent 62%);opacity:1;mix-blend-mode:normal}
+.login-card{position:relative;z-index:1;width:460px;max-width:100%;background:var(--white);border:1px solid var(--ash);border-radius:32px;padding:46px 44px;color:var(--graphite)}
+.login-card .lbrand{display:flex;align-items:center;gap:13px;margin-bottom:30px}
+.login-card .lbrand svg{width:44px;height:44px}
+.login-card .lbrand .n{font-family:var(--serif);font-size:1.28rem;color:var(--offblack)}
+.login-card .lbrand .n b{font-weight:600}
+.login-card .lbrand .s{font-size:.56rem;letter-spacing:.26em;color:var(--amber-d);font-weight:600;text-transform:uppercase;margin-top:4px}
+.login-card h1{font-family:var(--serif);font-size:1.5rem;font-weight:400;line-height:1.3;color:var(--offblack);letter-spacing:-.015em}
+.login-card p.sub{color:var(--smoke);font-size:.86rem;margin-top:8px}
+.login-card label{display:block;font-size:.66rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin:22px 0 8px;color:var(--graphite)}
+.login-card input{width:100%;padding:13px 16px;border-radius:14px;border:1px solid var(--ash);background:var(--parchment);color:var(--offblack);font-family:var(--sans);font-size:.92rem;outline:none;transition:.15s}
+.login-card input:focus{border-color:var(--navy);background:#fff}
+.login-card input::placeholder{color:var(--smoke)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:600;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;padding:14px 26px;border-radius:var(--r-pill);border:none;cursor:pointer;transition:.2s}
+.btn.amber{background:var(--navy);color:#fff;width:100%;margin-top:26px}
+.btn.amber:hover{background:var(--navy-d)}
+.btn.line{background:transparent;border:1px solid var(--ash);color:var(--graphite);width:100%;margin-top:12px}
+.btn.line:hover{border-color:var(--offblack);color:var(--offblack)}
+.login-note{font-size:.72rem;color:var(--smoke);margin-top:22px;line-height:1.6}
+
+/* ---------- app shell ---------- */
+#app{display:none}
+.topbar{position:sticky;top:0;z-index:100;background:rgba(246,243,241,.92);backdrop-filter:blur(10px);color:var(--offblack);border-bottom:1px solid var(--ash)}
+.topbar .wrap{display:flex;align-items:center;gap:16px;height:70px}
+.topbar .tbrand{display:flex;align-items:center;gap:11px;cursor:default}
+.topbar .tbrand svg{width:34px;height:34px}
+.topbar .tbrand .n{font-family:var(--serif);font-size:1.05rem;color:var(--offblack)}
+.topbar .tbrand .n b{font-weight:600}
+.org-chip{background:var(--white);border:1px solid var(--ash);border-radius:999px;padding:7px 16px;font-size:.74rem;color:var(--graphite);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:0 1 auto;min-width:150px}
+.org-chip b{color:var(--offblack);font-weight:600}
+.topnav{display:flex;gap:2px;margin-left:auto}
+.topnav button{background:none;border:none;color:var(--smoke);font-size:.8rem;font-weight:500;padding:9px 13px;border-radius:var(--r-pill);cursor:pointer;transition:.15s}
+.topnav button:hover{color:var(--offblack);background:var(--parch2)}
+.topnav button.act{background:var(--offblack);color:var(--parchment);font-weight:500}
+.logout{background:none;border:1px solid var(--ash);color:var(--graphite);font-size:.7rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:9px 18px;border-radius:var(--r-pill);cursor:pointer;transition:.15s}
+.logout:hover{border-color:var(--offblack);color:var(--offblack)}
+
+.view{display:none;padding:44px 0 80px}
+.view.act{display:block;animation:fade .3s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+.pagehead{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:30px}
+.pagehead h2{font-family:var(--serif);font-size:1.9rem;font-weight:400;color:var(--offblack);line-height:1.2;letter-spacing:-.02em}
+.pagehead .meta{font-size:.78rem;color:var(--smoke);margin-top:8px;display:flex;gap:16px;flex-wrap:wrap}
+.pagehead .meta b{color:var(--graphite);font-weight:500}
+.btn.navy{background:var(--navy);color:#fff}
+.btn.navy:hover{background:var(--navy-d)}
+.btn.small{padding:11px 20px;font-size:.72rem}
+
+/* ---------- panelen & tegels ---------- */
+.panel{background:var(--white);border:1px solid var(--ash);border-radius:var(--r-card);box-shadow:none;padding:30px}
+.panel h3{font-family:var(--serif);font-size:1.14rem;font-weight:500;color:var(--offblack);letter-spacing:-.01em}
+.panel .ph{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:6px;flex-wrap:wrap}
+.panel .psub{font-size:.8rem;color:var(--smoke);margin-bottom:16px}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:20px}
+.kpi{background:var(--white);border:1px solid var(--ash);border-radius:18px;padding:22px 22px 20px;box-shadow:none}
+.kpi .kl{font-size:.64rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--smoke)}
+.kpi .kv{font-family:var(--serif);font-size:2.1rem;font-weight:400;color:var(--navy);line-height:1.15;margin-top:6px}
+.kpi .kv small{font-size:1rem;color:var(--smoke);font-family:var(--sans);font-weight:500}
+.kpi .ks{font-size:.75rem;color:var(--graphite);margin-top:4px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:.66rem;font-weight:600;letter-spacing:.04em;padding:4px 12px;border-radius:999px;color:#fff}
+.chip.rood{background:#F0D7D2;color:#7A2E20}.chip.oranje{background:#F3E0C2;color:#7A5514}
+.chip.lgroen{background:#E2ECD2;color:#3E6B2A}.chip.groen{background:#CFE3C4;color:#2E5220}
+.chip.neut{background:var(--parch2);color:var(--graphite)}
+.dash-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;margin-bottom:18px}
+.dash-grid3{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
+
+/* legend */
+.legend{display:flex;gap:20px;flex-wrap:wrap;font-size:.76rem;color:var(--graphite);margin:2px 0 14px}
+.legend .li{display:flex;align-items:center;gap:8px}
+.legend .sw{width:13px;height:13px;border-radius:4px}
+
+/* tooltip */
+#tip{position:fixed;z-index:300;background:var(--offblack);color:var(--parchment);font-size:.76rem;line-height:1.5;padding:9px 13px;border-radius:10px;pointer-events:none;opacity:0;transition:opacity .12s;max-width:250px}
+#tip b{color:var(--amber)}
+
+/* onderwerpen-tabel */
+table.subj{width:100%;border-collapse:collapse;font-size:.84rem}
+table.subj th{text-align:left;font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--smoke);font-weight:600;padding:10px 12px;border-bottom:1px solid var(--ash)}
+table.subj td{padding:11px 12px;border-bottom:1px solid var(--parch2);color:var(--graphite);vertical-align:middle}
+table.subj tr:hover td{background:var(--parchment)}
+table.subj td.num{font-variant-numeric:tabular-nums;font-weight:600;color:var(--offblack)}
+table.subj .tgroup td{background:var(--parchment);font-weight:600;color:var(--offblack);font-size:.8rem;border-bottom:1px solid var(--ash2)}
+.gapflag{color:var(--st-rood);font-weight:700}
+.minibar{display:inline-block;height:7px;border-radius:4px;vertical-align:middle}
+
+/* analyse */
+.analyse p{font-size:.9rem;color:var(--graphite);margin-bottom:12px}
+.analyse b{color:var(--offblack)}
+.adv-cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:18px}
+.adv{background:var(--parchment);border:1px solid var(--ash2);border-radius:16px;padding:18px 18px 16px}
+.adv .at{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+.adv .at.rood{color:var(--st-rood)}.adv .at.oranje{color:var(--st-oranje)}.adv .at.groen{color:var(--st-groen)}
+.adv b{display:block;font-size:.88rem;color:var(--offblack);margin-bottom:5px;font-weight:600}
+.adv span{font-size:.8rem;color:var(--graphite)}
+
+/* ---------- welkomstpagina ---------- */
+.welkom-hero{background:var(--periwinkle);border-radius:40px;color:var(--offblack);padding:48px 50px;margin-bottom:24px;position:relative;overflow:hidden}
+.welkom-hero::after{content:"";position:absolute;right:-80px;bottom:-110px;width:300px;height:300px;border-radius:50%;background:rgba(246,243,241,.5)}
+.welkom-hero h2{font-family:var(--serif);font-size:1.9rem;font-weight:400;line-height:1.25;max-width:640px;position:relative;z-index:1;letter-spacing:-.02em}
+.welkom-hero h2 em{font-style:italic;color:var(--navy)}
+.welkom-hero p{color:var(--graphite);font-size:.9rem;margin-top:12px;max-width:640px;position:relative;z-index:1}
+.welkom-hero .wstats{display:flex;gap:36px;margin-top:26px;flex-wrap:wrap;position:relative;z-index:1}
+.welkom-hero .ws b{font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--navy);display:block;line-height:1.2}
+.welkom-hero .ws span{font-size:.72rem;color:var(--graphite);letter-spacing:.06em;text-transform:uppercase}
+.modules{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.mod{background:var(--white);border:1px solid var(--ash);border-radius:var(--r-card);padding:30px 28px;box-shadow:none;cursor:pointer;transition:border-color .2s;display:flex;flex-direction:column;position:relative}
+.mod:hover{border-color:var(--offblack)}
+.mod.soon{cursor:default;opacity:.72}
+.mod.soon:hover{border-color:var(--ash)}
+.mod .mi{width:50px;height:50px;border-radius:999px;background:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.mod .mi svg{width:24px;height:24px;stroke:#E8A33B;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.mod h3{font-family:var(--serif);font-size:1.16rem;font-weight:500;color:var(--offblack);margin-bottom:7px;letter-spacing:-.01em}
+.mod p{font-size:.85rem;color:var(--graphite);flex:1}
+.mod .badge{position:absolute;top:20px;right:20px;font-size:.58rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:4px 11px;border-radius:999px}
+.mod .badge.att{background:#F3E0C2;color:#7A5514}
+.mod .badge.ok{background:#E2ECD2;color:#3E6B2A}
+.mod .badge.soon{background:var(--parch2);color:var(--smoke)}
+.mod .go{margin-top:16px;font-weight:600;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--navy)}
+.mod .go::after{content:" →"}
+
+/* ---------- toolboxen ---------- */
+.tbx{background:var(--white);border:1px solid var(--ash);border-radius:18px;margin-bottom:12px;overflow:hidden;transition:background .2s}
+.tbx[open]{background:var(--parchment)}
+.tbx summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:16px;padding:20px 24px}
+.tbx summary::-webkit-details-marker{display:none}
+.tbx .tno{flex:0 0 42px;height:42px;border-radius:999px;background:var(--parchment);border:1px solid var(--ash);color:var(--navy);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-style:italic;font-weight:500}
+.tbx[open] .tno{background:var(--white)}
+.tbx .tt b{display:block;font-family:var(--serif);font-size:1.02rem;color:var(--offblack);font-weight:500}
+.tbx .tt span{font-size:.75rem;color:var(--smoke)}
+.tbx .rec{margin-left:auto;display:flex;gap:8px;align-items:center}
+.tbx .chev{color:var(--smoke);transition:.2s;margin-left:6px}
+.tbx[open] .chev{transform:rotate(180deg);color:var(--offblack)}
+.tbx .tb-body{padding:0 24px 24px 82px;font-size:.87rem;color:var(--graphite)}
+.tbx .tb-body h4{font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--amber-d);margin:16px 0 6px;font-weight:600}
+.tbx .tb-body ul{margin:4px 0 0 18px}
+.tbx .tb-body li{margin-bottom:5px}
+
+/* ---------- verbeterplan ---------- */
+table.plan{width:100%;border-collapse:collapse;font-size:.84rem}
+table.plan th{text-align:left;font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--smoke);font-weight:600;padding:10px 12px;border-bottom:1px solid var(--ash)}
+table.plan td{padding:10px 12px;border-bottom:1px solid var(--parch2);color:var(--graphite);vertical-align:middle}
+table.plan input,table.plan select{font-family:var(--sans);font-size:.82rem;padding:8px 12px;border:1px solid var(--ash);border-radius:10px;background:var(--parchment);color:var(--offblack);width:100%}
+table.plan input:focus,table.plan select:focus{border-color:var(--navy);outline:none;background:#fff}
+.plan-note{font-size:.78rem;color:var(--smoke);margin-top:14px}
+
+/* ---------- add-ons op welkom ---------- */
+.addons{margin-top:26px}
+.addons .ah{font-size:.64rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--smoke);margin-bottom:12px;display:flex;align-items:center;gap:9px}
+.addons .ah::before{content:"✳";color:var(--amber);letter-spacing:0}
+.addon-row{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.addon{background:var(--white);border:1px dashed var(--ash);border-radius:16px;padding:16px 14px;text-align:center;opacity:.85;display:block;text-decoration:none}
+a.addon.live{border-style:solid;opacity:1;cursor:pointer;transition:border-color .15s}
+a.addon.live:hover{border-color:var(--offblack)}
+a.addon.live span{color:var(--amber-d);font-weight:600}
+.addon svg{width:22px;height:22px;stroke:var(--navy);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;margin:0 auto 8px}
+.addon b{display:block;font-size:.75rem;color:var(--offblack);font-weight:600;line-height:1.35}
+.addon span{font-size:.58rem;color:var(--smoke);text-transform:uppercase;letter-spacing:.08em}
+.addons .anote{font-size:.75rem;color:var(--smoke);margin-top:12px}
+
+/* ---------- uitnodigingen & instellingen ---------- */
+.vkeuze{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+.vk{border:1px solid var(--ash);border-radius:var(--r-card);padding:26px;cursor:pointer;background:var(--white);transition:.15s;position:relative}
+.vk:hover{border-color:var(--offblack)}
+.vk.sel{border:1.5px solid var(--offblack);background:var(--parchment)}
+.vk .vkt{font-family:var(--serif);font-size:1.1rem;font-weight:500;color:var(--offblack);letter-spacing:-.01em}
+.vk .vks{font-size:.64rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--amber-d);margin:4px 0 10px}
+.vk p{font-size:.83rem;color:var(--graphite)}
+.vk .vkm{font-size:.78rem;color:var(--offblack);margin-top:12px;background:var(--white);border:1px solid var(--parch2);border-radius:12px;padding:10px 13px}
+.vk.sel .vkm{background:var(--white)}
+.vk .picked{position:absolute;top:16px;right:16px;display:none}
+.vk.sel .picked{display:inline-flex}
+.inv-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:22px}
+.inv-grid textarea{width:100%;min-height:110px;font-family:var(--sans);font-size:.88rem;padding:13px 16px;border:1px solid var(--ash);border-radius:14px;background:var(--parchment);resize:vertical;color:var(--offblack)}
+.inv-grid textarea:focus{border-color:var(--navy);outline:none;background:#fff}
+.inv-grid label{display:block;font-size:.66rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--graphite);margin-bottom:8px}
+table.inv{width:100%;border-collapse:collapse;font-size:.84rem;margin-top:8px}
+table.inv th{text-align:left;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--smoke);font-weight:600;padding:9px 12px;border-bottom:1px solid var(--ash)}
+table.inv td{padding:9px 12px;border-bottom:1px solid var(--parch2);color:var(--graphite)}
+.mailprev{background:var(--parchment);border:1px solid var(--ash2);border-radius:16px;padding:22px 24px;font-size:.85rem;color:var(--graphite)}
+.mailprev .mp-sub{font-weight:600;color:var(--offblack);border-bottom:1px solid var(--ash2);padding-bottom:10px;margin-bottom:12px}
+.mailprev p{margin-bottom:10px}
+.mailtoggle{display:flex;gap:8px;margin-bottom:14px}
+.mailtoggle button{border:1px solid var(--ash);background:var(--white);color:var(--offblack);border-radius:999px;padding:8px 18px;font-size:.74rem;font-weight:600;letter-spacing:.04em;cursor:pointer;transition:.15s}
+.mailtoggle button:hover{border-color:var(--offblack)}
+.mailtoggle button.on{background:var(--offblack);color:var(--parchment);border-color:var(--offblack)}
+
+/* ---------- autosave toast ---------- */
+#toast{position:fixed;right:22px;bottom:22px;z-index:400;background:var(--offblack);color:var(--parchment);font-size:.8rem;padding:11px 18px;border-radius:999px;opacity:0;transform:translateY(8px);transition:.25s;pointer-events:none;display:flex;gap:9px;align-items:center}
+#toast.show{opacity:1;transform:none}
+#toast .tick{width:16px;height:16px;border-radius:50%;background:var(--st-groen);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:#fff}
+
+/* ---------- paginering vragenlijst ---------- */
+.q-pagenav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin:20px 0 6px;flex-wrap:wrap}
+.q-pagenav .btn.ghostn{background:transparent;border:1px solid var(--ash);color:var(--offblack)}
+.q-pagenav .btn.ghostn:hover{border-color:var(--offblack)}
+.q-pagenav .btn.ghostn:disabled{opacity:.4;cursor:default}
+.q-pageinfo{font-size:.76rem;color:var(--smoke);letter-spacing:.06em;text-transform:uppercase}
+
+/* ---------- rapportkop met logo ---------- */
+.r-brandhead{display:flex;align-items:center;justify-content:space-between;gap:20px;background:var(--white);border:1px solid var(--ash);border-radius:var(--r-card);color:var(--offblack);padding:26px 30px;margin-bottom:20px}
+.r-brandhead .rb-l{display:flex;align-items:center;gap:14px}
+.r-brandhead svg{width:46px;height:46px}
+.r-brandhead .rn{font-family:var(--serif);font-size:1.25rem;color:var(--offblack)}
+.r-brandhead .rn b{font-weight:600}
+.r-brandhead .rs{font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--amber-d);font-weight:600;margin-top:3px}
+.r-brandhead .rb-r{text-align:right;font-size:.78rem;color:var(--smoke)}
+.r-brandhead .rb-r b{color:var(--offblack);display:block;font-size:.9rem}
+
+/* ---------- respondentmodus ---------- */
+body.resp .topnav,body.resp .logout{display:none!important}
+body.resp .topbar .org-chip{margin-left:auto}
+
+/* ---------- vragenlijst ---------- */
+.q-intro{max-width:760px}
+.listpick{display:flex;gap:14px;margin:24px 0 8px;flex-wrap:wrap}
+.lp{flex:1;min-width:280px;background:var(--white);border:1px solid var(--ash);border-radius:18px;padding:24px;cursor:pointer;transition:.15s}
+.lp:hover{border-color:var(--offblack)}
+.lp.sel{border:1.5px solid var(--offblack);background:var(--parchment)}
+.lp b{font-family:var(--serif);font-size:1.06rem;font-weight:500;color:var(--offblack);display:block;margin-bottom:5px}
+.lp span{font-size:.82rem;color:var(--graphite)}
+.progress{position:sticky;top:70px;z-index:50;background:var(--parchment);padding:14px 0 10px}
+.pbar{height:7px;background:var(--parch2);border-radius:99px;overflow:hidden}
+.pbar i{display:block;height:100%;background:var(--navy);border-radius:99px;transition:width .3s;width:0}
+.pmeta{display:flex;justify-content:space-between;font-size:.74rem;color:var(--smoke);margin-top:6px}
+.qcard{background:var(--white);border:1px solid var(--ash);border-radius:18px;padding:24px 26px;margin-bottom:12px;box-shadow:none}
+.qcard .qt{font-size:.62rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--amber-d);margin-bottom:8px}
+.qcard .qq{font-family:var(--serif);font-weight:500;color:var(--offblack);font-size:1.02rem;margin-bottom:14px;line-height:1.5;letter-spacing:-.01em}
+.opt{display:flex;gap:12px;align-items:flex-start;padding:11px 14px;border:1px solid var(--ash);border-radius:12px;margin-bottom:8px;cursor:pointer;font-size:.87rem;color:var(--graphite);transition:.12s}
+.opt:hover{border-color:var(--offblack)}
+.opt.on{border-color:var(--offblack);background:var(--parchment);color:var(--offblack)}
+.opt .rb{flex:0 0 17px;height:17px;border-radius:50%;border:1.5px solid var(--ash);margin-top:2px;position:relative;background:#fff}
+.opt.on .rb{border-color:var(--navy)}
+.opt.on .rb::after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--navy)}
+.opt.wn{border-style:dashed;color:var(--smoke);font-style:italic}
+.q-actions{display:flex;gap:14px;align-items:center;margin-top:24px;flex-wrap:wrap}
+.q-warn{font-size:.8rem;color:var(--st-rood);font-weight:500}
+.res-panel{background:var(--white);border:1.5px solid var(--offblack);border-radius:var(--r-card);padding:30px;margin-top:26px}
+.res-panel h3{font-family:var(--serif);color:var(--offblack);font-weight:500;font-size:1.2rem;margin-bottom:6px}
+
+/* ---------- rapport / print ---------- */
+#v-rapport .panel{margin-bottom:18px}
+@media print{
+  body{background:#fff}
+  .topbar,.pagehead .btn,.noprint,#tip,#toast{display:none!important}
+  .view{display:none!important;padding:0}
+  #v-rapport{display:block!important}
+  .panel{box-shadow:none;border:1px solid #ccc;page-break-inside:avoid}
+  .r-brandhead{-webkit-print-color-adjust:exact;print-color-adjust:exact;border-radius:0;border:1px solid #ccc}
+}
+@media (max-width:1000px){
+  .kpis{grid-template-columns:1fr 1fr}
+  .dash-grid,.dash-grid3,.adv-cards,.vkeuze,.inv-grid{grid-template-columns:1fr}
+  .topnav{flex-wrap:wrap}
+  .addon-row{grid-template-columns:1fr 1fr 1fr}
+  .modules{grid-template-columns:1fr}
+  .welkom-hero{padding:36px 30px;border-radius:28px}
+  .topbar .wrap{height:auto;padding-top:10px;padding-bottom:10px;flex-wrap:wrap}
+  .progress{top:0}
+}
+</style>
+</head>
+<body>
+<div id="tip"></div>
+<div id="toast"><span class="tick">✓</span><span id="toast-txt">Antwoord opgeslagen</span></div>
+
+<!-- ==================== LOGIN ==================== -->
+<div id="login">
+  <div class="login-card">
+    <div class="lbrand">
+      <svg viewBox="0 0 120 120"><rect width="120" height="120" rx="26" fill="#122A4C"/><path d="M28,86 L28,34 L40,34 L60,62 L80,34 L92,34 L92,86 L80,86 L80,54 L64,76 L56,76 L40,54 L40,86 Z" fill="#fff"/><path d="M46,62 L58,74 L82,42" fill="none" stroke="#E8A33B" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div><div class="n"><span>Kwaliteits</span><b>Meesters</b></div><div class="s">Klantportaal</div></div>
+    </div>
+    <h1>Veiligheidscultuur-indicator</h1>
+    <p class="sub">Log in om vragenlijsten in te vullen en de resultaten en analyse van uw organisatie te bekijken.</p>
+    <label for="l-mail">E-mailadres</label>
+    <input id="l-mail" type="email" placeholder="u@organisatie.nl">
+    <label for="l-code">Toegangscode</label>
+    <input id="l-code" type="password" placeholder="Ontvangen van uw consultant">
+    <button class="btn amber" onclick="doLogin()">Inloggen als beheerder →</button>
+    <button class="btn line" onclick="doLogin(true)">Bekijk de demo-omgeving</button>
+    <button class="btn line" onclick="openRespondent()">Ik heb een deelnamelink — vragenlijst invullen</button>
+    <div class="login-note">Alleen de beheerder van uw organisatie logt hier in. Medewerkers hoeven níét in te loggen: zij ontvangen per e-mail een persoonlijke deelnamelink en vullen de vragenlijst in op telefoon of computer. Antwoorden worden centraal en anoniem opgeslagen, na elk antwoord automatisch. Conceptversie — in de definitieve omgeving met beveiligde verbinding en tweestapsverificatie.</div>
+  </div>
+</div>
+
+<!-- ==================== APP ==================== -->
+<div id="app">
+  <div class="topbar">
+    <div class="wrap">
+      <div class="tbrand">
+        <svg viewBox="0 0 120 120"><rect width="120" height="120" rx="26" fill="#122A4C"/><path d="M28,86 L28,34 L40,34 L60,62 L80,34 L92,34 L92,86 L80,86 L80,54 L64,76 L56,76 L40,54 L40,86 Z" fill="#fff"/><path d="M46,62 L58,74 L82,42" fill="none" stroke="#E8A33B" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="n"><span>Kwaliteits</span><b>Meesters</b></div>
+      </div>
+      <div class="org-chip" title="Meting Q3 2026 · Versie A · Indicator v2.0"><b>Demo Bouw &amp; Infra B.V.</b> · Q3 2026 · v2.0</div>
+      <nav class="topnav">
+        <button id="nav-welkom" class="act" onclick="showView('welkom')">Overzicht</button>
+        <button id="nav-dash" onclick="showView('dash')">Dashboard</button>
+        <button id="nav-invite" onclick="showView('invite')">Uitnodigingen</button>
+        <button id="nav-vragen" onclick="showView('vragen')">Vragenlijst</button>
+        <button id="nav-toolbox" onclick="showView('toolbox')">Toolboxen</button>
+        <button id="nav-plan" onclick="showView('plan')">Verbeterplan</button>
+        <button id="nav-rapport" onclick="showView('rapport')">Rapport</button>
+      </nav>
+      <button class="logout" onclick="doLogout()">Uitloggen</button>
+    </div>
+  </div>
+
+  <!-- ==================== WELKOM ==================== -->
+  <div id="v-welkom" class="view act">
+    <div class="wrap">
+      <div class="welkom-hero">
+        <h2>Welkom, Demo Bouw &amp; Infra B.V. — <em>samen op weg naar trede 3</em></h2>
+        <p>Dit is uw omgeving bij KwaliteitsMeesters. Hier meet u waar uw veiligheidscultuur staat, ziet u waar de knelpunten zitten en werkt u — samen met uw consultant — aan routines die blijven staan.</p>
+        <div class="wstats" id="w-stats"></div>
+      </div>
+      <div class="modules" id="modules"></div>
+      <div class="addons">
+        <div class="ah">De medewerkers-app · add-ons — bekijk de klikbare demo</div>
+        <div class="addon-row">
+          <a class="addon live" href="kwaliteitsmeesters-app.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2 L2 20 h20 Z M12 9v5m0 3h.01"/></svg><b>Meldingssysteem</b><span>demo · 2 tikken</span></a>
+          <a class="addon live" href="kwaliteitsmeesters-app.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h6"/></svg><b>Incidentenregister</b><span>demo</span></a>
+          <a class="addon live" href="kwaliteitsmeesters-app.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-5"/><circle cx="12" cy="12" r="9"/></svg><b>Werkplekinspecties</b><span>demo</span></a>
+          <div class="addon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><b>Interne gedragsaudits</b><span>in ontwikkeling</span></div>
+          <a class="addon live" href="kwaliteitsmeesters-app.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg><b>Projectevaluaties</b><span>demo</span></a>
+          <a class="addon live" href="kwaliteitsmeesters-app.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M13 4a2 2 0 1 0 0.001 0zM6 21l3-9 4 2 2 7M6 12l2-5 5-1 3 4"/></svg><b>Safety walks</b><span>demo</span></a>
+        </div>
+        <div class="anote">Eén uitgangspunt voor alles: data verzamelen zonder dat het als last voelt — voor de gebruiker maximaal twee tikken op een telefoon. <a href="kwaliteitsmeesters-app.html" target="_blank" rel="noopener" style="color:var(--navy);font-weight:600">Open de app-demo →</a> Op termijn groeit dit platform mee met VCA, ISO 9001, ISO 45001 en ISO 27001.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== UITNODIGINGEN & INSTELLINGEN ==================== -->
+  <div id="v-invite" class="view">
+    <div class="wrap">
+      <div class="pagehead"><div>
+        <h2>Uitnodigingen &amp; instellingen</h2>
+        <div class="meta"><span>U nodigt medewerkers uit per e-mail. Zij loggen <b>niet</b> in: iedere genodigde krijgt een persoonlijke deelnamelink, in te vullen op telefoon of computer. Antwoorden worden centraal en anoniem opgeslagen.</span></div>
+      </div></div>
+
+      <div class="panel" style="margin-bottom:22px">
+        <div class="ph"><h3>1 · Kies de meting</h3></div>
+        <div class="psub">Beide metingen hebben 40 vragen per lijst en dezelfde scoringslogica; ze verschillen in de bril waarmee u kijkt.</div>
+        <div class="vkeuze">
+          <div class="vk" id="vk-A" onclick="setMode('A')">
+            <span class="picked chip groen">gekozen</span>
+            <div class="vkt">Trede-meting</div>
+            <div class="vks">Langs de vijf SCL-thema's</div>
+            <p>Meet de veiligheidscultuur langs de vijf thema's van de Safety Culture Ladder. De uitkomst sluit één-op-één aan op de trede-beoordeling van de audit: per thema ziet u waar u staat richting uw toetsingsklasse.</p>
+            <div class="vkm"><b>Kies deze meting</b> als u toewerkt naar een audit of statement en de uitkomst direct naast de norm wilt kunnen leggen.</div>
+          </div>
+          <div class="vk" id="vk-B" onclick="setMode('B')">
+            <span class="picked chip groen">gekozen</span>
+            <div class="vkt">Praktijkmeting</div>
+            <div class="vks">Langs acht praktijkrubrieken</div>
+            <p>Meet langs de acht rubrieken uit "SCL te bespreken onderwerpen": instrumenten, overleg &amp; communicatie, sturing &amp; leiderschap, beleid &amp; borging, kennis &amp; mens, processen, keten &amp; externen, en leren &amp; cijfers.</p>
+            <div class="vkm"><b>De meerwaarde van deze diepgang:</b> u ziet niet alleen wélk thema achterblijft, maar wélk instrument of ritme hapert — toolboxen, meldsysteem, werkplekinspecties, overlegstructuur. Ideaal om tussen audits gericht op verbeteringen te sturen.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-bottom:22px">
+        <div class="ph"><h3>2 · Nodig medewerkers uit</h3></div>
+        <div class="psub">Plak e-mailadressen (één per regel) en kies de lijst. Operationele medewerkers krijgen de operationele lijst; de sturende laag de sturende lijst.</div>
+        <div class="inv-grid">
+          <div>
+            <label for="inv-op">Operationele medewerkers</label>
+            <textarea id="inv-op" placeholder="jan@organisatie.nl&#10;piet@organisatie.nl"></textarea>
+          </div>
+          <div>
+            <label for="inv-st">De sturende laag</label>
+            <textarea id="inv-st" placeholder="directie@organisatie.nl&#10;kam@organisatie.nl"></textarea>
+          </div>
+        </div>
+        <div class="q-actions" style="margin-top:18px">
+          <button class="btn navy" onclick="sendInvites()">Verstuur uitnodigingen</button>
+          <span style="font-size:.8rem;color:var(--ink-mut)">Demo: er wordt niets echt verzonden.</span>
+        </div>
+        <div id="inv-status"></div>
+      </div>
+
+      <div class="panel">
+        <div class="ph"><h3>3 · De begeleidende mail</h3></div>
+        <div class="psub">Dit is de uitnodiging die genodigden ontvangen. Kies de variant die past bij uw situatie; het bijbehorende introductie-pamflet en de uitleg-toolbox vindt u onder Toolboxen en in het communicatiepakket.</div>
+        <div class="mailtoggle">
+          <button id="mt-first" class="on" onclick="setMailVariant('first')">Eerste meting</button>
+          <button id="mt-period" onclick="setMailVariant('period')">Periodieke meting</button>
+        </div>
+        <div class="mailprev" id="mailprev"></div>
+      </div>
+
+      <div class="panel" style="margin-top:22px">
+        <div class="ph"><h3>4 · Reminders &amp; ritme</h3></div>
+        <div class="psub">Het portaal verstuurt automatische herinneringen per e-mail — aan de mensen die ze nodig hebben, op het ritme dat u instelt. Zo blijft het ritme staan, ook in drukke weken, en is het achteraf aantoonbaar.</div>
+        <div>
+          <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:14px 2px;border-top:1px solid var(--line)">
+            <div style="flex:1;min-width:240px"><b style="color:var(--ink)">Toolbox-reminders</b><div style="font-size:.8rem;color:var(--ink-mut);margin-top:2px">Geplande toolbox met onderwerp en registratielink, vooraf naar de betrokken leidinggevenden.</div></div>
+            <select style="padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card,#fff);color:var(--ink);font:inherit;font-size:.82rem">
+              <option>Maandelijks</option><option>Tweewekelijks</option><option>Wekelijks</option>
+            </select>
+            <label style="display:inline-flex;align-items:center;gap:8px;font-size:.82rem;color:var(--ink-mut);cursor:pointer"><input type="checkbox" checked style="width:17px;height:17px;accent-color:var(--navy)">aan</label>
+          </div>
+          <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:14px 2px;border-top:1px solid var(--line)">
+            <div style="flex:1;min-width:240px"><b style="color:var(--ink)">SCL-vragenlijst-herinneringen</b><div style="font-size:.8rem;color:var(--ink-mut);margin-top:2px">Automatische opvolging van genodigden die nog niet hebben ingevuld — zonder dat u ziet wie: de meting blijft anoniem.</div></div>
+            <select style="padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card,#fff);color:var(--ink);font:inherit;font-size:.82rem">
+              <option>Na 7 dagen</option><option>Na 5 dagen</option><option>Na 10 dagen</option>
+            </select>
+            <label style="display:inline-flex;align-items:center;gap:8px;font-size:.82rem;color:var(--ink-mut);cursor:pointer"><input type="checkbox" checked style="width:17px;height:17px;accent-color:var(--navy)">aan</label>
+          </div>
+          <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:14px 2px;border-top:1px solid var(--line)">
+            <div style="flex:1;min-width:240px"><b style="color:var(--ink)">Werkplekinspectie-reminders</b><div style="font-size:.8rem;color:var(--ink-mut);margin-top:2px">Het inspectieritme per locatie of ploeg, met een signaal wanneer een ronde blijft liggen.</div></div>
+            <select style="padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card,#fff);color:var(--ink);font:inherit;font-size:.82rem">
+              <option>Wekelijks</option><option>Tweewekelijks</option><option>Maandelijks</option>
+            </select>
+            <label style="display:inline-flex;align-items:center;gap:8px;font-size:.82rem;color:var(--ink-mut);cursor:pointer"><input type="checkbox" checked style="width:17px;height:17px;accent-color:var(--navy)">aan</label>
+          </div>
+          <div style="font-size:.78rem;color:var(--ink-mut);margin-top:12px">Demo: instellingen worden in deze demo-omgeving niet opgeslagen. In de definitieve omgeving bepaalt u per reminder het ritme en de ontvangers.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== TOOLBOXEN ==================== -->
+  <div id="v-toolbox" class="view">
+    <div class="wrap">
+      <div class="pagehead"><div>
+        <h2>Veiligheidscultuur verbeter-toolboxen</h2>
+        <div class="meta"><span>Kant-en-klare toolboxen om de bevindingen uit de meting om te zetten in het goede gesprek op de werkvloer. Toolboxen met een <b style="color:var(--st-oranje)">aanbevolen</b>-label sluiten aan op de knelpunten uit uw meting.</span></div>
+      </div></div>
+      <div id="tbx-list"></div>
+      <div class="panel analyse" style="margin-top:8px">
+        <div class="ph"><h3>Zo gebruikt u een toolbox</h3></div>
+        <p>Laat de toolbox geven door de eigen leidinggevende — niet standaard door KAM — en maak er een gesprek van, geen zendkanaal. Registreer deelname, stel de controlevragen en koppel het onderwerp waar mogelijk aan een recente eigen melding of situatie. Eén doorleefd eigen voorbeeld doet meer dan tien standaardsheets.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== VERBETERPLAN ==================== -->
+  <div id="v-plan" class="view">
+    <div class="wrap">
+      <div class="pagehead"><div>
+        <h2>Verbeterplan &amp; acties</h2>
+        <div class="meta"><span>Automatisch voorgesteld op basis van de knelpunten uit uw meting — stuur op routines, niet op documenten. Elke actie vraagt een <b>eigenaar op naam</b>, een <b>deadline</b> en een <b>meetbaar resultaat</b>.</span></div>
+      </div></div>
+      <div class="panel">
+        <div style="overflow-x:auto"><table class="plan" id="plan-table"></table></div>
+        <div class="plan-note">Let op de valkuil uit de auditpraktijk: een plan waarin vrijwel alle acties dezelfde streefdatum hebben — vlak vóór de audit — en waar "MT" of "directie" als eigenaar staat, herkent een auditor direct als auditgedreven in plaats van sturend. In deze conceptversie worden wijzigingen niet opgeslagen.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== DASHBOARD ==================== -->
+  <div id="v-dash" class="view">
+    <div class="wrap">
+      <div class="pagehead">
+        <div>
+          <h2>Veiligheidscultuur-dashboard</h2>
+          <div class="meta">
+            <span>Meting: <b id="m-mode">–</b></span>
+            <span>Meetperiode: <b>7 – 20 juli 2026</b></span>
+            <span>Respons operationele medewerkers: <b id="m-resp-op">–</b></span>
+            <span>Respons sturende laag: <b id="m-resp-st">–</b></span>
+          </div>
+        </div>
+        <button class="btn navy small noprint" onclick="showView('rapport')">Naar rapport →</button>
+      </div>
+
+      <div class="kpis" id="kpis"></div>
+
+      <div class="dash-grid">
+        <div class="panel">
+          <div class="ph"><h3>Waar staat de organisatie op de ladder?</h3></div>
+          <div class="psub">Gemiddelde indicatieve trede per lijst, afgezet tegen de kleurzones van de indicator en de doeltrede.</div>
+          <div id="ch-meter"></div>
+        </div>
+        <div class="panel">
+          <div class="ph"><h3>Verdeling van alle antwoorden over de tredes</h3></div>
+          <div class="psub">Welk deel van de groep denkt en handelt op welke trede — beide lijsten samen.</div>
+          <div id="ch-donut" style="display:flex;gap:26px;align-items:center;flex-wrap:wrap"></div>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-bottom:22px">
+        <div class="ph"><h3 id="ch-themes-title">Score per SCL-thema — werkvloer naast aansturing</h3>
+          <span class="chip neut noprint" id="live-badge" style="display:none">bijgewerkt met uw inzending</span></div>
+        <div class="psub">Het verschil tussen beide lijsten is het belangrijkste stuurpunt: waar de sturende laag structureel hoger scoort dan de operationele medewerkers, bestaat het beleid wel — maar leeft het niet.</div>
+        <div class="legend">
+          <div class="li"><span class="sw" style="background:var(--ser1)"></span>Operationele medewerkers</div>
+          <div class="li"><span class="sw" style="background:var(--ser2)"></span>De sturende laag</div>
+          <div class="li"><span style="width:22px;border-top:2px dashed var(--ink-mut);display:inline-block"></span>Doel: trede 3</div>
+        </div>
+        <div id="ch-themes"></div>
+      </div>
+
+      <div class="dash-grid3">
+        <div class="panel">
+          <div class="ph"><h3>Tredeverdeling per lijst</h3></div>
+          <div class="psub">Percentage van de antwoorden per trede, per lijst.</div>
+          <div id="ch-stack"></div>
+        </div>
+        <div class="panel analyse">
+          <div class="ph"><h3>Analyse &amp; prognose</h3></div>
+          <div id="an-text"></div>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-bottom:22px">
+        <div class="ph"><h3>Alle twintig onderwerpen in detail</h3></div>
+        <div class="psub">Score per onderwerp per lijst, met kleurindicatie (rood &lt; 2,0 · oranje 2,0–2,7 · lichtgroen 2,7–3,4 · groen &gt; 3,4), de kloof tussen beide lijsten en het aandeel "weet niet".</div>
+        <div style="overflow-x:auto"><table class="subj" id="subj-table"></table></div>
+      </div>
+
+      <div class="panel analyse">
+        <div class="ph"><h3>Knelpunten &amp; aanbevolen vervolg</h3></div>
+        <div class="psub">Automatisch afgeleid uit de meting, gekoppeld aan de best practice "Op weg naar trede 3". Uw consultant verdiept deze punten met de gespreksleidraad.</div>
+        <div class="adv-cards" id="adv-cards"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== VRAGENLIJST ==================== -->
+  <div id="v-vragen" class="view">
+    <div class="wrap">
+      <div class="pagehead"><div>
+        <h2>Vragenlijst invullen</h2>
+        <div class="meta"><span id="q-meta">Veiligheidscultuur-indicator SCL 2.0 · 40 vragen · ca. 10 minuten · na elk antwoord automatisch opgeslagen</span></div>
+      </div></div>
+      <div class="q-intro panel" id="q-start">
+        <h3 style="margin-bottom:8px">Voordat u begint</h3>
+        <p style="font-size:.88rem;color:var(--ink-soft)">Kies bij elke vraag het antwoord dat het beste past bij <b>wat er meestal gebeurt</b> — niet wat u vindt of wat zou moeten. Er is geen goed of fout antwoord; elke optie beschrijft een herkenbare praktijk. Weet u het niet, kies dan "weet niet". U vult anoniem in: resultaten worden alleen op groepsniveau gerapporteerd en zijn nooit herleidbaar tot een persoon.</p>
+        <div class="listpick">
+          <div class="lp" id="lp-op" onclick="pickList('op')">
+            <b>Ik ben operationeel medewerker</b>
+            <span>Uitvoerend, monteur, vakman/vakvrouw, chauffeur of vergelijkbare functie. De vragen gaan over wat u op de werkplek ziet en doet.</span>
+          </div>
+          <div class="lp" id="lp-st" onclick="pickList('st')">
+            <b>Ik behoor tot de sturende laag</b>
+            <span>Directie, management, werkvoorbereiding, planning, HR, KAM/VGM of leidinggevende. De vragen gaan over wat is ingericht en geborgd.</span>
+          </div>
+        </div>
+        <button class="btn navy" id="q-go" style="display:none;margin-top:16px" onclick="startList()">Start de vragenlijst →</button>
+      </div>
+      <div id="q-form" style="display:none">
+        <div class="progress"><div class="pbar"><i id="pfill"></i></div>
+          <div class="pmeta"><span id="pcount">0 van 40 beantwoord</span><span id="plist"></span></div></div>
+        <div id="q-list"></div>
+        <div class="q-pagenav">
+          <button class="btn ghostn" id="q-prev" onclick="pageMove(-1)">← Vorige</button>
+          <span class="q-pageinfo" id="q-pageinfo"></span>
+          <button class="btn navy" id="q-next" onclick="pageMove(1)">Volgende →</button>
+          <button class="btn navy" id="q-submit" style="display:none" onclick="submitList()">Verstuur mijn antwoorden</button>
+        </div>
+        <div class="q-actions"><span class="q-warn" id="q-warn"></span></div>
+      </div>
+      <div id="q-done" style="display:none"></div>
+    </div>
+  </div>
+
+  <!-- ==================== RAPPORT ==================== -->
+  <div id="v-rapport" class="view">
+    <div class="wrap">
+      <div class="r-brandhead">
+        <div class="rb-l">
+          <svg viewBox="0 0 120 120"><rect width="120" height="120" rx="26" fill="#122A4C"/><path d="M28,86 L28,34 L40,34 L60,62 L80,34 L92,34 L92,86 L80,86 L80,54 L64,76 L56,76 L40,54 L40,86 Z" fill="#fff"/><path d="M46,62 L58,74 L82,42" fill="none" stroke="#E8A33B" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div><div class="rn"><span>Kwaliteits</span><b>Meesters</b></div><div class="rs">Veiligheidscultuur-indicator · Rapportage</div></div>
+        </div>
+        <div class="rb-r"><b>Demo Bouw &amp; Infra B.V.</b><span id="r-meta">Meting Q3 2026 · Vertrouwelijk, alleen op groepsniveau</span></div>
+      </div>
+      <div class="pagehead">
+        <div>
+          <h2>Rapportage veiligheidscultuur-indicator</h2>
+          <div class="meta"><span id="r-meta2">Vertrouwelijk · alleen op groepsniveau</span></div>
+        </div>
+        <button class="btn navy small noprint" onclick="window.print()">Afdrukken / opslaan als PDF</button>
+      </div>
+      <div id="r-body"></div>
+      <div class="panel analyse">
+        <div class="ph"><h3>Leeswijzer &amp; vervolg</h3></div>
+        <p>De indicatieve trede is een zelfbeeld, geen auditoordeel: auditors herkennen zelfoverschatting in de SAQ onmiddellijk, dus interpreteer scores ruim boven de eigen ambitie als een kalibratiesignaal. Elk onderwerp waar meer dan tien procent van de antwoorden op trede 1 of 2 uitkomt, verdient een verbeteractie — ongeacht het gemiddelde. Rood of oranje in deze meting → doorvragen met het bijbehorende cluster uit de gespreksleidraad → verbeteren en borgen met het themahoofdstuk uit de best practice "Op weg naar trede 3".</p>
+        <p style="margin-top:6px">Uw consultant van KwaliteitsMeesters bespreekt deze rapportage met u en vertaalt de bevindingen naar een verbeterplan dat stuurt op routines — met per actie een eigenaar, een deadline en een meetbaar resultaat.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+const SAQ = {"versie": "2.0", "themes": ["Beleid en leiderschap", "Kennis en vaardigheden", "Primaire en secundaire processen", "Samenwerken met externen", "Leren en verbeteren"], "rubrieken": ["Instrumenten", "Overleg en communicatie", "Sturing en leiderschap", "Beleid, doelen en borging", "Kennis, competenties en mens", "Processen en werkvoorbereiding", "Keten en externen", "Leren, analyse en cijfers"], "A": {"op": [{"t": 1, "s": "Zichtbaarheid & voorbeeldgedrag", "q": "Hoe vaak zie je je leidinggevende of de directie op de plek waar het werk echt gebeurt?", "opts": ["Vaak, en ze vragen ons actief hoe het veiliger en beter kan", "Vooral als er iets mis is gegaan", "Vaak, en ze pakken dan zelf ook dingen op of spreken mensen aan", "Regelmatig, dat hoort er hier gewoon bij", "Eigenlijk nooit, ze blijven op kantoor"], "key": [5, 2, 4, 3, 1]}, {"t": 1, "s": "Zichtbaarheid & voorbeeldgedrag", "q": "Werkt je leidinggevende zelf ook volgens de veiligheidsafspraken?", "opts": ["Ja, en ze spreken zichzelf en anderen er ook op aan", "Alleen als er controle is of bezoek komt", "Nee, voor hen gelden andere regels", "Ja, ze houden zich aan dezelfde afspraken als wij", "Ja, ze geven het goede voorbeeld en maken het bespreekbaar bij iedereen"], "key": [4, 2, 1, 3, 5]}, {"t": 1, "s": "Aanspreken", "q": "Iemand werkt onveilig en een collega ziet het. Wat gebeurt er meestal?", "opts": ["Er wordt niets gezegd, ieder voor zich", "We spreken elkaar én mensen van andere bedrijven er standaard op aan", "We spreken elkaar er uit onszelf op aan, ongeacht wie het is", "Diegene wordt aangesproken, dat is hier normaal", "Er wordt pas iets van gezegd als het misgaat"], "key": [1, 5, 4, 3, 2]}, {"t": 1, "s": "Aanspreken", "q": "Als jij iemand zou aanspreken op onveilig werken, hoe zou dat vallen?", "opts": ["Dat wordt gewaardeerd, we helpen elkaar zo", "Dat is normaal, daar kijkt niemand van op", "Dat hoort erbij, we vragen er zelfs actief om van elkaar", "Dat kan, maar het ligt gevoelig", "Dat doe je hier niet, daar krijg je gedoe mee"], "key": [4, 3, 5, 2, 1]}, {"t": 1, "s": "Waarderen & sanctioneren", "q": "Wat gebeurt er als iemand herhaaldelijk onveilig blijft werken?", "opts": ["Collega's spreken diegene zelf al aan voordat het zover komt", "Niets, het heeft geen gevolgen", "Er volgt een duidelijke, bekende aanpak die voor iedereen geldt", "Soms wordt er iets van gezegd, afhankelijk van wie het ziet", "Het komt zelden zover, want we houden elkaar hier scherp"], "key": [4, 1, 3, 2, 5]}, {"t": 1, "s": "Waarderen & sanctioneren", "q": "Wordt goed of veilig werken hier ook opgemerkt en gewaardeerd?", "opts": ["Ja, goed voorbeeld wordt gedeeld zodat anderen ervan leren", "Ja, daar is een vaste manier voor (compliment, attentie, in het zonnetje)", "Nee, daar is geen aandacht voor", "Alleen als het toevallig opvalt", "Ja, en collega's spreken ook onderling waardering uit"], "key": [5, 3, 1, 2, 4]}, {"t": 1, "s": "Doelen, middelen & prioriteit", "q": "Als veilig werken tijd of geld kost, wat gaat hier meestal voor?", "opts": ["Veiligheid gaat voor, en we regelen zelf wat daarvoor nodig is", "Veiligheid gaat voor, ook richting de opdrachtgever wordt dat bewaakt", "Veiligheid gaat voor, dat is hier de afspraak", "Meestal de planning, tenzij het echt niet anders kan", "De planning gaat altijd voor, veiligheid is bijzaak"], "key": [4, 5, 3, 2, 1]}, {"t": 1, "s": "Doelen, middelen & prioriteit", "q": "Heb je de middelen die je nodig hebt om veilig te werken (PBM, materieel)?", "opts": ["Ja, en als iets niet klopt geef ik dat zelf direct aan", "Ja, het is op orde en gekeurd", "Vaak niet, je moet het ermee doen", "Meestal wel, maar je moet er zelf achteraan", "Ja, en we denken samen mee over betere middelen"], "key": [4, 3, 1, 2, 5]}, {"t": 2, "s": "Verwachtingen & gedragsregels", "q": "Kun je de veiligheidsregels of gedragsafspraken van dit bedrijf in je eigen woorden noemen?", "opts": ["Ze hangen ergens, maar ik zou ze niet kunnen noemen", "Ja, en ik gebruik ze ook als ik een collega aanspreek", "Ik wist niet dat die er zijn", "Ja, de belangrijkste kan ik zo noemen", "Ja, ze zijn van onszelf — we hebben ze mee opgesteld en houden ze levend"], "key": [2, 4, 1, 3, 5]}, {"t": 2, "s": "Verwachtingen & gedragsregels", "q": "Weet je bij wie je moet zijn als je twijfelt of iets veilig kan?", "opts": ["Ja, we lossen het vaak samen op nog voor het een probleem wordt", "Ja, en ik stap er ook echt op af als het nodig is", "Nee, dat is onduidelijk", "Ik zoek het per keer uit", "Ja, dat is helder en dat weet iedereen"], "key": [5, 4, 1, 2, 3]}, {"t": 2, "s": "Risicobesef in eigen werk", "q": "Als je aan een klus begint, hoe goed weet je welke gevaren erbij spelen?", "opts": ["Ik let er zelf actief op en denk vooruit", "Ik ken ze, we bespreken ze vooraf", "Ik denk vooruit én deel wat ik zie met collega's", "Ik kom er meestal gaandeweg achter", "Ik let op als er iets misgaat"], "key": [4, 3, 5, 1, 2]}, {"t": 2, "s": "Risicobesef in eigen werk", "q": "Je ziet tijdens het werk een onveilige situatie en lost die meteen zelf op. Wat gebeurt er daarna meestal?", "opts": ["Ik meld het daarna alsnog, dat is hier de afspraak", "Niets, dat hoort gewoon bij het werk", "Ik meld het en we bespreken het in het team, zodat anderen ervan leren", "Opgelost is klaar; melden heeft dan geen zin meer", "Ik meld het en denk mee of het ook op andere klussen of projecten speelt"], "key": [3, 1, 4, 2, 5]}, {"t": 2, "s": "Inwerken & ontwikkelen", "q": "Hoe worden nieuwe mensen of inhuurkrachten hier ingewerkt op veiligheid?", "opts": ["We leren van en met elkaar, ook ervaren mensen blijven bijleren", "Ze worden begeleid én er wordt gecheckt of ze het echt snappen", "Ze krijgen wat papieren mee", "Ze zoeken het zelf uit", "Ze worden begeleid en gekoppeld aan een ervaren collega"], "key": [5, 4, 2, 1, 3]}, {"t": 2, "s": "Inwerken & ontwikkelen", "q": "Komt veilig werken terug in je functionerings- of ontwikkelgesprek?", "opts": ["Ja, we maken er samen ontwikkelafspraken over", "Ja, het is een vast onderwerp", "Ja, en ik breng zelf punten in over veilig werken", "Nee, dat gaat alleen over productie", "Zelden, alleen als er iets is gebeurd"], "key": [5, 3, 4, 1, 2]}, {"t": 2, "s": "Kennis toetsen", "q": "Wordt er weleens gecheckt of je de risico's van je werk echt kent?", "opts": ["Ja, daar zijn vaste momenten voor", "Ja, en ik gebruik het zelf om scherp te blijven", "Alleen na een incident", "Ja, en we bespreken samen wat we ervan leren", "Nee, nooit"], "key": [3, 4, 2, 5, 1]}, {"t": 2, "s": "Kennis toetsen", "q": "De planning loopt uit en de einddatum komt dichterbij. Wat zie je dan meestal gebeuren?", "opts": ["We werken door en nemen wat meer risico, dat hoort erbij", "Leidinggevenden vragen actief of het nog veilig kan en schalen op tijd op", "Dan wijkt alles voor het halen van de datum", "De planning wordt aangepast of er komt hulp bij; veiligheid gaat voor", "Wij trekken zelf aan de bel en daar wordt altijd naar gehandeld"], "key": [2, 4, 1, 3, 5]}, {"t": 3, "s": "Voorbereiding van het werk", "q": "Worden de risico's van een klus vooraf met je besproken?", "opts": ["Ja, bij de start van het werk", "Ja, en ik vul zelf aan wat ik zie", "Ja, en we stellen het bij zodra er iets verandert", "Nee, we beginnen gewoon", "Alleen bij groot of bijzonder werk"], "key": [3, 4, 5, 1, 2]}, {"t": 3, "s": "Voorbereiding van het werk", "q": "Sluit de voorbereiding aan bij hoe het werk echt gaat?", "opts": ["Ja, de voorbereiding klopt met de praktijk", "Deels, het klopt niet altijd", "Ja, en we verbeteren de voorbereiding op basis van de praktijk", "Ja, en ik geef door als iets niet klopt", "Nee, papier en praktijk staan los van elkaar"], "key": [3, 2, 5, 4, 1]}, {"t": 3, "s": "Risicobeoordeling op de werkplek", "q": "Doe je vlak voor de start nog een korte risicocheck (LMRA) op de werkplek?", "opts": ["Nee, dat kennen we hier niet", "Ja, dat hoort er standaard bij", "Ja, en ik doe het uit mezelf, ook als niemand kijkt", "Alleen bij risicovol werk", "Ja, en ik betrek collega's erbij zodat we het samen zien"], "key": [1, 3, 4, 2, 5]}, {"t": 3, "s": "Risicobeoordeling op de werkplek", "q": "Kom je bij die check iets tegen dat niet klopt — wat doe je dan?", "opts": ["Aanpassen of overleggen voor ik verderga", "Stoppen én het delen zodat het niet nog eens gebeurt", "Toch doorgaan, anders loopt het werk vast", "Uit mezelf stoppen tot het veilig is", "Doorgaan tenzij het echt gevaarlijk is"], "key": [3, 5, 1, 4, 2]}, {"t": 3, "s": "Middelen & materieel", "q": "Je werkt alleen of ver van collega's. Hoe is hulp bij een ongeval geregeld?", "opts": ["De afspraken zijn er én we bespreken regelmatig of ze in de praktijk werken", "Daar is niets voor geregeld", "Er zijn vaste afspraken voor BHV en alleenwerken en die kent iedereen", "Dit is vanzelfsprekend geregeld en we verbeteren het zelf als iets beter kan", "Na een incident wordt er even op gelet, daarna zakt het weg"], "key": [4, 1, 3, 5, 2]}, {"t": 3, "s": "Middelen & materieel", "q": "Wat gebeurt er als materieel kapot of onveilig is?", "opts": ["Het wordt pas vervangen als het echt stuk is", "We voorkomen het door er samen op te letten", "Je werkt er toch mee, er is geen alternatief", "Ik haal het zelf uit gebruik en meld het meteen", "Het wordt gemeld en vervangen, zo hoort het"], "key": [2, 5, 1, 4, 3]}, {"t": 3, "s": "Werk stilleggen", "q": "Mag jij het werk stilleggen als jij vindt dat het niet veilig kan?", "opts": ["Ja, dat is duidelijk afgesproken en dat weet iedereen", "Nee, daar ga ik niet over", "In theorie wel, maar ik zou het niet snel doen", "Ja, en we steunen elkaar daar ook in", "Ja, en het is ook echt gebeurd zonder gedoe"], "key": [3, 1, 2, 5, 4]}, {"t": 3, "s": "Werk stilleggen", "q": "Als je het werk zou stilleggen, hoe zou daarop gereageerd worden?", "opts": ["Dat mag, maar het wordt niet gewaardeerd", "Dat wordt gewaardeerd, veiligheid gaat voor", "Dat wordt gewaardeerd en we leren ervan met elkaar", "Dat is normaal en wordt geaccepteerd", "Daar krijg je last mee"], "key": [2, 4, 5, 3, 1]}, {"t": 4, "s": "Afspraken vooraf", "q": "Weten mensen van andere bedrijven die hier komen werken wat de regels zijn?", "opts": ["Het wordt besproken én er wordt op gelet of ze het doen", "Nee, dat zoeken ze zelf maar uit", "Ze krijgen het op papier mee", "Het wordt vooraf met ze besproken", "We stemmen het samen af zodat iedereen op één lijn zit"], "key": [4, 1, 2, 3, 5]}, {"t": 4, "s": "Afspraken vooraf", "q": "Doen inhuurkrachten en onderaannemers hier mee aan toolboxen, en kunnen zij melden zoals jullie?", "opts": ["Ja, dat is zo geregeld: zelfde toolboxen, zelfde meldkanaal", "Ja, volledig gelijk aan ons — hun inbreng gebruiken we ook om te verbeteren", "Nee, die staan er helemaal buiten", "Alleen als er iets is gebeurd worden ze erbij gehaald", "Ja, en ze doen ook echt mee en melden zelf"], "key": [3, 5, 1, 2, 4]}, {"t": 4, "s": "Aanspreken van externen", "q": "Iemand van een ander bedrijf doet iets onveiligs. Wat gebeurt er?", "opts": ["Daar ga ik niet over, ik laat het", "Ik spreek diegene zelf aan, ongeacht van welk bedrijf", "Ik meld het aan mijn eigen baas", "We spreken elkaar over en weer aan, dat is hier normaal", "Ik of mijn leidinggevende spreekt diegene aan"], "key": [1, 4, 2, 5, 3]}, {"t": 4, "s": "Aanspreken van externen", "q": "Als een extern bedrijf zich niet aan de afspraken houdt, gebeurt er dan iets?", "opts": ["Ja, en zo nodig werken we niet meer met ze", "Alleen als er iets ernstigs gebeurt", "Nee, dat loopt gewoon door", "Ja, het wordt besproken en opgevolgd", "We voorkomen het door vooraf goed af te stemmen"], "key": [4, 2, 1, 3, 5]}, {"t": 4, "s": "Beoordelen & selecteren", "q": "Merk je dat er ook op veiligheid gelet wordt bij de keuze van externe partijen?", "opts": ["Nee, het gaat alleen om prijs en snelheid", "Ja, en we verbeteren samen met vaste partners", "Zelden, alleen na problemen", "Ja, veiligheid telt mee bij wie we inhuren", "Ja, en goede partijen komen terug, slechte niet"], "key": [1, 5, 2, 3, 4]}, {"t": 4, "s": "Beoordelen & selecteren", "q": "Hoe worden kleine, korte klussen voorbereid vergeleken met grote projecten?", "opts": ["Klein werk bereiden we niet voor, dat doe je gewoon", "Ook voor kleine klussen is er een vaste, korte voorbereiding", "Alleen na problemen kijken we bij klein werk vooraf naar risico's", "Klein of groot maakt niet uit — veilig voorbereiden is vanzelfsprekend en we verbeteren de aanpak steeds", "Zelfde aanpak als groot werk; we denken zelf vooraf mee over de risico's"], "key": [1, 3, 2, 5, 4]}, {"t": 4, "s": "Grenzen richting opdrachtgever", "q": "Als een opdrachtgever haast heeft en het kan niet veilig, wat gebeurt er?", "opts": ["We geven de grens aan en passen het werk aan", "We doen wat de opdrachtgever wil", "We leggen zo nodig stil, ook als de opdrachtgever aandringt", "We bespreken het vooraf zodat het niet zover komt", "Meestal doorgaan, met tegenzin"], "key": [3, 1, 4, 5, 2]}, {"t": 4, "s": "Grenzen richting opdrachtgever", "q": "Voel je je gesteund als je richting een opdrachtgever 'nee' zegt om veiligheid?", "opts": ["Ja, en dat is ook echt gebeurd", "Ja, we trekken daarin samen op", "Ja, mijn organisatie staat achter me", "Soms, het hangt ervan af", "Nee, dan sta ik er alleen voor"], "key": [4, 5, 3, 2, 1]}, {"t": 5, "s": "Melden", "q": "Zie je een onveilige situatie of bijna-ongeval. Meld je dat?", "opts": ["Ja, en ik moedig collega's ook aan om te melden", "Nee, dat is te veel gedoe", "Ja, ook bijna-ongelukken en ideeën, want er gebeurt iets mee", "Alleen bij iets ernstigs", "Ja, melden is hier makkelijk en normaal"], "key": [5, 1, 4, 2, 3]}, {"t": 5, "s": "Melden", "q": "Durven mensen hier open te zijn over fouten of onveilige situaties?", "opts": ["Ja, we zijn er open over en leren ervan", "Nee, dan krijg je de schuld", "Ja, daar wordt normaal over gedaan", "Ja, juist fouten delen we om herhaling te voorkomen", "Alleen als het niet anders kan"], "key": [4, 1, 3, 5, 2]}, {"t": 5, "s": "Terugkoppeling & opvolging", "q": "Wat gebeurt er nadat je iets gemeld hebt?", "opts": ["Soms hoor je wat, meestal niet", "Geen idee, je hoort er nooit meer iets van", "Snelle terugkoppeling én het wordt met het team gedeeld zodat iedereen ervan leert", "Ik hoor binnen korte tijd — dagen, geen maanden — wat ermee gebeurt", "Terugkoppeling is vanzelfsprekend; we zien ook terug wat het op langere termijn oplevert"], "key": [2, 1, 4, 3, 5]}, {"t": 5, "s": "Terugkoppeling & opvolging", "q": "Zie je dat meldingen echt tot verandering leiden?", "opts": ["Nee, er verandert nooit iets", "Ja, ik zie het terug in hoe we werken", "Ja, er wordt iets mee gedaan", "Zelden, alleen bij grote dingen", "Ja, en dat motiveert om te blijven melden"], "key": [1, 4, 3, 2, 5]}, {"t": 5, "s": "Analyse & trends", "q": "Worden incidenten hier uitgezocht om herhaling te voorkomen?", "opts": ["Nee, het wordt hooguit genoteerd", "Ja, er wordt naar de oorzaak gekeken", "Ja, en de les komt terug in een toolbox of afspraak", "Ja, en we kijken naar patronen om vooruit te verbeteren", "Alleen bij ernstige gevallen"], "key": [1, 3, 4, 5, 2]}, {"t": 5, "s": "Analyse & trends", "q": "Worden veiligheidscijfers of terugkerende problemen met jullie gedeeld?", "opts": ["Ja, en we praten mee over wat er beter kan", "Zelden", "Ja, dat wordt met ons besproken", "Ja, we gebruiken het samen om vooruit te kijken", "Nee, dat blijft bij kantoor"], "key": [4, 2, 3, 5, 1]}, {"t": 5, "s": "Leren over werk heen", "q": "Hoor je van lessen of incidenten van andere projecten of ploegen?", "opts": ["Ja, en we passen onze manier van werken erop aan", "Ja, dat wordt gedeeld (bijvoorbeeld via safety alerts)", "Alleen als er iets ernstigs is gebeurd", "Nee, dat blijft binnen het eigen project", "Ja, we halen actief lessen bij elkaar op"], "key": [4, 3, 2, 1, 5]}, {"t": 5, "s": "Leren over werk heen", "q": "Weet jij wat je hier wel en niet hoort te melden?", "opts": ["Bij een echt ongeval is het duidelijk, verder niet", "Ja, en we melden ook ideeën en dingen die juist goed gaan", "Ja, dat is duidelijk afgesproken: ook bijna-ongevallen en onveilige situaties", "Melden? Dat doen we hier eigenlijk niet", "Ja, en we herinneren elkaar eraan als iets gemeld moet worden"], "key": [2, 5, 3, 1, 4]}], "st": [{"t": 1, "s": "Zichtbaarheid & voorbeeldgedrag", "q": "Hoe is de aanwezigheid van directie en management op de werkvloer geregeld?", "opts": ["Ingepland én zij pakken ter plekke zelf zaken op", "Via vaste, ingeplande werkplekbezoeken of safety walks", "Ingepland, en zij halen actief op wat veiliger en beter kan", "Niet, zij komen zelden op de werkvloer", "Alleen naar aanleiding van incidenten"], "key": [4, 3, 5, 1, 2]}, {"t": 1, "s": "Zichtbaarheid & voorbeeldgedrag", "q": "Hoe weet u dat leidinggevenden zelf het gewenste voorbeeldgedrag tonen?", "opts": ["We zien het terug in werkplekbezoeken en observaties", "We horen het pas als het misgaat", "Voorbeeldgedrag is expliciet onderdeel van hun beoordeling", "Dat weten we niet, daar sturen we niet op", "Leidinggevenden spreken elkaar er onderling op aan"], "key": [3, 2, 5, 1, 4]}, {"t": 1, "s": "Aanspreken", "q": "Hoe is de aanspreekcultuur binnen de organisatie geborgd?", "opts": ["Aanspreken over en weer, ook met externen, zit in de cultuur", "Medewerkers spreken elkaar uit zichzelf aan, over niveaus heen", "Alleen na incidenten en per geval verschillend", "Aanspreken gebeurt nauwelijks", "Aanspreken is de norm en wordt actief gestimuleerd"], "key": [5, 4, 2, 1, 3]}, {"t": 1, "s": "Aanspreken", "q": "Hoe weet u dat medewerkers elkaar in de praktijk daadwerkelijk aanspreken?", "opts": ["Uit een structureel beeld dat we volgen en bespreken", "We horen en zien het terug in observaties en overleg", "Uit voorbeelden waarin het aantoonbaar is gebeurd", "Dat weten we niet", "We nemen aan dat het gebeurt"], "key": [5, 3, 4, 1, 2]}, {"t": 1, "s": "Waarderen & sanctioneren", "q": "Hoe is het sanctiebeleid bij ongewenst V&G-gedrag ingericht?", "opts": ["Er is een vaste lijn die organisatiebreed consequent wordt toegepast", "Aanspreken voorkomt meestal dat formele stappen nodig zijn", "Er is beleid, maar de toepassing verschilt per leidinggevende", "Het komt zelden zover, door de cultuur van elkaar scherp houden", "Er is geen sanctiebeleid"], "key": [3, 4, 2, 5, 1]}, {"t": 1, "s": "Waarderen & sanctioneren", "q": "Hoe is het waarderen van goed of proactief V&G-gedrag geregeld?", "opts": ["Incidenteel, een compliment of attentie", "Goede voorbeelden worden gedeeld zodat anderen leren", "Waardering komt ook van medewerkers onderling", "Dat doen we niet gestructureerd", "Via een herkenbare, vast toegepaste waarderingsvorm"], "key": [2, 5, 4, 1, 3]}, {"t": 1, "s": "Doelen, middelen & prioriteit", "q": "Hoe zijn jullie V&G-doelen geformuleerd?", "opts": ["Concrete, meetbare doelen met eigenaar en evaluatiemoment", "Doelen die medewerkers kennen en waaraan zij bijdragen", "Doelen die we tegen de branche afzetten en bijstellen", "We hebben geen concrete V&G-doelen", "Losse maatregelen, geen samenhangende doelen"], "key": [3, 4, 5, 1, 2]}, {"t": 1, "s": "Doelen, middelen & prioriteit", "q": "Hoe verhoudt het V&G-budget zich tot de druk van planning en opdrachtgever?", "opts": ["V&G is geborgd in budget en niet onderhandelbaar", "V&G moet wijken als de druk toeneemt", "V&G is vast onderdeel van calculatie en aanbieding", "Veilig werken is leidend, ook richting de opdrachtgever", "Budget voor V&G is er nauwelijks"], "key": [3, 2, 5, 4, 1]}, {"t": 2, "s": "Rollen & bevoegdheden", "q": "Hoe zijn V&G-taken, -verantwoordelijkheden en -bevoegdheden vastgelegd?", "opts": ["Niet vastgelegd", "Per functie vastgelegd, inclusief wie mag stilleggen", "Vastgelegd én herkend en toegepast in de praktijk", "Globaal, niet tot op uitvoeringsniveau", "Vastgelegd met meetbare gedragscriteria per functie"], "key": [1, 3, 4, 2, 5]}, {"t": 2, "s": "Rollen & bevoegdheden", "q": "Hoe weet u dat medewerkers hun rol en bevoegdheid rond V&G kennen?", "opts": ["We toetsen het in gesprekken en op de werkvloer", "Medewerkers nemen zelf initiatief binnen hun bevoegdheid", "Dat toetsen we niet", "Medewerkers handelen er aantoonbaar naar", "We gaan ervan uit dat het bekend is"], "key": [3, 5, 1, 4, 2]}, {"t": 2, "s": "Risicobesef in eigen werk", "q": "Hoe borgt u dat medewerkers de risico's van hun eigen werk kennen?", "opts": ["Medewerkers denken vooruit en delen risico's onderling", "Via werkspecifieke instructie en bespreking vooraf", "Via algemene certificaten, niet werkspecifiek", "Medewerkers benoemen en beheersen risico's aantoonbaar zelf", "Dat borgen we niet"], "key": [5, 3, 2, 4, 1]}, {"t": 2, "s": "Risicobesef in eigen werk", "q": "Hoe verifieert u of risicocommunicatie ook echt overkomt bij de uitvoerenden?", "opts": ["We nemen aan dat het op papier volstaat", "We toetsen bij de start of het begrepen is", "Dat verifiëren we niet", "We verifiëren in de praktijk of het gewenste gedrag ontstaat", "We stellen de communicatie bij op basis van wat we terugzien"], "key": [2, 3, 1, 4, 5]}, {"t": 2, "s": "Inwerken & ontwikkelen", "q": "Hoe is het inwerken van nieuwe medewerkers, inhuur en anderstaligen geregeld?", "opts": ["Vast inwerktraject met begeleiding en ervaren-onervaren-koppeling", "Niet, zij zoeken het zelf uit", "Alleen een papieren introductie", "Een lerende omgeving waarin ook ervaren mensen bijleren", "Inwerken én toetsing of het echt begrepen is"], "key": [3, 1, 2, 5, 4]}, {"t": 2, "s": "Inwerken & ontwikkelen", "q": "Hoe komt V&G terug in functionerings- en ontwikkelgesprekken?", "opts": ["Alleen als er een incident was", "Medewerkers brengen zelf V&G-punten in", "Er worden concrete V&G-ontwikkelafspraken gemaakt en bewaakt", "Als vast onderwerp in het gesprek", "Niet, die gaan over productie"], "key": [2, 4, 5, 3, 1]}, {"t": 2, "s": "Kennis toetsen", "q": "Hoe stelt u periodiek vast of het kennisniveau binnen/van ... nog past bij de risico's?", "opts": ["Toetsing stuurt gericht bijscholing aan", "Dat doen we niet", "Alleen na een incident", "Via vaste toetsmomenten of herhaling", "We anticiperen op waar de risico's heen bewegen"], "key": [4, 1, 2, 3, 5]}, {"t": 2, "s": "Kennis toetsen", "q": "Hoe ontwikkelt u het veiligheidsleiderschap van direct leidinggevenden (uitvoerders, voormannen, leidinggevende monteurs)?", "opts": ["Er is een vast ontwikkeltraject of programma voor deze groep", "Daar doen we niets aan", "Leiderschap ontwikkelen is doorlopend; deze groep ontwikkelt elkaar en vraagt zelf om feedback, ook van de werkvloer", "Na incidenten spreken we ze erop aan", "Er is een vast programma én we meten het effect, bijvoorbeeld via feedback van de werkvloer"], "key": [3, 1, 5, 2, 4]}, {"t": 3, "s": "Voorbereiding van het werk", "q": "Hoe komt V&G terug in werkvoorbereiding en calculatie?", "opts": ["Pas als zich tijdens het werk een probleem voordoet", "De beoordeling wordt bijgesteld zodra iets verandert", "Via een in te vullen V&G-plan of formulier", "V&G zit al in calculatie en ontwerp verankerd", "Risico's worden per project beoordeeld en bij de start besproken"], "key": [1, 4, 2, 5, 3]}, {"t": 3, "s": "Voorbereiding van het werk", "q": "Hoe spelen de risiconiveaus (bedrijfs-RI&E, project-RI&E, TRA, LMRA) op elkaar in?", "opts": ["De samenhang is zichtbaar in de uitvoering", "Ze bestaan los van elkaar", "Die samenhang is er niet", "Ze spelen logisch op elkaar in en versterken elkaar", "We verbeteren de samenhang op basis van praktijkervaring"], "key": [4, 2, 1, 3, 5]}, {"t": 3, "s": "Risicobeoordeling op de werkplek", "q": "Hoe is de start-werkinstructie of werkvergunning ingericht?", "opts": ["Die kennen we niet", "Als moment dat we op basis van parate kennis en kunde verbeteren", "Als af te vinken formulier", "Als gesprek waarin risico's echt worden besproken", "Als gesprek waarin medewerkers actief meedenken"], "key": [1, 5, 2, 3, 4]}, {"t": 3, "s": "Risicobeoordeling op de werkplek", "q": "Hoe borgt u dat een wijziging (werk, plek, weer, bezetting) tot een nieuwe veiligheidsbeoordeling leidt?", "opts": ["Dat borgen we niet", "Alleen bij grote wijzigingen", "Medewerkers stellen zelf bij en overleggen", "Herbeoordeling gebeurt uit zichzelf en wordt gedeeld", "Via een vaste werkwijze voor herbeoordeling"], "key": [1, 2, 4, 5, 3]}, {"t": 3, "s": "Middelen & materieel", "q": "Hoe zijn keuring, onderhoud en vervanging van middelen geborgd?", "opts": ["Via een vast keurings- en onderhoudsritme", "Niet structureel", "Medewerkers melden zelf tijdig wat vervangen moet", "We investeren proactief in beter en veiliger materieel", "Pas als iets kapot is"], "key": [3, 1, 4, 5, 2]}, {"t": 3, "s": "Middelen & materieel", "q": "Hoe weet u dat afgekeurd of onveilig materieel echt uit gebruik gaat?", "opts": ["Medewerkers halen het zelf uit gebruik en melden het", "Het gebeurt uit zichzelf, we hoeven er nauwelijks op te sturen", "We zien het terug in controles en registratie", "We vertrouwen erop dat het gebeurt", "Dat weten we niet zeker"], "key": [4, 5, 3, 2, 1]}, {"t": 3, "s": "Werk stilleggen", "q": "Bij wie ligt de bevoegdheid om werk stil te leggen, en is dat bekend?", "opts": ["Bij iedereen, en stilleggen wordt gesteund en gewaardeerd", "Alleen bij het management, en nauwelijks bekend", "Bij iedereen, en er is in het verleden ook echt werk stilgelegd", "Bij leidinggevenden, het is bij hen wisselend bekend", "Bij iedereen, en dat is duidelijk gecommuniceerd"], "key": [5, 1, 4, 2, 3]}, {"t": 3, "s": "Werk stilleggen", "q": "Kunnen medewerkers melden zonder dat het tot hen herleidbaar is, en durven ze zich uit te spreken over collega's of leidinggevenden?", "opts": ["Ja, en signalen over gedrag of leidinggevenden worden aantoonbaar serieus opgepakt", "Na een incident durft men wel, daarna wordt het weer stil", "Dat speelt hier niet; wie zich uitspreekt heeft een probleem", "Ja, er is een anonieme meldmogelijkheid en die is bekend", "Zich uitspreken is hier normaal; anonimiteit is zelden nodig maar altijd mogelijk"], "key": [4, 2, 1, 3, 5]}, {"t": 4, "s": "Afspraken vooraf", "q": "Hoe zijn V&G-eisen richting opdrachtnemers vastgelegd en gedeeld?", "opts": ["In contracten én deze worden vóór de start met ze doorgenomen", "Gezamenlijk afgestemd met vaste partners", "Doorgenomen én er wordt op de naleving gelet", "In contracten, maar niet actief gedeeld", "Niet vastgelegd"], "key": [3, 5, 4, 2, 1]}, {"t": 4, "s": "Afspraken vooraf", "q": "Hoe verifieert u of externen de eisen begrijpen en naleven?", "opts": ["Dat verifiëren we niet", "We controleren de naleving in de uitvoering", "We toetsen het bij de start van een project of bij overeenkomen van contractovereenkomst", "We nemen aan dat papier volstaat", "We stellen bij op basis van wat we terugzien"], "key": [1, 4, 3, 2, 5]}, {"t": 4, "s": "Aanspreken van externen", "q": "Hoe wordt omgegaan met externen die zich niet aan de V&G-afspraken houden?", "opts": ["Daar gebeurt niets mee", "Het wordt besproken en opgevolgd", "Zo nodig worden ze uitgesloten van werk", "We voorkomen het door vooraf goed af te stemmen", "Alleen bij ernstige gevallen"], "key": [1, 3, 4, 5, 2]}, {"t": 4, "s": "Aanspreken van externen", "q": "Hoe weet u dat externen in de praktijk ook echt worden aangesproken?", "opts": ["Uit voorbeelden waarin het aantoonbaar is gebeurd", "We nemen aan dat het gebeurt", "We zien het terug in observaties en meldingen", "Aanspreken over en weer is met externen normaal geworden", "Dat weten we niet"], "key": [4, 2, 3, 5, 1]}, {"t": 4, "s": "Beoordelen & selecteren", "q": "Hoe weegt V&G-gedrag mee bij de selectie en beoordeling van opdrachtnemers?", "opts": ["Prestaties bepalen of we opnieuw met opdrachtnemers werken", "V&G-prestaties wegen mee als selectiecriterium", "Zelden, alleen na problemen", "Alleen prijs en beschikbaarheid tellen", "We verbeteren V&G samen met vaste partners"], "key": [4, 3, 2, 1, 5]}, {"t": 4, "s": "Beoordelen & selecteren", "q": "Hoe beoordeelt u de V&G-prestaties van opdrachtnemers?", "opts": ["Alleen als er iets misgaat kijken we ernaar", "Met een vast format op vaste momenten, met criteria over veiligheidsgedrag en een vervolg: verbeterafspraak of afscheid", "Niet; als het werk af is, is het goed", "Doorlopend, en goede V&G-prestaties belonen we aantoonbaar — bijvoorbeeld met meer werk", "Op vaste momenten én we bespreken de uitkomst met de opdrachtnemer en verbeteren samen"], "key": [2, 3, 1, 5, 4]}, {"t": 4, "s": "Grenzen richting opdrachtgever", "q": "Hoe gaat de organisatie om met opdrachtgeversdruk die veilig werken raakt?", "opts": ["We geven de grens aan en passen het werk aan", "We leggen zo nodig stil, ook onder druk", "We gaan meestal mee, met tegenzin", "We stemmen vooraf af zodat het niet zover komt", "We volgen de opdrachtgever"], "key": [3, 4, 2, 5, 1]}, {"t": 4, "s": "Grenzen richting opdrachtgever", "q": "Hoe worden medewerkers gesteund die richting een opdrachtgever een grens stellen?", "opts": ["Steun hangt van de situatie af", "Er zijn voorbeelden waarin dat ook echt gebeurde", "De organisatie staat aantoonbaar achter hen", "Zij staan er alleen voor", "De hele lijn trekt daarin samen op"], "key": [2, 4, 3, 1, 5]}, {"t": 5, "s": "Melden", "q": "Hoe laagdrempelig en volledig is het meldproces ingericht?", "opts": ["Melden is laagdrempelig en gangbaar", "Melden wordt actief aangemoedigd op alle niveaus", "Alleen ernstige zaken worden gemeld", "Er wordt nauwelijks gemeld", "Ook bijna-ongevallen en ideeën worden gemeld"], "key": [3, 5, 2, 1, 4]}, {"t": 5, "s": "Melden", "q": "Hoe is geborgd dat binnen- en buitenpersoneel in één systeem melden?", "opts": ["Er wordt via/op een verschillende methode/instrument/wijze gemeld door binnen- en buitenpersoneel", "Eén systeem dat aantoonbaar wordt gebruikt", "Eén systeem dat we op basis van gebruik verbeteren", "Er is geen eenduidig systeem", "Eén toegankelijk systeem voor iedereen"], "key": [2, 4, 5, 1, 3]}, {"t": 5, "s": "Terugkoppeling & opvolging", "q": "Hoe weet u dat melders binnen afzienbare termijn terugkoppeling krijgen?", "opts": ["Er staat een termijn op (bijvoorbeeld tien werkdagen) en we registreren of die wordt gehaald", "We gaan ervan uit dat de leidinggevende dat doet", "Het systeem bewaakt dit sluitend; melders bevestigen het in metingen en gesprekken", "Terugkoppeling is hier niet geregeld", "De termijn wordt bewaakt én we vragen melders zelf of ze zich gehoord voelen"], "key": [3, 2, 5, 1, 4]}, {"t": 5, "s": "Terugkoppeling & opvolging", "q": "Hoe weet u dat meldingen tot aantoonbare verbetering leiden?", "opts": ["Dat volgen we niet", "Alleen bij grote zaken", "We volgen opvolging tot afronding", "Verbeteringen worden breed gedeeld en benut", "We zien verbeteringen terug in de werkwijze"], "key": [1, 2, 3, 5, 4]}, {"t": 5, "s": "Analyse & trends", "q": "Hoe worden meldingen en incidenten geanalyseerd?", "opts": ["Alleen geregistreerd, niet geanalyseerd", "Trends beïnvloeden op actieve wijze beleid en toolboxonderwerpen", "Per stuk opgepakt (meldingen worden geannalyseerd na registratie, maar er vindt nog geen monitoring op het breder geheel plaats).", "Trends worden herkend en besproken in vast overleg", "Geanalyseerd op basisoorzaken"], "key": [1, 5, 2, 4, 3]}, {"t": 5, "s": "Analyse & trends", "q": "Hoe gebruikt u V&G-cijfers, trends en statistieken (IF-rate, meldingen, inspecties)?", "opts": ["Die houden we niet bij", "We zetten ze af tegen de branche en stellen onze doelstellingen bij", "We sturen erop via een dashboard of vaste rapportage", "We bespreken ze met de werkvloer", "We registreren ze zonder er iets mee te doen"], "key": [1, 5, 3, 4, 2]}, {"t": 5, "s": "Leren over vestigingen heen", "q": "Hoe leert de organisatie over projecten of vestigingen heen?", "opts": ["Lessen worden structureel gedeeld (safety alerts, overleg)", "Kruisbestuiving en actief lessen bij elkaar ophalen", "Alleen ernstige zaken worden gedeeld", "Er is een vaste, overkoepelende leeraanpak", "Lessen blijven binnen het eigen project"], "key": [3, 5, 2, 4, 1]}, {"t": 5, "s": "Leren over vestigingen heen", "q": "Stel: uw KAM-coördinator — of de drijvende kracht achter veiligheid — vertrekt morgen. Wat gebeurt er met de vaste ritmes (inspecties, toolboxen, meldingen)?", "opts": ["Die lopen door; ze zijn belegd in de lijn en vastgelegd", "Er zijn geen vaste ritmes", "Die vallen grotendeels stil tot er een opvolger is", "Nauwelijks merkbaar; iedereen draagt ze en ontwikkelt ze zelfs verder", "Die lopen door en de lijn pakt ze zelf verder op"], "key": [3, 1, 2, 5, 4]}]}, "B": {"op": [{"t": 1, "s": "Instrumenten", "q": "Worden er bij jullie werkplekinspecties of controles gedaan waar jij iets van merkt?", "opts": ["Ja, en wat eruit komt bespreken we samen om te verbeteren", "Ja, regelmatig en gepland", "Alleen nadat er iets is misgegaan", "Ja, en er wordt ook naar gedrag gekeken, niet alleen naar spullen", "Nee, daar merk ik niets van"], "key": [5, 3, 2, 4, 1]}, {"t": 1, "s": "Instrumenten", "q": "Waar gaan de toolboxen bij jullie over?", "opts": ["Vaste onderwerpen die los staan van ons werk", "Onderwerpen die passen bij het werk dat we doen", "We hebben geen toolboxen", "Onderwerpen die aansluiten op recente meldingen of situaties", "Onderwerpen die we deels zelf aandragen"], "key": [2, 3, 1, 4, 5]}, {"t": 1, "s": "Instrumenten", "q": "Is er een makkelijke manier om een onveilige situatie te melden?", "opts": ["Ja, met een app of meldpunt dat makkelijk werkt", "Nee, dat kan eigenlijk niet", "Ja, maar het is omslachtig", "Ja, en collega's moedigen elkaar aan om te melden", "Ja, en ik gebruik het ook echt uit mezelf"], "key": [3, 1, 2, 5, 4]}, {"t": 1, "s": "Instrumenten", "q": "Worden projecten achteraf geëvalueerd, ook op veiligheid?", "opts": ["Alleen als er iets is gebeurd", "Ja, en we gebruiken de lessen op het volgende project", "Ja, en die lessen worden breed gedeeld", "Ja, veiligheid komt in de evaluatie terug", "Nee, na afloop is het klaar"], "key": [2, 4, 5, 3, 1]}, {"t": 1, "s": "Instrumenten", "q": "Word je weleens geobserveerd op hoe je werkt, met een gesprek erna?", "opts": ["Ja, en het gesprek erna helpt me echt verder", "Nee, nooit", "Alleen na een incident", "Ja, dat gebeurt gepland", "Ja, en we bespreken samen wat we ervan leren"], "key": [4, 1, 2, 3, 5]}, {"t": 2, "s": "Overleg en communicatie", "q": "Komt veiligheid terug in jullie werkoverleg?", "opts": ["Alleen als er iets aan de hand is", "Ja, en we brengen zelf punten in", "Nee, daar gaat het niet over", "Ja, het is een vast punt", "Ja, en het staat vaak vooraan"], "key": [2, 5, 1, 3, 4]}, {"t": 2, "s": "Overleg en communicatie", "q": "Zijn er momenten waarop het hele bedrijf samenkomt en veiligheid aan bod komt?", "opts": ["Nee, die zijn er niet", "Ja, en veiligheid heeft daar echt aandacht", "Zelden", "Ja, en we denken mee over hoe het beter kan", "Ja, bijvoorbeeld bij een personeels- of jaarbijeenkomst"], "key": [1, 4, 2, 5, 3]}, {"t": 2, "s": "Overleg en communicatie", "q": "Hoor je wat er op andere projecten of bij collega's speelt op veiligheidsgebied?", "opts": ["Ja, en we leren er ook echt van", "Alleen bij ernstige dingen", "Nee, dat blijft bij hen", "Ja, dat wordt gedeeld", "Ja, we halen die informatie actief op"], "key": [4, 2, 1, 3, 5]}, {"t": 2, "s": "Overleg en communicatie", "q": "Krijg je veiligheidsberichten of updates (app, intranet, WhatsApp, poster)?", "opts": ["Nee", "Ja, en ik deel ze ook met collega's", "Zelden en onduidelijk", "Ja, regelmatig en begrijpelijk", "Ja, en ik doe er in de praktijk iets mee"], "key": [1, 5, 2, 3, 4]}, {"t": 2, "s": "Overleg en communicatie", "q": "Heb je het idee dat wat de OR of veiligheidscommissie doet, echt iets oplevert?", "opts": ["Nee, daar merk ik niets van", "Zelden", "Ja, en ik weet waar ik punten kan inbrengen", "Ja, en dat leidt aantoonbaar tot actie", "Ja, er komen concrete verbeteringen uit"], "key": [1, 2, 3, 5, 4]}, {"t": 3, "s": "Sturing en leiderschap", "q": "Zie je de directie of het management op de plek waar het werk gebeurt?", "opts": ["Ja, regelmatig", "Nee, eigenlijk nooit", "Ja, en ze pakken zelf ook dingen op", "Ja, en ze vragen ons hoe het veiliger kan", "Alleen als er iets mis is"], "key": [3, 1, 4, 5, 2]}, {"t": 3, "s": "Sturing en leiderschap", "q": "Spreken mensen elkaar hier aan op onveilig werken, ongeacht functie?", "opts": ["Ja, over en weer, ongeacht wie je bent", "Ja, ook richting mensen van andere bedrijven", "Ja, aanspreken is hier normaal", "Alleen leidinggevenden doen dat soms", "Nee, dat doe je hier niet"], "key": [4, 5, 3, 2, 1]}, {"t": 3, "s": "Sturing en leiderschap", "q": "Heeft veilig of onveilig werken hier gevolgen (positief of negatief)?", "opts": ["Ja, en we houden elkaar daar samen scherp in", "Nee, het maakt niet uit", "Ja, en goed gedrag wordt ook gezien en gewaardeerd", "Alleen soms, het hangt ervan af", "Ja, daar is een duidelijke, bekende lijn in"], "key": [5, 1, 4, 2, 3]}, {"t": 3, "s": "Sturing en leiderschap", "q": "Mag jij het werk stoppen als het niet veilig kan?", "opts": ["Ja, en het is ook echt gebeurd zonder gedoe", "Nee, daar ga ik niet over", "Ja, dat is duidelijk afgesproken", "Ja, en we steunen elkaar daarin", "In theorie, maar ik zou het niet snel doen"], "key": [4, 1, 3, 5, 2]}, {"t": 3, "s": "Sturing en leiderschap", "q": "Als veilig werken geld of tijd kost, hoe belangrijk vindt de leiding dat dan?", "opts": ["Veiligheid gaat voor, dat merk je", "Veiligheid zit gewoon in de manier van werken verweven", "Veiligheid gaat voor, ook richting de opdrachtgever", "Meestal het werk, tenzij het echt niet kan", "Dan gaat het werk gewoon voor"], "key": [3, 5, 4, 2, 1]}, {"t": 4, "s": "Beleid, doelen en borging", "q": "Weet je waar het bedrijf naartoe wil met veiligheid dit jaar?", "opts": ["Nee, geen idee", "Ja, en ik draag er zelf aan bij", "Ja, de doelen zijn me bekend", "Vaag, iets met veiligheid", "Ja, en we praten mee over die doelen"], "key": [1, 4, 3, 2, 5]}, {"t": 4, "s": "Beleid, doelen en borging", "q": "Zijn er duidelijke gedragsregels, bedrijfsspecifieke of gouden regels voor veilig werken?", "opts": ["Nee, die ken ik niet", "Ja, en ik weet wat ze inhouden", "Ja, en we werken er in de praktijk naar", "Ja, en we spreken elkaar erop aan", "Ze bestaan, maar niemand gebruikt ze"], "key": [1, 3, 4, 5, 2]}, {"t": 4, "s": "Beleid, doelen en borging", "q": "Passen de veiligheidsregels bij het werk dat jij doet?", "opts": ["Ja, en ze helpen me echt", "Deels, ze zijn te algemeen", "Ja, ze passen bij ons werk", "Ja, en we verbeteren ze als het nodig is", "Nee, ze slaan nergens op"], "key": [4, 2, 3, 5, 1]}, {"t": 4, "s": "Beleid, doelen en borging", "q": "Weet jij wat je hier wel en niet hoort te melden?", "opts": ["Bij een echt ongeval is het duidelijk, verder niet", "Ja, en we melden ook ideeën en dingen die juist goed gaan", "Ja, dat is duidelijk afgesproken: ook bijna-ongevallen en onveilige situaties", "Melden? Dat doen we hier eigenlijk niet", "Ja, en we herinneren elkaar eraan als iets gemeld moet worden"], "key": [2, 5, 3, 1, 4]}, {"t": 4, "s": "Beleid, doelen en borging", "q": "Voelt veiligheid als iets van iedereen, of alleen van 'die van KAM'?", "opts": ["Vooral van KAM", "Van iedereen, we voelen ons er samen verantwoordelijk voor", "Van de leidinggevenden en KAM samen", "Alleen van KAM of de baas", "Van iedereen, ook van ons"], "key": [2, 5, 3, 1, 4]}, {"t": 5, "s": "Kennis, competenties en mens", "q": "Weet je precies wat er van jou verwacht wordt qua veilig werken?", "opts": ["Ja, dat is duidelijk", "Ja, en ik weet wanneer ik moet stoppen of melden", "Ongeveer, ik vul het zelf in", "Ja, en ik denk mee over hoe het beter kan", "Nee, dat is nooit uitgelegd"], "key": [3, 4, 2, 5, 1]}, {"t": 5, "s": "Kennis, competenties en mens", "q": "Sluiten je opleidingen en cursussen aan op de risico's van jouw werk?", "opts": ["Deels", "Ja, en ik pas ze toe in de praktijk", "Ja, ze passen bij mijn werk", "Nee, het is standaard en algemeen", "Ja, en ik geef aan wat ik nog nodig heb"], "key": [2, 4, 3, 1, 5]}, {"t": 5, "s": "Kennis, competenties en mens", "q": "Word je goed ingewerkt als je nieuw bent of ander werk gaat doen?", "opts": ["Ja, met begeleiding van een ervaren collega", "Ja, en ook ervaren mensen blijven bijleren", "Je krijgt wat papieren", "Nee, je zoekt het zelf uit", "Ja, en er wordt gecheckt of je het snapt"], "key": [3, 5, 2, 1, 4]}, {"t": 5, "s": "Kennis, competenties en mens", "q": "Is er aandacht voor je gezondheid (fysieke belasting, hitte, werkdruk)?", "opts": ["Alleen als er iets misgaat", "Ja, en er wordt echt naar geluisterd", "Ja, en we denken samen mee over verbetering", "Nee, dat is je eigen zaak", "Ja, daar is aandacht voor (tropenrooster, hulpmiddelen, PAGO)"], "key": [2, 4, 5, 1, 3]}, {"t": 5, "s": "Kennis, competenties en mens", "q": "Kun je hier makkelijk zeggen wat je dwarszit — ook over collega's of leidinggevenden?", "opts": ["Alleen als het echt uit de hand loopt zegt iemand iets", "Nee, dat houd je hier voor je", "Ja, en als ik het niet rechtstreeks wil kan het anoniem", "We spreken ons gewoon uit, ook over leidinggevenden; dat is hier normaal", "Ja, en er wordt zichtbaar iets mee gedaan"], "key": [2, 1, 3, 5, 4]}, {"t": 6, "s": "Processen en werkvoorbereiding", "q": "Worden de risico's van een klus met je besproken voor je begint?", "opts": ["Nee, we beginnen gewoon", "Alleen bij bijzonder werk", "Ja, en we passen aan als er iets verandert", "Ja, bij de start", "Ja, en ik vul aan wat ik zie"], "key": [1, 2, 5, 3, 4]}, {"t": 6, "s": "Processen en werkvoorbereiding", "q": "Doe je vlak voor de start nog een korte check op de werkplek (LMRA)?", "opts": ["Nee, dat kennen we niet", "Ja, en ik betrek collega's erbij", "Alleen bij risicovol werk", "Ja, uit mezelf, ook zonder toezicht", "Ja, standaard"], "key": [1, 5, 2, 4, 3]}, {"t": 6, "s": "Processen en werkvoorbereiding", "q": "Worden de risico's echt besproken, of alleen een formulier afgevinkt?", "opts": ["Er is geen bespreking", "Ze worden besproken en we verbeteren de aanpak", "Ze worden echt besproken", "Ze worden besproken en ik denk mee", "Vooral afvinken"], "key": [1, 5, 3, 4, 2]}, {"t": 6, "s": "Processen en werkvoorbereiding", "q": "Is je gereedschap en materieel op orde en gekeurd?", "opts": ["Ja, gekeurd en op orde", "Ja, en we denken mee over beter materieel", "Meestal, ik let er niet op", "Ja, en ik meld het zelf als iets niet klopt", "Vaak niet, je werkt eromheen"], "key": [3, 5, 2, 4, 1]}, {"t": 6, "s": "Processen en werkvoorbereiding", "q": "Je ziet tijdens het werk een onveilige situatie en lost die meteen zelf op. Wat gebeurt er daarna meestal?", "opts": ["Ik meld het daarna alsnog, dat is hier de afspraak", "Niets, dat hoort gewoon bij het werk", "Ik meld het en we bespreken het in het team, zodat anderen ervan leren", "Opgelost is klaar; melden heeft dan geen zin meer", "Ik meld het en denk mee of het ook op andere klussen of projecten speelt"], "key": [3, 1, 4, 2, 5]}, {"t": 7, "s": "Keten en externen", "q": "Weten externe partijen wat hier de veiligheidsregels zijn?", "opts": ["We stemmen het samen af", "Het wordt besproken en er wordt op gelet", "Nee, dat zoeken ze zelf uit", "Het wordt vooraf besproken", "Ze krijgen het op papier"], "key": [5, 4, 1, 3, 2]}, {"t": 7, "s": "Keten en externen", "q": "Spreek je mensen van andere bedrijven aan als ze onveilig werken?", "opts": ["Ik meld het aan mijn baas", "We spreken elkaar over en weer aan", "Ik spreek ze zelf aan", "Ik of mijn leidinggevende spreekt hen aan", "Nee, daar ga ik niet over"], "key": [2, 5, 4, 3, 1]}, {"t": 7, "s": "Keten en externen", "q": "Gebeurt er iets als een extern bedrijf zich niet aan de afspraken houdt?", "opts": ["Alleen bij ernstige zaken", "Ja, en zo nodig werken we niet meer met het extern bedrijf samen", "Nee, het loopt door", "Ja, het wordt opgevolgd", "We voorkomen het door vooraf af te stemmen"], "key": [2, 4, 1, 3, 5]}, {"t": 7, "s": "Keten en externen", "q": "Doen inhuurkrachten en onderaannemers hier mee aan toolboxen, en kunnen zij melden zoals jullie?", "opts": ["Ja, dat is zo geregeld: zelfde toolboxen, zelfde meldkanaal", "Ja, volledig gelijk aan ons — hun inbreng gebruiken we ook om te verbeteren", "Nee, die staan er helemaal buiten", "Alleen als er iets is gebeurd worden ze erbij gehaald", "Ja, en ze doen ook echt mee en melden zelf"], "key": [3, 5, 1, 2, 4]}, {"t": 7, "s": "Keten en externen", "q": "Als de opdrachtgever haast heeft en het kan niet veilig, wat gebeurt er?", "opts": ["We leggen zo nodig stil", "Meestal doorgaan, met tegenzin", "We stemmen vooraf af zodat het niet zover komt", "We geven de grens aan", "We doen wat de opdrachtgever wil"], "key": [4, 2, 5, 3, 1]}, {"t": 8, "s": "Leren, analyse en cijfers", "q": "Wordt uitgezocht hoe een incident kon gebeuren, om herhaling te voorkomen?", "opts": ["Nee, het wordt hooguit genoteerd", "Alleen bij ernstige gevallen", "Ja, en de leerles hiervan komt terug in ons werk", "Ja, er wordt naar de oorzaak gekeken", "Ja, en we kijken naar patronen"], "key": [1, 2, 4, 3, 5]}, {"t": 8, "s": "Leren, analyse en cijfers", "q": "Krijg je terugkoppeling en zie je verandering na wat je meldt?", "opts": ["Soms hoor je wat, meestal niet", "Geen idee, je hoort er nooit meer iets van", "Snelle terugkoppeling én het wordt met het team gedeeld zodat iedereen ervan leert", "Ik hoor binnen korte tijd — dagen, geen maanden — wat ermee gebeurt", "Terugkoppeling is vanzelfsprekend; we zien ook terug wat het op langere termijn oplevert"], "key": [2, 1, 4, 3, 5]}, {"t": 8, "s": "Leren, analyse en cijfers", "q": "Worden veiligheidscijfers of terugkerende problemen met jullie gedeeld?", "opts": ["Ja, het wordt besproken", "Ja, we gebruiken het samen om vooruit te kijken", "Nee, dat blijft bij kantoor", "Ja, en we praten mee", "Zelden"], "key": [3, 5, 1, 4, 2]}, {"t": 8, "s": "Leren, analyse en cijfers", "q": "Hoe worden kleine, korte klussen voorbereid vergeleken met grote projecten?", "opts": ["Klein werk bereiden we niet voor, dat doe je gewoon", "Ook voor kleine klussen is er een vaste, korte voorbereiding", "Alleen na problemen kijken we bij klein werk vooraf naar risico's", "Klein of groot maakt niet uit — veilig voorbereiden is vanzelfsprekend en we verbeteren de aanpak steeds", "Zelfde aanpak als groot werk; we denken zelf vooraf mee over de risico's"], "key": [1, 3, 2, 5, 4]}, {"t": 8, "s": "Leren, analyse en cijfers", "q": "Je werkt alleen of ver van collega's. Hoe is hulp bij een ongeval geregeld?", "opts": ["De afspraken zijn er én we bespreken regelmatig of ze in de praktijk werken", "Daar is niets voor geregeld", "Er zijn vaste afspraken voor BHV en alleenwerken en die kent iedereen", "Dit is vanzelfsprekend geregeld en we verbeteren het zelf als iets beter kan", "Na een incident wordt er even op gelet, daarna zakt het weg"], "key": [4, 1, 3, 5, 2]}], "st": [{"t": 1, "s": "Instrumenten", "q": "Op basis waarvan plant u werkplekinspecties, en waar kijken ze naar?", "opts": ["Op basis van risico, en ook naar gedrag", "We doen geen inspecties", "Op risico, en bevindingen worden geanalyseerd", "Op risico, en de analyse stuurt onze verbeteringen", "Op frequentie, en alleen naar middelen"], "key": [3, 1, 4, 5, 2]}, {"t": 1, "s": "Instrumenten", "q": "Hoe komen toolboxonderwerpen tot stand?", "opts": ["Ook met inbreng van medewerkers", "Trends en incidenten bepalen actief de onderwerpen", "Gekoppeld aan actuele risico's en meldingen", "Vaste kalender los van de actualiteit", "We houden geen toolboxen"], "key": [4, 5, 3, 2, 1]}, {"t": 1, "s": "Instrumenten", "q": "Hoe is het meldsysteem ingericht en hoe weet u dat het werkt?", "opts": ["Meldbereidheid is hoog en we sturen erop", "Er wordt nauwelijks gemeld", "Ook bijna-ongevallen en ideeën komen binnen", "Een systeem, maar weinig gebruikt", "Laagdrempelig en aantoonbaar gebruikt"], "key": [5, 1, 4, 2, 3]}, {"t": 1, "s": "Instrumenten", "q": "Hoe benut u projectevaluaties voor V&G-lessen?", "opts": ["Lessen worden over projecten heen benut", "We evalueren niet", "V&G-lessen worden vastgelegd", "Lessen sturen structureel onze werkwijze", "Alleen bij incidenten"], "key": [4, 1, 3, 5, 2]}, {"t": 1, "s": "Instrumenten", "q": "Hoe zijn interne audits of gedragsobservaties ingericht?", "opts": ["Gepland, door bevoegde personen", "Gepland én geanalyseerd op patronen en de uitkomsten sturen gerichte verbetering bij het individu en bedrijfsbreed", "Gepland én geanalyseerd op patronen", "Incidenteel en zonder analyse", "Die doen we niet"], "key": [3, 5, 4, 2, 1]}, {"t": 2, "s": "Overleg en communicatie", "q": "Hoe is V&G in de vaste overlegstructuur geborgd?", "opts": ["V&G komt zelden op de agenda", "V&G staat standaard vooraan", "V&G is een vast agendapunt op elk niveau", "Alleen bij incidenten", "V&G stuurt de agenda mede op basis van actualiteit"], "key": [1, 4, 3, 2, 5]}, {"t": 2, "s": "Overleg en communicatie", "q": "Hoe ontwikkelt u het veiligheidsleiderschap van direct leidinggevenden (uitvoerders, voormannen, leidinggevende monteurs)?", "opts": ["Er is een vast ontwikkeltraject of programma voor deze groep", "Daar doen we niets aan", "Leiderschap ontwikkelen is doorlopend; deze groep ontwikkelt elkaar en vraagt zelf om feedback, ook van de werkvloer", "Na incidenten spreken we ze erop aan", "Er is een vast programma én we meten het effect, bijvoorbeeld via feedback van de werkvloer"], "key": [3, 1, 5, 2, 4]}, {"t": 2, "s": "Overleg en communicatie", "q": "Hoe verzorgt u de V&G-informatievoorziening (safety alerts, intranet, app)?", "opts": ["We verzorgen dit structureel en verifiëren of de boodschap landt", "Onregelmatig", "Structureel en begrijpelijk", "We verzorgen dit structureel en verifiëren of de boodschap landt En we stellen bij op basis van gebruik en begrip", "Niet structureel"], "key": [4, 2, 3, 5, 1]}, {"t": 2, "s": "Overleg en communicatie", "q": "Welke rol speelt het adviesorgaan (OR, VGM-commissie) in V&G-verbetering?", "opts": ["Brengt zelf onderwerpen en oplossingen in", "Draagt bij aan concrete verbeteracties", "Formeel aanwezig, weinig effect", "Geen rol", "Is een aanjager van verbetering"], "key": [4, 3, 2, 1, 5]}, {"t": 2, "s": "Overleg en communicatie", "q": "Hoe weet u dat V&G-communicatie de werkvloer echt bereikt?", "opts": ["We nemen aan dat het aankomt", "We stellen communicatie bij op wat we terugzien", "We toetsen het in overleg en op de vloer", "Dat weten we niet", "Medewerkers handelen er aantoonbaar naar"], "key": [2, 5, 3, 1, 4]}, {"t": 3, "s": "Sturing en leiderschap", "q": "Hoe zijn directiebezoeken of safety walks geregeld?", "opts": ["Vast ingepland en zichtbaar", "Ingepland én de directie pakt zelf zaken op", "Alleen na incidenten", "Ingepland, en de directie haalt actief verbeterpunten op", "Die zijn er niet"], "key": [3, 4, 2, 5, 1]}, {"t": 3, "s": "Sturing en leiderschap", "q": "Hoe is de aanspreekcultuur over niveaus en dienstverbanden heen geborgd?", "opts": ["Alleen top-down en per geval", "Medewerkers spreken elkaar uit zichzelf aan", "Aanspreken is de norm en wordt gestimuleerd", "Aanspreken gebeurt nauwelijks", "Aanspreken over en weer, ook met externen"], "key": [2, 4, 3, 1, 5]}, {"t": 3, "s": "Sturing en leiderschap", "q": "Hoe consequent en organisatiebreed wordt het sanctie- en waarderingsbeleid toegepast?", "opts": ["Consequent en organisatiebreed toegepast", "De cultuur maakt formele stappen zelden nodig", "Beleid bestaat, toepassing verschilt per leidinggevende", "Er is geen beleid", "Aanspreken voorkomt meestal formele stappen"], "key": [3, 5, 2, 1, 4]}, {"t": 3, "s": "Sturing en leiderschap", "q": "Bij wie ligt de bevoegdheid tot het stilleggen van de werkzaamheden, en hoe is dat bekend?", "opts": ["Bij leidinggevenden, wisselend bekend", "Bij iedereen, en er is ook echt werk stilgelegd", "Bij iedereen, en stilleggen wordt gewaardeerd", "Alleen bij management, nauwelijks bekend", "Bij iedereen, duidelijk gecommuniceerd"], "key": [2, 4, 5, 1, 3]}, {"t": 3, "s": "Sturing en leiderschap", "q": "Hoe verhoudt het V&G-budget zich tot druk van planning en opdrachtgever?", "opts": ["Er is nauwelijks tot geen budget voor V&G", "V&G is geborgd en niet onderhandelbaar", "Begroot V&G-budget wordt verminderd of geschrapt als er op projectkosten dient te worden bespaard (door interne of externe druk)", "Veilig werken is leidend, dezelfde eis wordt gesteld aan de opdrachtgever", "V&G zit vast in calculatie en aanbieding"], "key": [1, 3, 2, 4, 5]}, {"t": 4, "s": "Beleid, doelen en borging", "q": "Hoe past uw V&G-beleid bij het werk en de kernrisico's?", "opts": ["Er is geen expliciet beleid", "Algemeen beleid, los van de kernrisico's", "Beleid dat we op basis van praktijk bijstellen", "Beleid dat aansluit op de kernrisico's", "Beleid dat leeft in de organisatie"], "key": [1, 2, 5, 3, 4]}, {"t": 4, "s": "Beleid, doelen en borging", "q": "Hoe concreet en meetbaar zijn uw V&G-doelen?", "opts": ["Geen concrete doelen", "Doelen die we tegen de branche afzetten", "Losse maatregelen, geen doelen", "Doelen die medewerkers kennen en dragen", "Meetbare doelen met eigenaar en evaluatie"], "key": [1, 5, 2, 4, 3]}, {"t": 4, "s": "Beleid, doelen en borging", "q": "Hoe is gewenst gedrag gedefinieerd en hoe weet u of het leeft?", "opts": ["Niet gedefinieerd", "Medewerkers spreken elkaar erop aan", "Gedefinieerd en herkenbaar in de praktijk", "Medewerkers handelen er aantoonbaar naar", "Gedefinieerd, maar het leeft niet"], "key": [1, 5, 3, 4, 2]}, {"t": 4, "s": "Beleid, doelen en borging", "q": "Hoe is V&G verankerd in de reguliere bedrijfsvoering en managementcyclus (PDCA)?", "opts": ["V&G is onderdeel van de managementcyclus", "V&G is volledig in de bedrijfsvoering geïntegreerd", "Alleen reactief na incidenten", "V&G stuurt aantoonbaar plannen en bijsturing", "Niet, V&G staat los"], "key": [3, 5, 2, 4, 1]}, {"t": 4, "s": "Beleid, doelen en borging", "q": "Hoe voorkomt u dat V&G 'een feestje van KAM' blijft?", "opts": ["V&G ligt vooral bij KAM", "Dat is het feitelijk nog", "V&G is gedeelde verantwoordelijkheid van iedereen", "De lijn is eigenaar, KAM ondersteunt", "De lijn draagt V&G mede"], "key": [2, 1, 5, 4, 3]}, {"t": 5, "s": "Kennis, competenties en mens", "q": "Hoe zijn V&G-TVB's en meetbare gedragscriteria in functieprofielen vastgelegd?", "opts": ["Met meetbare V&G-gedragscriteria per functie", "Vastgelegd én toegepast in beoordeling", "Niet vastgelegd", "Per functie vastgelegd, inclusief gedrag", "TVB's globaal, geen gedragscriteria"], "key": [5, 4, 1, 3, 2]}, {"t": 5, "s": "Kennis, competenties en mens", "q": "Hoe koppelt u opleidingen aan de eigen risico's?", "opts": ["Deels werkspecifiek", "Het opleidingsplan is werkspecifiek en anticipeert op nieuwe risico's", "En medewerkers passen ze aantoonbaar toe", "Opleidingen volgen de eigen risico's", "Alleen standaardpakket"], "key": [2, 5, 4, 3, 1]}, {"t": 5, "s": "Kennis, competenties en mens", "q": "Hoe is het inwerken van nieuwe medewerkers, inhuur en anderstaligen geborgd?", "opts": ["Alleen papieren introductie", "Inclusief toetsing of het begrepen is", "Niet geborgd", "Vast traject met begeleiding en/of inzet met een mix van ervaren en onervaren medewerkers", "In een lerende omgeving waarin iedereen bijleert"], "key": [2, 4, 1, 3, 5]}, {"t": 5, "s": "Kennis, competenties en mens", "q": "Hoe stuurt u op gezondheid en duurzame inzetbaarheid (PAGO/PMO, belasting, mentaal)?", "opts": ["Daar sturen we niet op", "En we verbeteren dit samen met medewerkers", "En medewerkers voelen zich gehoord", "Via vaste voorzieningen en aandacht", "Alleen als er iets misgaat"], "key": [1, 5, 4, 3, 2]}, {"t": 5, "s": "Kennis, competenties en mens", "q": "Hoe borgt u sociale veiligheid en meldveiligheid (durven mensen zich uit te spreken)?", "opts": ["Mensen spreken zich aantoonbaar uit", "Alleen bij escalatie", "Openheid over fouten zit in de cultuur", "Via een aanspreekpunt of vertrouwenspersoon", "Daar is geen aandacht voor"], "key": [4, 2, 5, 3, 1]}, {"t": 6, "s": "Processen en werkvoorbereiding", "q": "Hoe is V&G in werkvoorbereiding en calculatie meegenomen?", "opts": ["Bijgesteld zodra iets verandert", "Via een in te vullen V&G-plan", "Pas bij problemen tijdens het werk", "Risico's worden per project beoordeeld en besproken", "Al in calculatie en ontwerp meegenomen"], "key": [4, 2, 1, 3, 5]}, {"t": 6, "s": "Processen en werkvoorbereiding", "q": "Hoe spelen bedrijfs-RI&E, project-RI&E, TRA en LMRA op elkaar in?", "opts": ["We verbeteren de samenhang op basis van praktijk", "Ze staan los van elkaar", "Geen samenhang", "Ze spelen logisch op elkaar in", "De samenhang is zichtbaar in de uitvoering"], "key": [5, 2, 1, 3, 4]}, {"t": 6, "s": "Processen en werkvoorbereiding", "q": "Hoe zorgt u dat de start-werkinstructie een echt gesprek is en geen afvinklijst?", "opts": ["Risico's worden echt besproken", "Er is geen start-werkinstructie", "Medewerkers denken actief mee", "We verbeteren de instructie op basis van ervaring", "Het is vooral afvinken"], "key": [3, 1, 4, 5, 2]}, {"t": 6, "s": "Processen en werkvoorbereiding", "q": "Wat gebeurt er als een project qua planning knel komt te zitten?", "opts": ["De einddatum staat; die halen we, hoe dan ook", "We passen de planning aan of schalen op; een vaste afweging waarin veiligheid voorgaat", "Als het echt misgaat grijpen we in", "Werk teruggeven of opknippen is geaccepteerd beleid; medewerkers krijgen bewust geen einddatumdruk mee", "We zien het vooraf aankomen via signalen uit de planning en sturen bij vóór het knelt"], "key": [1, 3, 2, 5, 4]}, {"t": 6, "s": "Processen en werkvoorbereiding", "q": "Hoe borgt u dat wijzigingen (werk, plek, weer, bezetting) tot herbeoordeling van risico's leiden?", "opts": ["Herbeoordeling gebeurt uit zichzelf en wordt gedeeld", "Dat borgen we niet", "Via een vaste werkwijze", "Alleen bij grote wijzigingen", "Medewerkers stellen zelf bij en overleggen"], "key": [5, 1, 3, 2, 4]}, {"t": 7, "s": "Keten en externen", "q": "Hoe zijn V&G-eisen in contracten vastgelegd en vóór de start gedeeld?", "opts": ["Doorgenomen én naleving wordt gecontroleerd", "Gezamenlijk afgestemd met vaste partners", "Niet vastgelegd", "In contracten, niet actief gedeeld", "In contracten én vooraf doorgenomen"], "key": [4, 5, 1, 2, 3]}, {"t": 7, "s": "Keten en externen", "q": "Hoe weegt V&G-gedrag mee in selectie en beoordeling van opdrachtnemers?", "opts": ["Alleen als er iets misgaat kijken we ernaar", "Met een vast format op vaste momenten, met criteria over veiligheidsgedrag en een vervolg: verbeterafspraak of afscheid", "Niet; als het werk af is, is het goed", "Doorlopend, en goede V&G-prestaties belonen we aantoonbaar — bijvoorbeeld met meer werk", "Op vaste momenten én we bespreken de uitkomst met de opdrachtnemer en verbeteren samen"], "key": [2, 3, 1, 5, 4]}, {"t": 7, "s": "Keten en externen", "q": "Hoe verifieert u of externen de eisen begrijpen en naleven?", "opts": ["We toetsen het bij de start van een project of bij overeenkomen van contractovereenkomst", "We stellen bij op wat we terugzien", "Dat verifiëren we niet", "We nemen aan dat papier volstaat", "We controleren naleving in de uitvoering"], "key": [3, 5, 1, 2, 4]}, {"t": 7, "s": "Keten en externen", "q": "Hoe gaat u om met externen die zich niet aan de afspraken houden?", "opts": ["Daar gebeurt niets mee", "Zo nodig worden zij uitgesloten van werk", "Voorkomen door vooraf goed af te stemmen", "Alleen bij ernstige gevallen", "Besproken en opgevolgd"], "key": [1, 4, 5, 2, 3]}, {"t": 7, "s": "Keten en externen", "q": "Hoe stelt de organisatie grenzen richting opdrachtgevers waar veiligheid in het geding is?", "opts": ["We geven de grens aan", "We stemmen vooraf af zodat het niet zover komt", "We leggen zo nodig stil, ook onder druk", "We volgen de opdrachtgever", "We gaan meestal mee, met tegenzin"], "key": [3, 5, 4, 1, 2]}, {"t": 8, "s": "Leren, analyse en cijfers", "q": "Hoe analyseert u incidenten en meldingen op basisoorzaken?", "opts": ["Trends beïnvloeden beleid en toolboxen op actieve wijze", "Per stuk oppakken", "Analyse op basisoorzaken", "Alleen registreren", "Trends herkennen en bespreken"], "key": [5, 2, 3, 1, 4]}, {"t": 8, "s": "Leren, analyse en cijfers", "q": "Hoe gebruikt u V&G-statistieken en een dashboard (IF-rate, meldingen, inspecties)?", "opts": ["Afzetten tegen de branche en bijstellen", "Registreren zonder gebruik", "Bespreken met de werkvloer", "We houden geen cijfers bij", "Sturen via dashboard of rapportage"], "key": [5, 2, 4, 1, 3]}, {"t": 8, "s": "Leren, analyse en cijfers", "q": "Hoe is de gesloten leercyclus (terugkoppeling én aantoonbare opvolging) geborgd?", "opts": ["Er staat een termijn op (bijvoorbeeld tien werkdagen) en we registreren of die wordt gehaald", "We gaan ervan uit dat de leidinggevende dat doet", "Het systeem bewaakt dit sluitend; melders bevestigen het in metingen en gesprekken", "Terugkoppeling is hier niet geregeld", "De termijn wordt bewaakt én we vragen melders zelf of ze zich gehoord voelen"], "key": [3, 2, 5, 1, 4]}, {"t": 8, "s": "Leren, analyse en cijfers", "q": "Hoe leert de organisatie over vestigingen en projecten heen?", "opts": ["Alleen ernstige zaken gedeeld", "Structureel gedeeld (safety alerts, overleg)", "Via een overkoepelende leeraanpak", "Actief kruisbestuiven en lessen ophalen", "Lessen blijven lokaal"], "key": [2, 3, 4, 5, 1]}, {"t": 8, "s": "Leren, analyse en cijfers", "q": "Stel: uw KAM-coördinator — of de drijvende kracht achter veiligheid — vertrekt morgen. Wat gebeurt er met de vaste ritmes (inspecties, toolboxen, meldingen)?", "opts": ["Die lopen door; ze zijn belegd in de lijn en vastgelegd", "Er zijn geen vaste ritmes", "Die vallen grotendeels stil tot er een opvolger is", "Nauwelijks merkbaar; iedereen draagt ze en ontwikkelt ze zelfs verder", "Die lopen door en de lijn pakt ze zelf verder op"], "key": [3, 1, 2, 5, 4]}]}};
+
+</script>
+<script>
+/* ==================== helpers ==================== */
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+const fmt1=v=>v.toFixed(1).replace('.',',');
+const fmt2=v=>v.toFixed(2).replace('.',',');
+const pct=v=>Math.round(v*100)+'%';
+function colorFor(s){if(s<2.0)return['rood','Rood','var(--st-rood)'];if(s<2.7)return['oranje','Oranje','var(--st-oranje)'];if(s<3.4)return['lgroen','Lichtgroen','var(--st-lgroen)'];return['groen','Groen','var(--st-groen)']}
+const SEQ=['#D9E4F2','#AFC6E2','#7FA3CC','#527FB4','#2E5FA3'];
+const S1='#2E5FA3',S2='#C77F1F';
+const THEME_SHORT=['Beleid & leiderschap','Kennis & vaardigheden','Processen','Externen','Leren & verbeteren'];
+const RUB_SHORT=['Instrumenten','Overleg & communicatie','Sturing & leiderschap','Beleid & borging','Kennis & mens','Processen & voorbereiding','Keten & externen','Leren & cijfers'];
+const MODE_NAME={A:'Trede-meting (vijf SCL-thema’s)',B:'Praktijkmeting (acht praktijkrubrieken)'};
+
+/* ==================== meting-configuratie ==================== */
+let MODE='A';                 // 'A' = Trede-meting, 'B' = Praktijkmeting
+function QS(list){return SAQ[MODE][list]}
+function nGroups(){return MODE==='A'?5:8}
+function groupSize(){return MODE==='A'?8:5}
+function groupName(i){return MODE==='A'?SAQ.themes[i]:SAQ.rubrieken[i]}
+function groupShort(i){return MODE==='A'?THEME_SHORT[i]:RUB_SHORT[i]}
+function nClusters(){return MODE==='A'?20:40}
+function clusterSize(){return MODE==='A'?2:1}
+function clusterName(i){
+  if(MODE==='A')return SAQ.A.op[i*2].s;
+  const q=SAQ.B.op[i].q;return q.length>72?q.slice(0,70)+'…':q;
+}
+function clusterGroup(i){return MODE==='A'?Math.floor(i/4):Math.floor(i/5)}
+
+/* ==================== demo-dataset ==================== */
+const N_OP=24,N_ST=8;
+const MEANS={
+ A:{op:[2.6,2.8,2.2,2.1, 3.1,3.2,2.9,2.3, 2.9,3.0,3.3,2.8, 2.5,2.6,2.0,2.4, 2.3,2.0,2.1,2.2],
+    st:[3.0,2.9,2.6,2.9, 3.3,3.2,3.1,2.6, 3.1,3.0,3.4,3.1, 2.9,2.8,2.2,2.9, 2.7,2.5,2.6,2.5],
+    wnop:[.06,.05,.18,.28,.05,.04,.08,.12,.05,.04,.05,.08,.10,.08,.22,.10,.06,.09,.12,.10],
+    wnst:[.03,.05,.06,.04,.03,.03,.05,.08,.03,.04,.03,.04,.05,.06,.08,.05,.04,.05,.06,.08],
+    per:2},
+ B:{op:[2.3,2.6,2.8,2.4, 3.0,2.9,2.4,2.1],
+    st:[2.8,2.9,3.0,2.9, 3.2,3.1,2.7,2.6],
+    wnop:[.12,.08,.06,.20,.06,.05,.18,.12],
+    wnst:[.05,.05,.04,.05,.04,.03,.07,.06],
+    per:5}
+};
+let counts={op:[],st:[]}, nResp={op:0,st:0}, extra={op:0,st:0};
+function genDemo(){
+  const cfg=MEANS[MODE];
+  const rnd=mulberry32(MODE==='A'?20260713:20260714);
+  ['op','st'].forEach(list=>{
+    counts[list]=Array.from({length:40},()=>[0,0,0,0,0,0]);
+    const N=list==='op'?N_OP:N_ST, M=list==='op'?cfg.op:cfg.st, WN=list==='op'?cfg.wnop:cfg.wnst;
+    nResp[list]=N;
+    for(let r=0;r<N;r++)for(let q=0;q<40;q++){
+      const g=Math.floor(q/cfg.per);
+      if(rnd()<WN[g]){counts[list][q][5]++;continue}
+      const m=M[g]+(rnd()-0.5)*0.35;
+      const w=[1,2,3,4,5].map(t=>Math.exp(-((t-m)**2)/(2*0.62**2)));
+      const tot=w.reduce((a,b)=>a+b,0);let x=rnd()*tot,pick=0;
+      for(let i=0;i<5;i++){x-=w[i];if(x<=0){pick=i;break}}
+      counts[list][q][pick]++;
+    }
+  });
+  extra={op:0,st:0};
+}
+/* ==================== statistiek ==================== */
+function rangeStat(list,from,to){
+  let n=0,sum=0,wn=0,tot=0;
+  for(let q=from;q<to;q++){const c=counts[list][q];
+    for(let t=0;t<5;t++){n+=c[t];sum+=(t+1)*c[t]}
+    wn+=c[5];tot+=c[5]+c.slice(0,5).reduce((a,b)=>a+b,0)}
+  return{mean:n?sum/n:0,wn:tot?wn/tot:0}
+}
+const clusterStat=(l,i)=>rangeStat(l,i*clusterSize(),(i+1)*clusterSize());
+const groupStat=(l,i)=>rangeStat(l,i*groupSize(),(i+1)*groupSize());
+const listStat=l=>rangeStat(l,0,40);
+function distribution(list){
+  const d=[0,0,0,0,0];let n=0;
+  for(let q=0;q<40;q++){const c=counts[list][q];for(let t=0;t<5;t++){d[t]+=c[t];n+=c[t]}}
+  return{d:d.map(x=>n?x/n:0),n}
+}
+function distTotal(){
+  const a=distribution('op'),b=distribution('st');
+  const n=a.n+b.n;const d=a.d.map((v,i)=>(v*a.n+b.d[i]*b.n)/n);
+  return{d,n}
+}
+function worstClusters(k){
+  const arr=[];
+  for(let c=0;c<nClusters();c++){const a=clusterStat('op',c),b=clusterStat('st',c);
+    arr.push({c,score:(a.mean+b.mean)/2,gap:b.mean-a.mean,wn:Math.max(a.wn,b.wn)})}
+  return arr.sort((x,y)=>x.score-y.score).slice(0,k);
+}
+
+/* ==================== tooltip & toast ==================== */
+const tip=document.getElementById('tip');
+document.addEventListener('mousemove',e=>{
+  const t=e.target.closest('[data-tip]');
+  if(t){tip.innerHTML=t.getAttribute('data-tip');tip.style.opacity=1;
+    tip.style.left=Math.min(e.clientX+14,window.innerWidth-260)+'px';tip.style.top=(e.clientY+16)+'px';}
+  else tip.style.opacity=0;
+});
+let toastT=null;
+function toast(msg){
+  document.getElementById('toast-txt').textContent=msg;
+  const el=document.getElementById('toast');el.classList.add('show');
+  clearTimeout(toastT);toastT=setTimeout(()=>el.classList.remove('show'),1600);
+}
+
+/* ==================== dashboard ==================== */
+function renderKPIs(){
+  const so=listStat('op'),ss=listStat('st');
+  const totMean=(so.mean*distribution('op').n+ss.mean*distribution('st').n)/(distribution('op').n+distribution('st').n);
+  const gap=ss.mean-so.mean;
+  const wnAll=(so.wn+ss.wn)/2;
+  const c=colorFor(totMean);
+  document.getElementById('kpis').innerHTML=`
+    <div class="kpi"><div class="kl">Indicatieve trede (totaal)</div>
+      <div class="kv">${fmt2(totMean)}<small> / 5</small></div>
+      <div class="ks"><span class="chip ${c[0]}">${c[1]}</span></div></div>
+    <div class="kpi"><div class="kl">Operationele medewerkers</div>
+      <div class="kv" style="color:${S1}">${fmt2(so.mean)}</div>
+      <div class="ks">gemiddelde trede werkvloer</div></div>
+    <div class="kpi"><div class="kl">De sturende laag</div>
+      <div class="kv" style="color:${S2}">${fmt2(ss.mean)}</div>
+      <div class="ks">gemiddelde trede aansturing</div></div>
+    <div class="kpi"><div class="kl">Kloof aansturing – werkvloer</div>
+      <div class="kv">${gap>=0?'+':''}${fmt2(gap)}</div>
+      <div class="ks">${gap>=0.4?'<b style="color:var(--st-rood)">belangrijkste stuurpunt</b>':'binnen de marge'}</div></div>
+    <div class="kpi"><div class="kl">Aandeel "weet niet"</div>
+      <div class="kv">${pct(wnAll)}</div>
+      <div class="ks">${wnAll>=0.1?'signaal: ingericht, maar leeft niet':'laag — instrumenten zijn bekend'}</div></div>`;
+  document.getElementById('m-resp-op').textContent=nResp.op+' van 31 ('+Math.round(nResp.op/31*100)+'%)';
+  document.getElementById('m-resp-st').textContent=nResp.st+' van 9 ('+Math.round(nResp.st/9*100)+'%)';
+  document.getElementById('m-mode').textContent=MODE_NAME[MODE];
+}
+function renderMeter(){
+  const so=listStat('op').mean,ss=listStat('st').mean;
+  const W=520,H=150,x0=30,x1=W-20;
+  const X=v=>x0+(v-1)/4*(x1-x0);
+  const zones=[[1,2,'#F3D9D5','Rood'],[2,2.7,'#F6E3CB','Oranje'],[2.7,3.4,'#E3EDD8','Lichtgroen'],[3.4,5,'#D2E5D6','Groen']];
+  let s=`<svg viewBox="0 0 ${W} ${H}" style="width:100%;max-width:640px">`;
+  zones.forEach(z=>{s+=`<rect x="${X(z[0])}" y="52" width="${X(z[1])-X(z[0])}" height="26" rx="4" fill="${z[2]}"/>
+    <text x="${(X(z[0])+X(z[1]))/2}" y="98" text-anchor="middle" font-size="9.5" fill="#8A94A0">${z[3]}</text>`});
+  for(let t=1;t<=5;t++){s+=`<line x1="${X(t)}" y1="48" x2="${X(t)}" y2="82" stroke="#fff" stroke-width="2"/>
+    <text x="${X(t)}" y="118" text-anchor="middle" font-size="11" font-weight="600" fill="#57636F">${t}</text>`}
+  s+=`<line x1="${X(3)}" y1="34" x2="${X(3)}" y2="90" stroke="#57636F" stroke-dasharray="4 4" stroke-width="1.6"/>
+      <text x="${X(3)}" y="28" text-anchor="middle" font-size="9.5" font-weight="600" fill="#57636F">DOEL: TREDE 3</text>`;
+  const mark=(v,col,lab,dy)=>`<g data-tip="<b>${lab}</b><br>gemiddelde trede ${fmt2(v)}">
+      <circle cx="${X(v)}" cy="65" r="8.5" fill="${col}" stroke="#fff" stroke-width="2.5"/>
+      <text x="${X(v)}" y="${dy}" text-anchor="middle" font-size="11.5" font-weight="700" fill="${col}">${fmt2(v)}</text></g>`;
+  s+=mark(so,S1,'Operationele medewerkers',142)+mark(ss,S2,'De sturende laag',14)+'</svg>';
+  s+=`<div class="legend" style="margin-top:10px"><div class="li"><span class="sw" style="background:${S1}"></span>Operationele medewerkers (label onder)</div><div class="li"><span class="sw" style="background:${S2}"></span>De sturende laag (label boven)</div></div>`;
+  document.getElementById('ch-meter').innerHTML=s;
+}
+function renderDonut(){
+  const{d}=distTotal();
+  const cx=95,cy=95,R=78,r=48;let a0=-Math.PI/2;
+  let s=`<svg viewBox="0 0 190 190" style="width:190px;flex:0 0 auto">`;
+  d.forEach((v,i)=>{
+    const a1=a0+v*2*Math.PI;
+    const large=(a1-a0)>Math.PI?1:0;
+    const p=(a,rr)=>`${cx+rr*Math.cos(a)},${cy+rr*Math.sin(a)}`;
+    s+=`<path d="M${p(a0,R)} A${R},${R} 0 ${large} 1 ${p(a1,R)} L${p(a1,r)} A${r},${r} 0 ${large} 0 ${p(a0,r)} Z"
+      fill="${SEQ[i]}" stroke="#fff" stroke-width="2" data-tip="<b>Trede ${i+1}</b><br>${pct(d[i])} van de antwoorden"/>`;
+    a0=a1;});
+  const tot=d.reduce((a,v,i)=>a+v*(i+1),0);
+  s+=`<text x="${cx}" y="${cy-4}" text-anchor="middle" font-family="Lora,serif" font-size="26" font-weight="600" fill="#163A64">${fmt1(tot)}</text>
+      <text x="${cx}" y="${cy+16}" text-anchor="middle" font-size="8.5" fill="#8A94A0">GEM. TREDE</text></svg>`;
+  let leg=`<div style="flex:1;min-width:180px">`;
+  d.forEach((v,i)=>{leg+=`<div style="display:flex;align-items:center;gap:9px;font-size:.8rem;color:var(--ink-soft);padding:4px 0">
+    <span class="sw" style="width:12px;height:12px;border-radius:4px;background:${SEQ[i]};display:inline-block"></span>
+    Trede ${i+1} <b style="margin-left:auto;color:var(--ink)">${pct(v)}</b></div>`});
+  const wnA=listStat('op').wn,wnB=listStat('st').wn;
+  leg+=`<div style="font-size:.72rem;color:var(--ink-mut);margin-top:8px;border-top:1px dashed var(--line);padding-top:8px">"Weet niet" telt niet mee in het gemiddelde: ${pct(wnA)} bij operationeel, ${pct(wnB)} bij de sturende laag.</div></div>`;
+  document.getElementById('ch-donut').innerHTML=s+leg;
+}
+function renderGroups(){
+  const G=nGroups();
+  const W=920,rowH=MODE==='A'?62:56,H=G*rowH+34,x0=230,x1=W-70;
+  const X=v=>x0+(v-1)/4*(x1-x0);
+  let s=`<svg viewBox="0 0 ${W} ${H}" style="width:100%">`;
+  for(let t=1;t<=5;t++)s+=`<line x1="${X(t)}" y1="6" x2="${X(t)}" y2="${H-24}" stroke="#EFEAE0" stroke-width="1"/>
+    <text x="${X(t)}" y="${H-8}" text-anchor="middle" font-size="10" fill="#8A94A0">${t}</text>`;
+  s+=`<line x1="${X(3)}" y1="4" x2="${X(3)}" y2="${H-24}" stroke="#8A94A0" stroke-dasharray="4 4" stroke-width="1.4"/>`;
+  for(let i=0;i<G;i++){
+    const y=i*rowH+14;
+    const a=groupStat('op',i),b=groupStat('st',i);
+    s+=`<text x="0" y="${y+21}" font-size="12" font-weight="600" fill="#163A64">${i+1}. ${groupShort(i)}</text>`;
+    const bar=(v,col,dy,lab,wn)=>{
+      const w=Math.max(2,X(v)-X(1));
+      return `<g data-tip="<b>${lab}</b> — ${groupShort(i)}<br>gemiddelde trede ${fmt2(v)} · weet niet ${pct(wn)}">
+        <rect x="${X(1)}" y="${y+dy}" width="${w}" height="13" rx="4" fill="${col}"/>
+        <text x="${X(v)+8}" y="${y+dy+11}" font-size="10.5" font-weight="700" fill="${col}">${fmt2(v)}</text></g>`};
+    s+=bar(a.mean,S1,4,'Operationele medewerkers',a.wn);
+    s+=bar(b.mean,S2,21,'De sturende laag',b.wn);
+  }
+  s+='</svg>';
+  document.getElementById('ch-themes').innerHTML=s;
+  document.getElementById('ch-themes-title').textContent=MODE==='A'?'Score per SCL-thema — werkvloer naast aansturing':'Score per praktijkrubriek — werkvloer naast aansturing';
+}
+function renderStack(){
+  const rows=[['Operationele medewerkers','op'],['De sturende laag','st']];
+  let s='';
+  rows.forEach(r=>{
+    const{d}=distribution(r[1]);
+    s+=`<div style="font-size:.78rem;font-weight:600;color:var(--navy);margin:12px 0 6px">${r[0]}</div>
+        <div style="display:flex;height:26px;border-radius:7px;overflow:hidden;gap:2px">`;
+    d.forEach((v,i)=>{
+      if(v<=0)return;
+      s+=`<div data-tip="<b>Trede ${i+1}</b> · ${r[0]}<br>${pct(v)} van de antwoorden"
+        style="width:${v*100}%;background:${SEQ[i]};display:flex;align-items:center;justify-content:center;font-size:.66rem;font-weight:600;color:${i>=3?'#fff':'#3A4756'}">${v>=0.08?pct(v):''}</div>`});
+    s+='</div>';
+  });
+  s+=`<div class="legend" style="margin-top:14px">`+SEQ.map((c,i)=>`<div class="li"><span class="sw" style="background:${c}"></span>Trede ${i+1}</div>`).join('')+'</div>';
+  document.getElementById('ch-stack').innerHTML=s;
+}
+function renderTable(){
+  let h=`<tr><th>${MODE==='A'?'Onderwerp':'Vraag'}</th><th>Operationeel</th><th>Sturende laag</th><th>Kloof</th><th>Weet niet</th><th>Status</th></tr>`;
+  const perGroup=MODE==='A'?4:5;
+  for(let g=0;g<nGroups();g++){
+    h+=`<tr class="tgroup"><td colspan="6">${MODE==='A'?'Thema':'Rubriek'} ${g+1} — ${groupName(g)}</td></tr>`;
+    for(let c=g*perGroup;c<(g+1)*perGroup;c++){
+      const a=clusterStat('op',c),b=clusterStat('st',c);
+      const comb=(a.mean+b.mean)/2, gap=b.mean-a.mean, wn=Math.max(a.wn,b.wn);
+      const col=colorFor(comb);
+      const knel=comb<2.7||gap>=0.6||wn>=0.15;
+      const mb=(v,c2)=>`<span class="minibar" style="width:${(v-1)/4*70}px;background:${c2};margin-left:8px"></span>`;
+      h+=`<tr>
+        <td>${knel?'<span class="gapflag" title="knelpunt">⚑ </span>':''}${clusterName(c)}</td>
+        <td class="num">${fmt2(a.mean)}${mb(a.mean,S1)}</td>
+        <td class="num">${fmt2(b.mean)}${mb(b.mean,S2)}</td>
+        <td class="num" ${gap>=0.6?'style="color:var(--st-rood)"':''}>${gap>=0?'+':''}${fmt2(gap)}</td>
+        <td>${pct(wn)}${wn>=0.15?' ⚠':''}</td>
+        <td><span class="chip ${col[0]}">${col[1]}</span></td></tr>`;
+    }
+  }
+  document.getElementById('subj-table').innerHTML=h;
+}
+function renderAnalyse(){
+  const so=listStat('op'),ss=listStat('st');
+  const gs=Array.from({length:nGroups()},(_,i)=>({i,m:(groupStat('op',i).mean+groupStat('st',i).mean)/2}));
+  const opKoers=gs.filter(t=>t.m>=2.7).map(t=>groupShort(t.i));
+  const nietKoers=gs.filter(t=>t.m<2.7).map(t=>groupShort(t.i));
+  let gapMax={g:-9};for(let c=0;c<nClusters();c++){const g=clusterStat('st',c).mean-clusterStat('op',c).mean;if(g>gapMax.g)gapMax={g,c}}
+  let wnMax={w:-1};for(let c=0;c<nClusters();c++){const w=clusterStat('op',c).wn;if(w>wnMax.w)wnMax={w,c}}
+  const tot=(so.mean+ss.mean)/2;
+  document.getElementById('an-text').innerHTML=`
+    <p><b>Meting.</b> ${MODE_NAME[MODE]} · ${nResp.op+nResp.st} deelnemers.</p>
+    <p><b>Huidige positie.</b> De organisatie scoort gemiddeld <b>trede ${fmt2(tot)}</b>: de werkvloer op ${fmt2(so.mean)}, de sturende laag op ${fmt2(ss.mean)}.</p>
+    <p><b>Op koers.</b> ${opKoers.length?opKoers.join(', ')+' zitten in de lichtgroene zone of hoger: trede 3 is daar in zicht of gehaald.':'Nog geen '+(MODE==='A'?'thema':'rubriek')+' bereikt de lichtgroene zone.'}</p>
+    <p><b>Nog niet op koers.</b> ${nietKoers.length?nietKoers.join(', ')+' blijven in de oranje of rode zone steken.':'Alles zit op of boven de lichtgroene zone.'}</p>
+    <p><b>De kloof.</b> Het grootste verschil tussen aansturing en werkvloer zit op <b>${clusterName(gapMax.c)}</b> (+${fmt2(gapMax.g)}): het beleid bestaat, maar leeft daar nog niet. Het hoogste aandeel "weet niet" bij operationele medewerkers zit op <b>${clusterName(wnMax.c)}</b> (${pct(wnMax.w)}).</p>
+    <p><b>Prognose.</b> ${tot>=2.7?'Trede 3 is binnen bereik; consolideer de routines en sluit de leercyclus om het oordeel audit-vast te maken.':'Trede 3 ligt in het vooruitzicht wanneer de achterblijvende '+(MODE==='A'?'thema’s':'rubrieken')+' naar 2,7 of hoger bewegen. Begin bij de leercyclus — in de auditpraktijk hét beslisthema — en bij het dichten van de kloof tussen kantoor en werkvloer.'}</p>`;
+}
+function renderAdvies(){
+  const worst=worstClusters(3);
+  document.getElementById('adv-cards').innerHTML=worst.map(w=>{
+    const col=colorFor(w.score);
+    const g=clusterGroup(w.c);
+    const bp=MODE==='A'?('thema '+(g+1)+' van de best practice'):('het cluster "'+groupName(g)+'" uit de gespreksleidraad');
+    return `<div class="adv"><div class="at ${col[0]==='rood'?'rood':'oranje'}">Knelpunt · score ${fmt2(w.score)}</div>
+      <b>${clusterName(w.c)}</b>
+      <span>${w.gap>=0.6?'Grote kloof tussen aansturing en werkvloer (+'+fmt2(w.gap)+'). ':''}${w.wn>=0.15?'Hoog aandeel "weet niet" ('+pct(w.wn)+'). ':''}Verdiep met de gespreksleidraad en richt in via ${bp}.</span></div>`;
+  }).join('');
+}
+function renderRapport(){
+  const so=listStat('op'),ss=listStat('st');const tot=(so.mean+ss.mean)/2;const c=colorFor(tot);
+  document.getElementById('r-meta').textContent='Meting Q3 2026 · '+MODE_NAME[MODE];
+  document.getElementById('r-meta2').textContent=MODE_NAME[MODE]+' · Indicator v2.0 · Vertrouwelijk, alleen op groepsniveau';
+  let t=`<div class="panel" style="margin-bottom:20px"><div class="ph"><h3>Samenvatting</h3></div>
+    <p style="font-size:.9rem;color:var(--ink-soft)">Indicatieve trede totaal: <b>${fmt2(tot)}</b> (<span class="chip ${c[0]}">${c[1]}</span>) · operationele medewerkers ${fmt2(so.mean)} · de sturende laag ${fmt2(ss.mean)} · kloof +${fmt2(ss.mean-so.mean)} · respons ${nResp.op}+${nResp.st} deelnemers.</p></div>`;
+  t+=`<div class="panel" style="margin-bottom:20px"><div class="ph"><h3>Score per ${MODE==='A'?'thema':'rubriek'}</h3></div><table class="subj"><tr><th>${MODE==='A'?'Thema':'Rubriek'}</th><th>Operationeel</th><th>Sturende laag</th><th>Gemiddeld</th><th>Status</th></tr>`;
+  for(let i=0;i<nGroups();i++){const a=groupStat('op',i),b=groupStat('st',i);const m=(a.mean+b.mean)/2;const cc=colorFor(m);
+    t+=`<tr><td>${i+1}. ${groupName(i)}</td><td class="num">${fmt2(a.mean)}</td><td class="num">${fmt2(b.mean)}</td><td class="num">${fmt2(m)}</td><td><span class="chip ${cc[0]}">${cc[1]}</span></td></tr>`}
+  t+=`</table></div>`;
+  const worst=worstClusters(5);
+  t+=`<div class="panel" style="margin-bottom:20px"><div class="ph"><h3>Belangrijkste knelpunten</h3></div><table class="subj"><tr><th>Onderwerp</th><th>Score</th><th>Kloof</th><th>Weet niet</th><th>Vervolg</th></tr>`;
+  worst.forEach(w=>{t+=`<tr><td>⚑ ${clusterName(w.c)}</td><td class="num">${fmt2(w.score)}</td><td class="num">+${fmt2(w.gap)}</td><td>${pct(w.wn)}</td><td>${MODE==='A'?('Thema '+(clusterGroup(w.c)+1)+' van de best practice'):('Rubriek: '+groupShort(clusterGroup(w.c)))}</td></tr>`});
+  t+=`</table></div>`;
+  document.getElementById('r-body').innerHTML=t;
+}
+
+/* ==================== welkom, toolboxen & verbeterplan ==================== */
+const TOOLBOXEN=[
+ {tt:'De meting komt eraan — jouw blik telt',th:0,rb:[],uitrol:'first',duur:'10 min · hele ploeg · vóór de eerste meting',
+  doel:'Uitleggen waarom de organisatie de veiligheidscultuur meet en iedereen met vertrouwen laten deelnemen.',
+  kern:'Dit is geen toets en geen beoordeling. Er zijn geen foute antwoorden — elk antwoord beschrijft een herkenbare praktijk. Het gaat om wat er meestal écht gebeurt, niet om wat zou moeten. Anoniem, 10 minuten, telefoon of computer.',
+  werk:['Vertel waarom de organisatie dit doet: beter en veiliger werk, niet controleren van mensen.','Laat de deelnamelink zien: telefoon of pc, één vraag per scherm op mobiel, automatisch opgeslagen.','Benadruk de anonimiteit: alleen groepsresultaten, nooit herleidbaar tot een persoon.','Spreek af wanneer de resultaten worden teruggekoppeld — en doe dat ook.'],
+  ctrl:['Waarom vullen we deze vragenlijst in?','Is een antwoord fout als het er niet fraai uitziet? (nee — eerlijk telt)','Waar en wanneer zie je de groepsresultaten terug?']},
+ {tt:'We meten opnieuw — omdat het werkt',th:0,rb:[],uitrol:'period',duur:'10 min · hele ploeg · vóór de hermeting',
+  doel:'De hermeting introduceren en laten zien wat er met de vorige meting is gedaan.',
+  kern:'Vorige keer heeft de organisatie op basis van jullie antwoorden dingen veranderd. Nu meten we of dat werkt — en waar de volgende stap zit. Meten zonder terugkoppeling is zinloos; daarom eerst terugblikken, dan invullen.',
+  werk:['Begin met de terugblik: noem twee concrete dingen die na de vorige meting zijn veranderd.','Wees eerlijk over wat nog niet is gelukt en waarom.','Zet daarna pas de nieuwe meting uit: zelfde werkwijze, anoniem, 10 minuten.','Spreek de terugkoppeldatum af.'],
+  ctrl:['Wat is er na de vorige meting concreet veranderd?','Waarom meten we opnieuw?','Wanneer horen we de nieuwe resultaten?']},
+ {tt:'Opgelost is niet gemeld',th:5,rb:[0,7],duur:'15 min · hele ploeg',
+  doel:'De meldbereidheid verhogen door het verschil uit te leggen tussen oplossen en melden.',
+  kern:'Jullie zijn ingehuurd om problemen op te lossen — en precies die pragmatiek is de grootste vijand van het leren. Opgelost is niet gemeld, en wat niet gemeld is, kan de organisatie niet verbeteren.',
+  werk:['Start met een eigen recente casus: iets dat is opgelost maar nooit gemeld.','Vraag de groep: wat had de rest van het bedrijf hiervan kunnen leren?','Spreek een gedeelde ondergrens af: wat is hier meldenswaardig?','Sluit af met het meldkanaal: laat iedereen de meldapp of QR-code op de telefoon zetten.'],
+  ctrl:['Wat is het verschil tussen oplossen en melden?','Noem twee dingen die hier meldenswaardig zijn.','Waar vind je het meldkanaal?']},
+ {tt:'Terugkoppeling: de cirkel sluiten',th:5,rb:[7],duur:'10 min · met leidinggevende',
+  doel:'Zichtbaar maken wat er met meldingen gebeurt, zodat melden blijft lonen.',
+  kern:'Wie meldt en niets terughoort, meldt geen tweede keer. Melden zonder terugkoppeling doodt de meldcultuur.',
+  werk:['Neem de laatste drie meldingen door: wat is ermee gebeurd, en wie weet dat?','Spreek termijnen af: analyse binnen 7 en terugkoppeling binnen 10 werkdagen.','Wijs per melding een opvolger aan die de melder persoonlijk informeert.'],
+  ctrl:['Wat gebeurde er met de laatste melding uit deze ploeg?','Binnen hoeveel dagen hoort een melder iets terug?','Bij wie kun je terecht als je niets hoort?']},
+ {tt:'Aanspreken — ook de baas',th:1,rb:[2],duur:'20 min · gemengde groep',
+  doel:'De drempel verlagen om elkaar aan te spreken, ongeacht functie of dienstverband.',
+  kern:'Het sterkste gedragsbewijs op trede 3 is een medewerker die de directeur aanspreekt — en daarvoor wordt bedankt. Aanspreken is één, láten aanspreken is twee.',
+  werk:['Bespreek de stelling: "hoe is het om een directeur aan te spreken?"','Oefen in tweetallen een aanspreekmoment: kort, feitelijk, zonder verwijt.','Bespreek hoe je wilt dat een ander jóu aanspreekt — en wat je dan terugzegt.'],
+  ctrl:['Wanneer heb je voor het laatst iemand aangesproken — of jij je laten aanspreken?','Geldt aanspreken hier ook voor inhuur en bezoekers?','Hoe reageert een leidinggevende hier als hij wordt aangesproken?']},
+ {tt:'Werk stilleggen zonder gedoe',th:3,rb:[2],duur:'15 min · hele ploeg',
+  doel:'De stilleg-bevoegdheid bekend en veilig maken voor iedereen.',
+  kern:'Iedereen — eigen medewerker, inhuur of zzp\'er — mag het werk stilleggen bij twijfel, zonder gevolgen. De organisatie geeft rugdekking, ook richting de opdrachtgever.',
+  werk:['Vertel het (eigen) verhaal van een keer dat er is stilgelegd — en wat er daarna gebeurde.','Loop het afspraakkader langs: wie leg je het voor, wie pakt de melding op?','Bespreek een dilemma: opdrachtgever heeft haast, de afzetting is niet compleet. Wat doe je?'],
+  ctrl:['Mag jij het werk stilleggen? Wanneer wel/niet?','Wie geeft je rugdekking richting de opdrachtgever?','Is hier ooit echt stilgelegd — en hoe viel dat?']},
+ {tt:'LMRA: de laatste minuut die telt',th:3,rb:[5],duur:'10 min · op de werkplek',
+  doel:'De laatste-minuut-risicoanalyse van formulier naar gewoonte brengen.',
+  kern:'De LMRA is geen papier maar een blik omhoog, omlaag en om je heen — élke keer, ook bij de kleine klus. Kleine projecten zijn geen kleiner risiconiveau.',
+  werk:['Doe samen een LMRA op de echte werkplek van vandaag.','Laat ieder één risico benoemen dat een ander nog niet zag.','Bespreek: wat doe je als er iets verandert — ander weer, andere plek, extra partij?'],
+  ctrl:['Wanneer doe je een LMRA?','Wat doe je als de situatie niet klopt met de voorbereiding?','Geldt de LMRA ook voor een klus van een half uur?']},
+ {tt:'Externen horen erbij',th:4,rb:[6],duur:'15 min · incl. vaste onderaannemers',
+  doel:'Inhuur en onderaannemers volwaardig meenemen in afspraken, melden en aanspreken.',
+  kern:'De helft van de handen op het werk komt van buiten. Dezelfde regels, hetzelfde meldkanaal, dezelfde toolbox — anders stopt de cultuur bij het eigen personeelsbestand.',
+  werk:['Nodig vaste externen expliciet uit voor deze toolbox.','Check ter plekke: hebben zij toegang tot meldkanaal en V&G-informatie?','Bespreek over en weer aanspreken: wat mogen zij van ons verwachten — en wij van hen?'],
+  ctrl:['Kennen onze vaste externen de gedragsregels en de meldapp?','Wie beoordeelt of een onderaannemer veilig werkt — en wanneer voor het laatst?','Wat gebeurt er als een externe zich niet aan de afspraken houdt?']},
+ {tt:'Doelen die je kunt navertellen',th:1,rb:[3],duur:'10 min · per team',
+  doel:'De V&G-doelen van dit jaar vertalen naar wat ze betekenen voor dit team.',
+  kern:'"De boodschap is herkenbaar, de doelen zijn dat niet" — de meest voorkomende auditbevinding. Een doel telt pas als de werkvloer het in eigen woorden kan navertellen.',
+  werk:['Presenteer de (maximaal drie) doelen van dit jaar in gewone taal.','Vraag het team: wat betekent dit doel voor jouw werk, morgen?','Maak per doel één teamafspraak die je over een maand terugziet.'],
+  ctrl:['Noem één V&G-doel van dit jaar in je eigen woorden.','Wat draag jij daaraan bij?','Wanneer bespreken we of het lukt?']},
+ {tt:'Leren van elkaars werk',th:5,rb:[1,7],duur:'15 min · projectoverstijgend',
+  doel:'Lessen en goede voorbeelden over ploegen en projecten heen laten stromen.',
+  kern:'Een organisatie die alleen van eigen incidenten leert, leert te langzaam. Kruisbestuiving — elkaars projecten bezoeken, éénpuntslessen delen — is het medicijn tegen bedrijfsblindheid.',
+  werk:['Behandel één les of incident van een ánder project of team.','Vraag: kan dit hier ook gebeuren? Wat doen wij anders?','Plan een tegenbezoek: wie kijkt volgende maand mee op een ander project?'],
+  ctrl:['Noem een les van een ander project die hier is toegepast.','Waar vind je safety alerts of éénpuntslessen?','Wanneer keek er voor het laatst iemand van buiten dit project mee?']}
+];
+const PLAN_ACTIES_A={
+ 0:['Plan vaste, zichtbare werkplekbezoeken van directie en management met een gespreksdoel','Elk MT-lid minimaal 4 werkplekbezoeken per jaar, vastgelegd met bevinding en opvolging'],
+ 1:['Organiseer een aanspreek-workshop en maak láten aanspreken bespreekbaar in elk teamoverleg','Iedere medewerker spreekt maandelijks minstens één collega aan; ervaring terug in teamoverleg'],
+ 2:['Leg het sanctie- én waarderingsbeleid vast en pas het organisatiebreed consequent toe','Beleid bekend op de werkvloer; elke toepassing geregistreerd, persoonsonafhankelijk'],
+ 3:['Herformuleer maximaal drie V&G-doelen met eigenaar op naam en vertaal ze per functie','Elke medewerker kan minimaal één doel in eigen woorden navertellen (toets in gesprekken)'],
+ 4:['Leg V&G-taken en -bevoegdheden per functie vast, inclusief stilleg-bevoegdheid','Functieprofielen actueel; besproken in eerstvolgend functioneringsgesprek'],
+ 5:['Borg werkspecifieke risicobespreking vóór de start van elke klus','Startwerk als tweerichtingsgesprek op 100% van de projecten, ook kortcyclisch werk'],
+ 6:['Richt het inwerktraject in met buddy-systeem en vaste evaluatiemomenten','Nieuwe mensen eerste 2 maanden nooit alleen; evaluatie na 3 weken en 2 maanden'],
+ 7:['Richt een structureel toetsingsmoment van het kennisniveau in','Digitale toolbox met controlevragen per kwartaal; deelname en score gevolgd'],
+ 8:['Breng samenhang in RI&E, project-RI&E, TRA en LMRA met een vast actualisatieritme','Actualisatieritme vastgelegd en nageleefd; samenhang zichtbaar in de uitvoering'],
+ 9:['Maak de LMRA-gewoonte zichtbaar en bespreek afwijkingen in het werkoverleg','LMRA standaard bij elke klus; afwijkingen maandelijks besproken'],
+ 10:['Houd keuring en afkeurroutine zichtbaar (rood label, vaste inleverplek)','Geen afgekeurd materieel in roulatie bij inspecties'],
+ 11:['Leg de stilleg-bevoegdheid expliciet vast en communiceer rugdekking','Bevoegdheid bekend bij 100% van de medewerkers (toets in interviews)'],
+ 12:['Leg V&G-eisen contractueel vast en neem ze vóór de start met externen door','Inhuurverklaring/zzp-handboek uitgereikt en getekend vóór eerste werkdag'],
+ 13:['Neem externen op in toolboxen, meldkanaal en veiligheidscommunicatie','Vaste externen aantoonbaar aangesloten op meldapp en toolboxdeelname'],
+ 14:['Richt een formele, periodieke beoordeling van opdrachtnemers in','Vast format, minimaal jaarlijks, deel criteria over veiligheidsgedrag, met consequentie'],
+ 15:['Leg vast wie namens de organisatie de grens bewaakt richting opdrachtgevers','Escalatielijn bekend; voorbeelden van gestelde grenzen gedocumenteerd'],
+ 16:['Voer een meldcampagne ("opgelost is niet gemeld") met telbaar meldingsdoel','Minimaal één melding per medewerker per maand; aandeel proactieve meldingen stijgt'],
+ 17:['Leg termijnen vast voor analyse en terugkoppeling van meldingen','Analyse binnen 7, terugkoppeling binnen 10 werkdagen, gevolgd in vast overleg'],
+ 18:['Analyseer meldingen en inspecties per kwartaal op trends en basisoorzaken','Kwartaaltrendbeeld gedeeld met directie én werkvloer, met aantoonbare opvolging'],
+ 19:['Organiseer kruisbestuiving: éénpuntslessen en projectbezoeken over teams heen','Elk kwartaal minimaal één gedeelde les en één wederzijds projectbezoek']
+};
+const PLAN_ACTIES_B={
+ 0:['Geef werkplekinspecties een gedragscomponent en een vast maandritme, belegd bij meerdere lagen','Bevindingen gefilterd op thema en besproken in vast overleg; opvolging binnen 4 weken'],
+ 1:['Veranker V&G als staand eerste agendapunt en borg een bottom-up-kanaal','Agenda’s en notulen tonen V&G-opvolging; kwartaaloverleg uitvoerenden zónder directie'],
+ 2:['Plan zichtbaar leiderschap: safety walks met ritme en leg de stilleg-bevoegdheid vast','Directie 4x, projectleiding 10x per jaar; stilleg-bevoegdheid bekend bij iedereen'],
+ 3:['Herformuleer maximaal drie V&G-doelen met eigenaar en vertaal ze per functie','Elke medewerker kan minimaal één doel in eigen woorden navertellen'],
+ 4:['Koppel functieprofielen aan V&G en richt een structureel kennistoetsmoment in','Profielen actueel; toetsing per kwartaal aantoonbaar'],
+ 5:['Breng samenhang in RI&E, TRA en LMRA met vast actualisatieritme en startwerk als gesprek','Samenhang zichtbaar in de uitvoering; startwerk tweerichting op alle projecten'],
+ 6:['Richt een formele, periodieke beoordeling van opdrachtnemers in en sluit externen aan','Vast beoordelingsformat jaarlijks; externen op meldkanaal en in toolboxen'],
+ 7:['Sluit de leercyclus: meldkaders, termijnen, trendanalyse en terugkoppeling','Analyse binnen 7 en terugkoppeling binnen 10 werkdagen; kwartaaltrends gedeeld']
+};
+function renderWelkom(){
+  const so=listStat('op'),ss=listStat('st');
+  const tot=(so.mean+ss.mean)/2;const c=colorFor(tot);
+  const worst=worstClusters(3);
+  const knel=worstClusters(nClusters()).filter(w=>w.score<2.7||w.gap>=0.6||w.wn>=0.15).length;
+  document.getElementById('w-stats').innerHTML=`
+    <div class="ws"><b>${fmt2(tot)}</b><span>indicatieve trede</span></div>
+    <div class="ws"><b>${nResp.op+nResp.st}</b><span>deelnemers</span></div>
+    <div class="ws"><b>${knel}</b><span>knelpunten in beeld</span></div>
+    <div class="ws"><b>${MODE==='A'?'Trede-meting':'Praktijkmeting'}</b><span>actieve meting</span></div>`;
+  const worstG=worst.map(w=>clusterGroup(w.c));
+  const recCount=TOOLBOXEN.filter(t=>t.uitrol||(MODE==='A'?worstG.includes(t.th-1):t.rb.some(r=>worstG.includes(r)))).length;
+  document.getElementById('modules').innerHTML=`
+    <div class="mod" onclick="showView('dash')">
+      <span class="badge ${c[0]==='groen'||c[0]==='lgroen'?'ok':'att'}">trede ${fmt2(tot)} · ${c[1]}</span>
+      <div class="mi"><svg viewBox="0 0 24 24"><path d="M4 20h16M6 20V10m6 10V4m6 16v-7"/></svg></div>
+      <h3>Veiligheidscultuur-dashboard</h3>
+      <p>Waar staat uw organisatie op de ladder? Score per ${MODE==='A'?'SCL-thema':'praktijkrubriek'}, de kloof tussen kantoor en werkvloer, en de knelpunten — live bijgewerkt.</p>
+      <div class="go">Open het dashboard</div></div>
+    <div class="mod" onclick="showView('invite')">
+      <span class="badge att">${MODE==='A'?'Trede-meting':'Praktijkmeting'} actief</span>
+      <div class="mi"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="m22 6-10 7L2 6"/></svg></div>
+      <h3>Uitnodigingen &amp; instellingen</h3>
+      <p>Kies de meting (trede of praktijk), nodig medewerkers uit per e-mail en volg de respons. Deelnemers vullen in via een link — zonder in te loggen.</p>
+      <div class="go">Beheer de meting</div></div>
+    <div class="mod" onclick="showView('toolbox')">
+      <span class="badge att">${recCount} aanbevolen</span>
+      <div class="mi"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
+      <h3>Verbeter-toolboxen</h3>
+      <p>Toolboxen voor de uitrol van de meting én voor de knelpunten die eruit komen — met werkvorm en controlevragen, klaar om te geven.</p>
+      <div class="go">Bekijk de toolboxen</div></div>
+    <div class="mod" onclick="showView('plan')">
+      <span class="badge att">${Math.min(5,nClusters())} acties voorgesteld</span>
+      <div class="mi"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+      <h3>Verbeterplan &amp; acties</h3>
+      <p>Van meting naar routines: voorgestelde acties per knelpunt, met eigenaar op naam, deadline en een meetbaar resultaat.</p>
+      <div class="go">Naar het verbeterplan</div></div>
+    <div class="mod" onclick="showView('vragen')">
+      <div class="mi"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-5"/><rect x="3" y="4" width="18" height="16" rx="2"/></svg></div>
+      <h3>Vragenlijst (voorbeeld)</h3>
+      <p>Bekijk de vragenlijst zoals uw medewerkers hem zien: per vijf vragen op de computer, per vraag op de telefoon, automatisch opgeslagen.</p>
+      <div class="go">Open de vragenlijst</div></div>
+    <div class="mod" onclick="showView('rapport')">
+      <div class="mi"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15h6M9 11h2"/></svg></div>
+      <h3>Rapport &amp; documenten</h3>
+      <p>De volledige rapportage in de huisstijl van KwaliteitsMeesters, af te drukken of als PDF te delen met directie of auditor.</p>
+      <div class="go">Open het rapport</div></div>`;
+}
+function renderToolbox(){
+  const worstG=worstClusters(5).map(w=>clusterGroup(w.c));
+  const isRec=t=>t.uitrol?true:(MODE==='A'?worstG.includes(t.th-1):t.rb.some(r=>worstG.includes(r)));
+  const sorted=[...TOOLBOXEN].sort((a,b)=>(isRec(a)?0:1)-(isRec(b)?0:1));
+  document.getElementById('tbx-list').innerHTML=sorted.map((t,i)=>{
+    const rec=isRec(t);
+    const label=t.uitrol?('bij de uitrol · '+(t.uitrol==='first'?'eerste meting':'periodieke meting')):(rec?'aanbevolen o.b.v. uw meting':'');
+    return `<details class="tbx"${rec&&i<2?' open':''}>
+      <summary><div class="tno">${String(i+1).padStart(2,'0')}</div>
+        <div class="tt"><b>${t.tt}</b><span>${t.th?('Thema '+t.th+' — '+SAQ.themes[t.th-1]+' · '):''}${t.duur}</span></div>
+        <div class="rec">${label?'<span class="chip '+(t.uitrol?'neut':'oranje')+'">'+label+'</span>':''}<span class="chev">▾</span></div></summary>
+      <div class="tb-body">
+        <h4>Doel</h4><p>${t.doel}</p>
+        <h4>Kernboodschap</h4><p>${t.kern}</p>
+        <h4>Werkvorm</h4><ul>${t.werk.map(w=>`<li>${w}</li>`).join('')}</ul>
+        <h4>Controlevragen</h4><ul>${t.ctrl.map(w=>`<li>${w}</li>`).join('')}</ul>
+      </div></details>`}).join('');
+}
+function renderPlan(){
+  const worst=worstClusters(5);
+  let h=`<tr><th style="width:26%">Actie (routine)</th><th style="width:28%">Meetbaar resultaat</th><th>Knelpunt</th><th style="width:13%">Eigenaar (naam)</th><th style="width:12%">Deadline</th><th style="width:11%">Status</th></tr>`;
+  const seen=new Set();
+  worst.forEach(w=>{
+    let a;
+    if(MODE==='A'){a=PLAN_ACTIES_A[w.c]}
+    else{const g=clusterGroup(w.c);if(seen.has(g))return;seen.add(g);a=PLAN_ACTIES_B[g]}
+    if(!a)a=['Bespreek dit onderwerp met uw consultant',''];
+    h+=`<tr><td><b style="color:var(--navy)">${a[0]}</b></td><td>${a[1]}</td>
+      <td>⚑ ${clusterName(w.c)}<br><span style="font-size:.72rem;color:var(--ink-mut)">score ${fmt2(w.score)} · kloof +${fmt2(w.gap)}</span></td>
+      <td><input placeholder="Naam + functie"></td><td><input type="date"></td>
+      <td><select><option>Open</option><option>Lopend</option><option>Geborgd</option></select></td></tr>`});
+  document.getElementById('plan-table').innerHTML=h;
+}
+function renderAll(){renderKPIs();renderMeter();renderDonut();renderGroups();renderStack();renderTable();renderAnalyse();renderAdvies();renderRapport();renderWelkom();renderToolbox();renderPlan();renderModeUI()}
+
+/* ==================== meting-instelling & uitnodigingen ==================== */
+function renderModeUI(){
+  document.getElementById('vk-A').classList.toggle('sel',MODE==='A');
+  document.getElementById('vk-B').classList.toggle('sel',MODE==='B');
+  document.getElementById('q-meta').textContent='Veiligheidscultuur-indicator SCL 2.0 · '+MODE_NAME[MODE]+' · 40 vragen · ca. 10 minuten · na elk antwoord automatisch opgeslagen';
+}
+function setMode(m){
+  if(m===MODE)return;
+  MODE=m;genDemo();resetQ();renderAll();
+  toast('Meting gewijzigd naar: '+(m==='A'?'Trede-meting':'Praktijkmeting'));
+}
+let invitees=[];
+function sendInvites(){
+  const parse=(id,list)=>document.getElementById(id).value.split(/\n+/).map(s=>s.trim()).filter(s=>s.includes('@')).map(e=>({e,list}));
+  const nieuw=[...parse('inv-op','Operationele medewerkers'),...parse('inv-st','De sturende laag')];
+  if(!nieuw.length){toast('Geen geldige e-mailadressen gevonden');return}
+  invitees.push(...nieuw);
+  document.getElementById('inv-op').value='';document.getElementById('inv-st').value='';
+  renderInvites();
+  toast(nieuw.length+' uitnodiging(en) verstuurd (demo)');
+}
+function renderInvites(){
+  if(!invitees.length){document.getElementById('inv-status').innerHTML='';return}
+  let h=`<table class="inv"><tr><th>E-mailadres</th><th>Lijst</th><th>Status</th></tr>`;
+  invitees.forEach(v=>{h+=`<tr><td>${v.e}</td><td>${v.list}</td><td><span class="chip neut">uitgenodigd · nog niet ingevuld</span></td></tr>`});
+  h+=`</table><div class="plan-note">Respons is anoniem: u ziet wíé nog niet heeft ingevuld (voor een herinnering), maar nooit wélke antwoorden iemand gaf.</div>`;
+  document.getElementById('inv-status').innerHTML=h;
+}
+let mailVariant='first';
+function setMailVariant(v){
+  mailVariant=v;
+  document.getElementById('mt-first').classList.toggle('on',v==='first');
+  document.getElementById('mt-period').classList.toggle('on',v==='period');
+  renderMail();
+}
+function renderMail(){
+  const first=mailVariant==='first';
+  document.getElementById('mailprev').innerHTML=`
+    <div class="mp-sub">Onderwerp: ${first?'Jouw blik op veilig werken — 10 minuten, anoniem':'We meten opnieuw — omdat jouw antwoorden vorige keer iets veranderden'}</div>
+    <p>Beste collega,</p>
+    ${first?`
+    <p>Hoe veilig werken we hier écht? Niet volgens het handboek, maar volgens jou — op de plek waar het werk gebeurt. Dat willen we weten, en daarom vragen we jou om 10 minuten.</p>
+    <p><b>Geen toets, geen beoordeling.</b> Er zijn geen foute antwoorden: elk antwoord beschrijft een herkenbare praktijk. Kies wat er bij ons meestal écht gebeurt — niet wat zou moeten.</p>
+    <p><b>Anoniem, altijd.</b> Niemand ziet jouw individuele antwoorden. Resultaten worden alleen op groepsniveau gedeeld — en dat doen we ook echt, beloofd.</p>
+    <p><b>Zo werkt het.</b> Klik op jouw persoonlijke link hieronder. Telefoon of computer, maakt niet uit. Je antwoorden worden na elke vraag automatisch opgeslagen — je kunt dus altijd even stoppen en later verdergaan.</p>`
+    :`
+    <p>Een tijd geleden vulden jij en je collega's de veiligheidscultuur-meting in. Op basis daarvan is er het nodige veranderd — daarover hoor je meer in de toolbox van je leidinggevende. Nu willen we weten: werkt het, en waar zit de volgende stap?</p>
+    <p><b>Zelfde aanpak als vorige keer.</b> 10 minuten, anoniem, geen foute antwoorden. Kies wat er bij ons meestal écht gebeurt.</p>
+    <p><b>Jouw antwoorden doen ertoe.</b> De vorige meting leidde tot concrete veranderingen. Hoe eerlijker het beeld, hoe gerichter we kunnen verbeteren.</p>
+    <p><b>Zo werkt het.</b> Klik op jouw persoonlijke link hieronder — telefoon of computer. Na elke vraag wordt automatisch opgeslagen; stoppen en later verdergaan kan altijd.</p>`}
+    <p style="background:#fff;border:1px dashed var(--line);border-radius:8px;padding:12px 14px;text-align:center;font-weight:600;color:var(--navy)">▶ [persoonlijke deelnamelink]</p>
+    <p>Alvast bedankt — met jouw blik maken we het werk hier veiliger én beter.</p>
+    <p>Met vriendelijke groet,<br><b>[naam beheerder]</b> · mede namens KwaliteitsMeesters</p>`;
+}
+
+/* ==================== vragenlijst (gepagineerd + autosave) ==================== */
+let curList=null,answers=[],qPage=0,RESPONDENT=false;
+function pageSize(){return window.matchMedia('(max-width:680px)').matches?1:5}
+function pickList(l){curList=l;
+  document.getElementById('lp-op').classList.toggle('sel',l==='op');
+  document.getElementById('lp-st').classList.toggle('sel',l==='st');
+  document.getElementById('q-go').style.display='inline-flex';}
+function startList(){
+  answers=Array(40).fill(null);qPage=0;
+  document.getElementById('q-start').style.display='none';
+  document.getElementById('q-done').style.display='none';
+  document.getElementById('q-form').style.display='block';
+  document.getElementById('plist').textContent=(curList==='op'?'Operationele medewerkers':'De sturende laag')+' · '+(MODE==='A'?'Trede-meting':'Praktijkmeting');
+  renderQPage();window.scrollTo({top:0});
+}
+function renderQPage(){
+  const qs=QS(curList),ps=pageSize();
+  const from=qPage*ps,to=Math.min(40,from+ps);
+  document.getElementById('q-list').innerHTML=qs.slice(from,to).map((q,k)=>{
+    const i=from+k;
+    const glabel=MODE==='A'?('Thema '+q.t+' — '+SAQ.themes[q.t-1]+' · '+q.s):('Rubriek '+q.t+' — '+SAQ.rubrieken[q.t-1]);
+    return `<div class="qcard" id="qc${i}">
+      <div class="qt">Vraag ${i+1} van 40 · ${glabel}</div>
+      <div class="qq">${q.q}</div>
+      ${q.opts.map((o,j)=>`<div class="opt${answers[i]===j?' on':''}" onclick="pickAns(${i},${j},this)"><span class="rb"></span><span>${o}</span></div>`).join('')}
+      <div class="opt wn${answers[i]===5?' on':''}" onclick="pickAns(${i},5,this)"><span class="rb"></span><span>Weet niet / niet van toepassing</span></div>
+    </div>`}).join('');
+  const totPages=Math.ceil(40/ps);
+  document.getElementById('q-prev').disabled=qPage===0;
+  document.getElementById('q-next').style.display=qPage<totPages-1?'inline-flex':'none';
+  document.getElementById('q-submit').style.display=qPage===totPages-1?'inline-flex':'none';
+  document.getElementById('q-pageinfo').textContent='Scherm '+(qPage+1)+' van '+totPages+(ps===1?' · één vraag per scherm':' · vijf vragen per scherm');
+  updateProgress();
+}
+function pageMove(d){
+  qPage=Math.max(0,Math.min(Math.ceil(40/pageSize())-1,qPage+d));
+  renderQPage();window.scrollTo({top:0,behavior:'smooth'});
+}
+window.addEventListener('resize',()=>{
+  if(document.getElementById('q-form').style.display==='block'){
+    const firstQ=qPage*pageSize();qPage=Math.floor(firstQ/pageSize());renderQPage();
+  }
+});
+function pickAns(i,j,el){
+  answers[i]=j;
+  el.parentNode.querySelectorAll('.opt').forEach(o=>o.classList.remove('on'));
+  el.classList.add('on');updateProgress();
+  toast('Antwoord '+(i+1)+' van 40 opgeslagen');
+}
+function updateProgress(){
+  const done=answers.filter(a=>a!==null).length;
+  document.getElementById('pfill').style.width=(done/40*100)+'%';
+  document.getElementById('pcount').textContent=done+' van 40 beantwoord';
+}
+function submitList(){
+  const missing=answers.map((a,i)=>a===null?i+1:null).filter(x=>x);
+  if(missing.length){
+    document.getElementById('q-warn').textContent='Nog '+missing.length+' vraag(en) onbeantwoord (o.a. vraag '+missing.slice(0,3).join(', ')+'). Kies desnoods "weet niet".';
+    const ps=pageSize();qPage=Math.floor((missing[0]-1)/ps);renderQPage();
+    return false;
+  }
+  document.getElementById('q-warn').textContent='';
+  const qs=QS(curList);
+  answers.forEach((a,i)=>{
+    if(a===5)counts[curList][i][5]++;
+    else counts[curList][i][qs[i].key[a]-1]++;
+  });
+  nResp[curList]++;extra[curList]++;
+  const G=nGroups(),gs=groupSize();
+  const perG=[];
+  for(let t=0;t<G;t++){let s=0,n=0;
+    for(let i=t*gs;i<t*gs+gs;i++){const a=answers[i];if(a!==null&&a!==5){s+=qs[i].key[a];n++}}
+    perG.push(n?s/n:null)}
+  const valid=perG.filter(v=>v!==null);
+  const totMine=valid.reduce((a,b)=>a+b,0)/valid.length;
+  const cm=colorFor(totMine);
+  document.getElementById('q-form').style.display='none';
+  document.getElementById('q-done').style.display='block';
+  document.getElementById('q-done').innerHTML=`<div class="res-panel">
+    <h3>Bedankt — uw antwoorden zijn verwerkt</h3>
+    <p style="font-size:.88rem;color:var(--ink-soft);margin-bottom:18px">Uw individuele beeld hieronder is alleen nu voor u zichtbaar; in de resultaten telt uw inzending uitsluitend anoniem mee op groepsniveau.${RESPONDENT?' U kunt dit venster sluiten.':''}</p>
+    <div class="kpis" style="grid-template-columns:repeat(3,1fr)">
+      <div class="kpi"><div class="kl">Uw indicatieve trede</div><div class="kv">${fmt2(totMine)}</div>
+        <div class="ks"><span class="chip ${cm[0]}">${cm[1]}</span></div></div>
+      <div class="kpi"><div class="kl">Sterkste ${MODE==='A'?'thema':'rubriek'}</div><div class="kv" style="font-size:1.05rem;line-height:1.4;font-family:var(--sans)">${groupShort(perG.indexOf(Math.max(...valid)))}</div><div class="ks">${fmt2(Math.max(...valid))}</div></div>
+      <div class="kpi"><div class="kl">Aandachtspunt</div><div class="kv" style="font-size:1.05rem;line-height:1.4;font-family:var(--sans)">${groupShort(perG.indexOf(Math.min(...valid)))}</div><div class="ks">${fmt2(Math.min(...valid))}</div></div>
+    </div>
+    <div style="margin-top:16px">${perG.map((v,i)=>v===null?'':`
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;font-size:.82rem">
+        <span style="width:210px;color:var(--ink-soft)">${i+1}. ${groupShort(i)}</span>
+        <span class="minibar" style="width:${(v-1)/4*200}px;background:${colorFor(v)[2]}"></span>
+        <b>${fmt2(v)}</b></div>`).join('')}</div>
+    ${RESPONDENT?'':`<div class="q-actions"><button class="btn navy" onclick="showView('dash')">Naar het dashboard →</button>
+      <button class="btn navy small" style="background:transparent;color:var(--navy);border:1.5px solid var(--line)" onclick="resetQ();showView('vragen')">Nog een lijst invullen</button></div>`}
+  </div>`;
+  renderAll();
+  document.getElementById('live-badge').style.display='inline-flex';
+  document.getElementById('live-badge').textContent='bijgewerkt met '+(extra.op+extra.st)+' nieuwe inzending(en)';
+  return false;
+}
+function resetQ(){
+  curList=null;answers=[];qPage=0;
+  document.getElementById('q-done').style.display='none';
+  document.getElementById('q-form').style.display='none';
+  document.getElementById('q-start').style.display='block';
+  document.getElementById('lp-op').classList.remove('sel');
+  document.getElementById('lp-st').classList.remove('sel');
+  document.getElementById('q-go').style.display='none';
+}
+
+/* ==================== navigatie ==================== */
+function showView(v){
+  document.querySelectorAll('.view').forEach(x=>x.classList.remove('act'));
+  document.getElementById('v-'+v).classList.add('act');
+  document.querySelectorAll('.topnav button').forEach(b=>b.classList.remove('act'));
+  const nb=document.getElementById('nav-'+v);if(nb)nb.classList.add('act');
+  window.scrollTo({top:0});
+}
+function doLogin(demo){
+  if(!demo){
+    const m=document.getElementById('l-mail').value,c=document.getElementById('l-code').value;
+    if(!m||!c){alert('Vul e-mailadres en toegangscode in, of kies de demo-omgeving.');return}
+  }
+  RESPONDENT=false;document.body.classList.remove('resp');
+  document.getElementById('login').style.display='none';
+  document.getElementById('app').style.display='block';
+  showView('welkom');
+}
+function openRespondent(){
+  RESPONDENT=true;document.body.classList.add('resp');
+  document.getElementById('login').style.display='none';
+  document.getElementById('app').style.display='block';
+  resetQ();showView('vragen');
+}
+function doLogout(){
+  document.getElementById('app').style.display='none';
+  document.getElementById('login').style.display='flex';
+}
+genDemo();renderMail();renderAll();
+</script>
+</body>
+</html>

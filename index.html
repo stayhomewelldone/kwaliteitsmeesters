@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KwaliteitsMeesters | Senior QHSE-advies en veiligheidscultuur</title>
+<meta name="description" content="KwaliteitsMeesters meet veiligheidscultuur waar het werk gebeurt: twee vragenlijsten, de kloof tussen kantoor en werkvloer, en een route naar trede 3 van de Safety Culture Ladder. Adviseurs die zelf als auditor toetsen. Nederland en België.">
+<meta name="theme-color" content="#EDF0F4">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:site_name" content="KwaliteitsMeesters">
+<meta property="og:title" content="KwaliteitsMeesters | Veiligheidscultuur, gemeten waar het werk gebeurt">
+<meta property="og:description" content="Senior QHSE-advies door adviseurs die ook auditor zijn. Nulmeting in twee lagen, verdieping op de werkvloer, verbeterplan op routines. Tot en met de audit.">
+<!-- DEPLOY STEP: vervang door de live URL's zodra de site online staat, en vervang og:image door een kaart van 1200x630 (beeldmerk plus tagline op de canvaskleur) -->
+<meta property="og:url" content="https://www.kwaliteitsmeesters.eu/">
+<meta property="og:image" content="https://www.kwaliteitsmeesters.eu/assets/kwaliteitsmeesters-beeldmerk.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240"><rect x="6" y="6" width="228" height="228" rx="50" fill="%23163A64"/><rect x="56" y="64" width="24" height="116" fill="%23fff"/><rect x="160" y="64" width="24" height="116" fill="%23fff"/><path d="M56,64 L80,64 L125,119 L111,136 Z" fill="%23fff"/><path d="M184,64 L160,64 L115,119 L129,136 Z" fill="%23fff"/><path d="M120,132 L135,149 L120,198 L105,149 Z" fill="%23C8A24B"/><path d="M109,105 L120,117 L131,105 L120,94 Z" fill="%23E4C87E"/></svg>'>
+<link rel="stylesheet" href="assets/site.css">
+<noscript><style>.page:not([hidden]){display:block}.rv,.rv-stagger>*{opacity:1!important;transform:none!important}.hero{display:none}.hero-static{display:block}.route .line{transform:scaleX(1)}.ladder .t{transform:none;opacity:1}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#main">Naar de inhoud</a>
+
+<!-- beeldmerk en tekeningen (sprite) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="gNavy" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1E3F7C"/><stop offset="1" stop-color="#0E2145"/></linearGradient>
+    <linearGradient id="gGold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E4C87E"/><stop offset="1" stop-color="#C8A24B"/></linearGradient>
+    <linearGradient id="gSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D9E3EF"/><stop offset="1" stop-color="#EDF0F4"/></linearGradient>
+    <symbol id="mark" viewBox="0 0 240 240">
+      <rect x="6" y="6" width="228" height="228" rx="50" fill="url(#gNavy)"/>
+      <rect x="56" y="64" width="24" height="116" fill="#fff"/><rect x="160" y="64" width="24" height="116" fill="#fff"/>
+      <path d="M56,64 L80,64 L125,119 L111,136 Z" fill="#fff"/><path d="M184,64 L160,64 L115,119 L129,136 Z" fill="#fff"/>
+      <path d="M120,132 L135,149 L120,198 L105,149 Z" fill="url(#gGold)"/><path d="M109,105 L120,117 L131,105 L120,94 Z" fill="#E4C87E"/>
+    </symbol>
+    <!-- figuren: 100 x 300, voeten op y=300 -->
+    <symbol id="fig-stand" viewBox="0 0 100 300">
+      <path d="M30 36 A20 20 0 0 1 70 36 L74 40 L26 40 Z" fill="#F7F9FB" stroke="#0E2145" stroke-width="2.5" stroke-linejoin="round"/>
+      <circle cx="50" cy="48" r="17" fill="#F7F9FB" stroke="#0E2145" stroke-width="2.5"/>
+      <path d="M28 78 L72 78 L78 180 L22 180 Z" fill="#E4C87E" stroke="#0E2145" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M28 118 H72 M26 146 H74" stroke="#fff" stroke-width="5"/>
+      <path d="M28 80 L8 150 M72 80 L92 150" fill="none" stroke="#0E2145" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M30 180 L26 296 M70 180 L74 296 M26 296 H44 M56 296 H74" fill="none" stroke="#0E2145" stroke-width="2.5" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="fig-stand-plain" viewBox="0 0 100 300">
+      <circle cx="50" cy="34" r="18" fill="#F7F9FB" stroke="#0E2145" stroke-width="2.5"/>
+      <path d="M28 70 L72 70 L78 176 L22 176 Z" fill="#F7F9FB" stroke="#0E2145" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M28 72 L10 150 M72 72 L90 150" fill="none" stroke="#0E2145" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M30 176 L26 296 M70 176 L74 296 M26 296 H44 M56 296 H74" fill="none" stroke="#0E2145" stroke-width="2.5" stroke-linecap="round"/>
+    </symbol>
+    <!-- zittend: 100 x 240, zitvlak op y=150, voeten op 240 -->
+    <symbol id="fig-sit" viewBox="0 0 100 240">
+      <circle cx="50" cy="26" r="18" fill="#F7F9FB" stroke="#0E2145" stroke-width="2.5"/>
+      <path d="M28 60 L72 60 L76 150 L24 150 Z" fill="#F7F9FB" stroke="#0E2145" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M28 64 L14 130 L40 132 M72 64 L86 130 L60 132" fill="none" stroke="#0E2145" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M30 150 L30 236 M70 150 L70 236" fill="none" stroke="#0E2145" stroke-width="2.5" stroke-linecap="round"/>
+    </symbol>
+    <!-- stoel: 120 x 200, zitting op y=110 -->
+    <symbol id="chair" viewBox="0 0 120 200">
+      <path d="M20 10 L28 110 L100 110 L100 198 M28 110 L28 198 M20 10 L84 10" fill="none" stroke="#0E2145" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <!-- verdieping 1: de directiekamer -->
+    <symbol id="lvl1" viewBox="0 0 1600 900">
+      <rect x="560" y="20" width="200" height="860" fill="#E9EDF3"/>
+      <path fill-rule="evenodd" fill="#F7F9FB" d="M760 20 H1600 V880 H760 Z M1320 120 H1540 V420 H1320 Z"/>
+      <rect x="540" y="0" width="1060" height="20" fill="#C9D3E2"/>
+      <path d="M540 0 H1600 M540 20 H1600" stroke="#0E2145" stroke-width="2"/>
+      <rect x="540" y="20" width="20" height="860" fill="#C9D3E2"/>
+      <path d="M540 20 V880 M560 20 V880" stroke="#0E2145" stroke-width="2"/>
+      <path d="M760 20 V700" stroke="#0E2145" stroke-width="2"/>
+      <!-- raam -->
+      <path d="M1320 120 H1540 V420 H1320 Z M1430 120 V420 M1320 270 H1540" fill="none" stroke="#0E2145" stroke-width="2"/>
+      <!-- ingelijste grafiek -->
+      <rect x="900" y="160" width="220" height="180" fill="#F7F9FB" stroke="#0E2145" stroke-width="2"/>
+      <path d="M924 312 H1096" stroke="#B6C1D0" stroke-width="1.5"/>
+      <rect x="936" y="256" width="26" height="56" fill="#1E3F7C" opacity=".85"/>
+      <rect x="978" y="230" width="26" height="82" fill="#1E3F7C" opacity=".85"/>
+      <rect x="1020" y="208" width="26" height="104" fill="#1E3F7C" opacity=".85"/>
+      <rect x="1062" y="186" width="26" height="126" fill="#1E3F7C" opacity=".85"/>
+      <!-- lamp -->
+      <path d="M1180 20 V116" stroke="#0E2145" stroke-width="2"/>
+      <path d="M1146 116 H1214 L1198 142 H1162 Z" fill="#DCE3EE" stroke="#0E2145" stroke-width="2" stroke-linejoin="round"/>
+      <circle class="lamp" cx="1180" cy="152" r="9" fill="#E4C87E"/>
+      <!-- mensen aan tafel -->
+      <use href="#chair" x="860" y="690" width="120" height="200"/>
+      <use href="#chair" x="1010" y="690" width="120" height="200"/>
+      <use href="#chair" x="1160" y="690" width="120" height="200"/>
+      <use href="#fig-sit" x="880" y="640" width="100" height="240"/>
+      <use href="#fig-sit" x="1180" y="640" width="100" height="240"/>
+      <use href="#fig-sit" x="1030" y="640" width="100" height="240"/>
+      <!-- tafel -->
+      <rect x="840" y="736" width="440" height="14" fill="#DCE3EE" stroke="#0E2145" stroke-width="2"/>
+      <path d="M866 750 V880 M1254 750 V880" stroke="#0E2145" stroke-width="2"/>
+      <rect x="900" y="724" width="64" height="10" fill="#F7F9FB" stroke="#0E2145" stroke-width="1.5"/>
+      <rect x="1140" y="706" width="78" height="30" fill="#DCE3EE" stroke="#0E2145" stroke-width="1.5"/>
+      <rect x="1010" y="722" width="40" height="12" fill="#F7F9FB" stroke="#0E2145" stroke-width="1.5"/>
+      <!-- trap: vlucht A naar links, vlucht B naar rechts -->
+      <polyline points="760,60 740,60 740,100 724,100 724,140 708,140 708,180 692,180 692,220 676,220 676,260 660,260 660,300 644,300 644,340 628,340 628,380 612,380 612,420 596,420 596,460 580,460 580,500 596,500 596,540 612,540 612,580 628,580 628,620 644,620 644,660 660,660 660,700 676,700 676,740 692,740 692,780 708,780 708,820 724,820 724,860 740,860 760,860" fill="none" stroke="#0E2145" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M744 16 L584 416 M584 416 L744 816" fill="none" stroke="#6B7A90" stroke-width="1.5"/>
+      <path d="M740 60 V16 M660 260 V216 M580 460 V416 M660 660 V616 M740 860 V816" stroke="#6B7A90" stroke-width="1.5"/>
+      <!-- vloerplaat -->
+      <rect x="560" y="880" width="1040" height="20" fill="#C9D3E2"/>
+      <path d="M560 880 H1600" stroke="#0E2145" stroke-width="2"/>
+    </symbol>
+
+    <!-- verdieping 2: de keet -->
+    <symbol id="lvl2" viewBox="0 0 1600 900">
+      <rect x="560" y="0" width="200" height="880" fill="#E9EDF3"/>
+      <path fill-rule="evenodd" fill="#F7F9FB" d="M760 0 H1600 V880 H760 Z M1320 130 H1540 V370 H1320 Z"/>
+      <rect x="540" y="0" width="20" height="880" fill="#C9D3E2"/>
+      <path d="M540 0 V880 M560 0 V880" stroke="#0E2145" stroke-width="2"/>
+      <path d="M760 0 V700" stroke="#0E2145" stroke-width="2"/>
+      <path d="M1320 130 H1540 V370 H1320 Z M1430 130 V370" fill="none" stroke="#0E2145" stroke-width="2"/>
+      <!-- planbord -->
+      <rect x="880" y="130" width="320" height="210" fill="#F7F9FB" stroke="#0E2145" stroke-width="2"/>
+      <path d="M944 150 V320 M1008 150 V320 M1072 150 V320 M1136 150 V320 M900 150 H1180 M900 206 H1180 M900 262 H1180 M900 320 H1180" stroke="#B6C1D0" stroke-width="1.5"/>
+      <rect x="912" y="160" width="22" height="14" fill="#1E3F7C" opacity=".8"/>
+      <rect x="956" y="166" width="22" height="14" fill="#1E3F7C" opacity=".8"/>
+      <rect x="1084" y="216" width="22" height="14" fill="#1E3F7C" opacity=".8"/>
+      <rect x="1148" y="272" width="22" height="14" fill="#1E3F7C" opacity=".8"/>
+      <rect x="1020" y="276" width="22" height="14" fill="#C8A24B"/>
+      <!-- haken met hesjes -->
+      <path d="M1290 430 H1450" stroke="#0E2145" stroke-width="2"/>
+      <path d="M1318 430 V444 M1402 430 V444" stroke="#0E2145" stroke-width="2"/>
+      <path d="M1300 444 H1336 L1340 510 H1296 Z" fill="#E4C87E" stroke="#0E2145" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M1298 470 H1338 M1297 488 H1339" stroke="#fff" stroke-width="4"/>
+      <path d="M1384 444 H1420 L1424 510 H1380 Z" fill="#E4C87E" stroke="#0E2145" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M1382 470 H1422 M1381 488 H1423" stroke="#fff" stroke-width="4"/>
+      <!-- uitvoerder achter het bureau -->
+      <use href="#fig-stand" x="920" y="580" width="100" height="300"/>
+      <rect x="880" y="740" width="380" height="14" fill="#DCE3EE" stroke="#0E2145" stroke-width="2"/>
+      <path d="M904 754 V880 M1236 754 V880" stroke="#0E2145" stroke-width="2"/>
+      <rect x="1060" y="652" width="110" height="76" fill="#F7F9FB" stroke="#0E2145" stroke-width="2"/>
+      <path d="M1076 672 H1154 M1076 688 H1130 M1076 704 H1144" stroke="#B6C1D0" stroke-width="2"/>
+      <path d="M1115 728 V740 M1092 740 H1138" stroke="#0E2145" stroke-width="2"/>
+      <rect x="1200" y="722" width="22" height="18" fill="#F7F9FB" stroke="#0E2145" stroke-width="1.5"/>
+      <!-- trap -->
+      <polyline points="760,60 740,60 740,100 724,100 724,140 708,140 708,180 692,180 692,220 676,220 676,260 660,260 660,300 644,300 644,340 628,340 628,380 612,380 612,420 596,420 596,460 580,460 580,500 596,500 596,540 612,540 612,580 628,580 628,620 644,620 644,660 660,660 660,700 676,700 676,740 692,740 692,780 708,780 708,820 724,820 724,860 740,860 760,860" fill="none" stroke="#0E2145" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M744 16 L584 416 M584 416 L744 816" fill="none" stroke="#6B7A90" stroke-width="1.5"/>
+      <path d="M740 60 V16 M660 260 V216 M580 460 V416 M660 660 V616 M740 860 V816" stroke="#6B7A90" stroke-width="1.5"/>
+      <!-- de adviseur daalt af -->
+      <use href="#fig-stand-plain" x="616" y="280" width="100" height="300" transform="scale(.8) translate(160 160)"/>
+      <rect x="560" y="880" width="1040" height="20" fill="#C9D3E2"/>
+      <path d="M560 880 H1600" stroke="#0E2145" stroke-width="2"/>
+    </symbol>
+
+    <!-- verdieping 3: de werkvloer -->
+    <symbol id="lvl3" viewBox="0 0 1600 900">
+      <rect x="560" y="0" width="200" height="880" fill="#E9EDF3"/>
+      <rect x="540" y="0" width="20" height="880" fill="#C9D3E2"/>
+      <path d="M540 0 V880 M560 0 V880 M760 0 V880" stroke="#0E2145" stroke-width="2"/>
+      <!-- trap -->
+      <polyline points="760,60 740,60 740,100 724,100 724,140 708,140 708,180 692,180 692,220 676,220 676,260 660,260 660,300 644,300 644,340 628,340 628,380 612,380 612,420 596,420 596,460 580,460 580,500 596,500 596,540 612,540 612,580 628,580 628,620 644,620 644,660 660,660 660,700 676,700 676,740 692,740 692,780 708,780 708,820 724,820 724,860 740,860 760,860" fill="none" stroke="#0E2145" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M744 16 L584 416 M584 416 L744 816" fill="none" stroke="#6B7A90" stroke-width="1.5"/>
+      <path d="M740 60 V16 M660 260 V216 M580 460 V416 M660 660 V616 M740 860 V816" stroke="#6B7A90" stroke-width="1.5"/>
+      <!-- steiger -->
+      <path d="M900 140 V880 M1040 140 V880 M1180 140 V880" stroke="#0E2145" stroke-width="2.5"/>
+      <path d="M880 360 H1200 M880 620 H1200 M880 140 H1200" stroke="#0E2145" stroke-width="2"/>
+      <path d="M900 360 L1040 140 M1040 620 L1180 360 M900 880 L1040 620" stroke="#6B7A90" stroke-width="1.5"/>
+      <rect x="900" y="352" width="280" height="10" fill="#DCE3EE" stroke="#0E2145" stroke-width="1.5"/>
+      <rect x="900" y="612" width="280" height="10" fill="#DCE3EE" stroke="#0E2145" stroke-width="1.5"/>
+      <path d="M880 300 H1200 M880 560 H1200" stroke="#6B7A90" stroke-width="1.5"/>
+      <use href="#fig-stand" x="1070" y="312" width="100" height="300"/>
+      <!-- kruiwagen en medewerker op de grond -->
+      <use href="#fig-stand" x="1210" y="580" width="100" height="300"/>
+      <path d="M1300 790 L1390 790 L1376 852 L1316 852 Z" fill="#DCE3EE" stroke="#0E2145" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M1390 790 L1430 784 M1290 852 H1316 M1296 852 V880" stroke="#0E2145" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="1372" cy="866" r="14" fill="#F7F9FB" stroke="#0E2145" stroke-width="2"/>
+      <!-- pionnen -->
+      <path d="M800 880 L812 836 H828 L840 880 Z" fill="#DCE3EE" stroke="#0E2145" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M846 880 L858 836 H874 L886 880 Z" fill="#DCE3EE" stroke="#0E2145" stroke-width="2" stroke-linejoin="round"/>
+      <!-- grond -->
+      <rect x="0" y="880" width="1600" height="20" fill="#CAD2DD"/>
+      <path d="M0 880 H1600" stroke="#0E2145" stroke-width="2"/>
+    </symbol>
+
+    <!-- achtergrond (parallax): lucht, wolken, skyline en kraan -->
+    <symbol id="back" viewBox="0 0 1600 2700">
+      <g class="cloud" fill="#fff" opacity=".85">
+        <ellipse cx="300" cy="250" rx="90" ry="28"/><ellipse cx="350" cy="230" rx="60" ry="34"/><ellipse cx="250" cy="238" rx="50" ry="26"/>
+      </g>
+      <g class="cloud" fill="#fff" opacity=".7">
+        <ellipse cx="1380" cy="210" rx="80" ry="24"/><ellipse cx="1420" cy="194" rx="54" ry="30"/>
+      </g>
+      <g class="cloud" fill="#fff" opacity=".75">
+        <ellipse cx="1200" cy="1120" rx="96" ry="30"/><ellipse cx="1250" cy="1100" rx="62" ry="36"/><ellipse cx="1150" cy="1108" rx="52" ry="28"/>
+      </g>
+      <g class="cloud" fill="#fff" opacity=".7">
+        <ellipse cx="260" cy="1650" rx="84" ry="26"/><ellipse cx="306" cy="1634" rx="56" ry="32"/>
+      </g>
+      <!-- skyline -->
+      <path d="M0 2060 V1990 H120 V1960 H210 V2010 H330 V1940 H380 V1900 H430 V1940 H520 V1980 H640 V2000 H760 V1950 H820 V1920 H880 V1950 H1000 V2000 H1120 V1970 H1260 V2020 H1600 V2060 Z" fill="#D3DBE6"/>
+      <!-- kraan -->
+      <rect x="1250" y="940" width="30" height="1120" fill="#DCE3EE" stroke="#0E2145" stroke-width="2"/>
+      <path d="M1250 1000 L1280 1040 M1280 1000 L1250 1040 M1250 1080 L1280 1120 M1280 1080 L1250 1120 M1250 1160 L1280 1200 M1280 1160 L1250 1200 M1250 1240 L1280 1280 M1280 1240 L1250 1280 M1250 1320 L1280 1360 M1280 1320 L1250 1360 M1250 1400 L1280 1440 M1280 1400 L1250 1440 M1250 1480 L1280 1520 M1280 1480 L1250 1520 M1250 1560 L1280 1600 M1280 1560 L1250 1600 M1250 1640 L1280 1680 M1280 1640 L1250 1680 M1250 1720 L1280 1760 M1280 1720 L1250 1760 M1250 1800 L1280 1840 M1280 1800 L1250 1840 M1250 1880 L1280 1920 M1280 1880 L1250 1920 M1250 1960 L1280 2000 M1280 1960 L1250 2000" stroke="#6B7A90" stroke-width="1.5"/>
+      <rect x="1232" y="906" width="66" height="36" fill="#F7F9FB" stroke="#0E2145" stroke-width="2"/>
+      <g class="crane-boom">
+        <path d="M790 910 H1340 M790 896 H1340 M790 896 V910 M1340 896 V910" stroke="#0E2145" stroke-width="2"/>
+        <path d="M820 896 L850 910 M880 896 L910 910 M940 896 L970 910 M1000 896 L1030 910 M1060 896 L1090 910 M1120 896 L1150 910 M1180 896 L1210 910 M1300 896 L1330 910" stroke="#6B7A90" stroke-width="1.5"/>
+        <path d="M880 910 V1040 M870 1040 H890 L880 1058 Z" stroke="#0E2145" stroke-width="2" fill="#F7F9FB"/>
+        <path d="M1265 896 L1100 860 L790 896" fill="none" stroke="#6B7A90" stroke-width="1.5"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="notice" id="notice"><b>Conceptversie</b> &nbsp;·&nbsp; website in voorbereiding op de lancering</div>
+
+<header class="site-head">
+  <div class="container head-row">
+    <a class="brand" href="#home" aria-label="KwaliteitsMeesters, naar de startpagina">
+      <svg viewBox="0 0 240 240" aria-hidden="true"><use href="#mark"/></svg>
+      <span class="wm">Kwaliteits<span>Meesters</span></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Hoofdnavigatie">
+      <a href="#home" data-page="home">Home</a>
+      <a href="#scl" data-page="scl">Safety Culture Ladder</a>
+      <a href="#dashboard" data-page="dashboard">Meting &amp; dashboard</a>
+      <a href="#diensten" data-page="diensten">Expertise</a>
+      <a href="#kennis" data-page="kennis">Kennis</a>
+      <a href="#overons" data-page="overons">Over ons</a>
+      <a href="#faq" data-page="faq">Vragen</a>
+      <span class="sep" aria-hidden="true"></span>
+      <a class="portal" href="kwaliteitsmeesters-portaal.html" target="_blank" rel="noopener">Klantportaal (demo)</a>
+      <a class="cta" href="#contact" data-page="contact">Plan een kennismaking</a>
+    </nav>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span></button>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- ================================================================ HOME -->
+<div class="page" id="page-home">
+
+  <!-- de afdaling -->
+  <section class="hero" id="hero" aria-label="De afdaling: van directiekamer naar werkvloer">
+    <div class="stage">
+      <div class="sky" aria-hidden="true"></div>
+      <div class="scene-back" aria-hidden="true"><svg viewBox="0 0 1600 2700" preserveAspectRatio="xMinYMin slice"><use href="#back"/></svg></div>
+      <div class="scene" aria-hidden="true">
+        <svg viewBox="0 0 1600 2700" preserveAspectRatio="xMinYMin slice">
+          <use href="#lvl1" x="0" y="0" width="1600" height="900"/>
+          <use href="#lvl2" x="0" y="900" width="1600" height="900"/>
+          <use href="#lvl3" x="0" y="1800" width="1600" height="900"/>
+        </svg>
+      </div>
+
+      <div class="captions">
+        <div class="band" data-a="0" data-b="0.20" data-ramp="0.03">
+          <div class="mono"><i></i>Bovenin · de directiekamer</div>
+          <h1 class="h1"><span class="vh">Op kantoor klopt het verhaal.</span><span aria-hidden="true"><span class="w" style="--th:0">Op</span> <span class="w" style="--th:.08">kantoor</span> <span class="w" style="--th:.16">klopt</span> <span class="w" style="--th:.24">het</span> <span class="w" style="--th:.32">verhaal.</span></span></h1>
+          <p class="sub">Er is een meldsysteem. Er zijn toolboxen en een jaarplan. De directie meent elk woord.</p>
+        </div>
+        <div class="band" data-a="0.33" data-b="0.52">
+          <div class="mono"><i></i>Halverwege · de keet</div>
+          <h2><span class="vh">Een verdieping lager wordt het dunner.</span><span aria-hidden="true"><span class="w" style="--th:0">Een</span> <span class="w" style="--th:.07">verdieping</span> <span class="w" style="--th:.14">lager</span> <span class="w" style="--th:.21">wordt</span> <span class="w" style="--th:.28">het</span> <span class="w" style="--th:.35">dunner.</span></span></h2>
+          <p class="sub">De uitvoerder kent de regels. De planning staat onder druk. Op papier klopt het; in de uitvoering gaat het anders.</p>
+        </div>
+        <div class="band" data-a="0.60" data-b="0.78">
+          <div class="mono"><i></i>Beneden · de werkvloer</div>
+          <h2><span class="vh">Hier beslist de auditor.</span><span aria-hidden="true"><span class="w" style="--th:0">Hier</span> <span class="w" style="--th:.1">beslist</span> <span class="w" style="--th:.2">de</span> <span class="w" style="--th:.3">auditor.</span></span></h2>
+          <p class="sub">Hij leest uw handboek niet. Hij vraagt de monteur wat er met zijn melding is gebeurd.</p>
+        </div>
+        <div class="band" data-a="0.84" data-b="1" data-ramp="0.05">
+          <div class="mono"><i></i>KwaliteitsMeesters · senior QHSE-advies</div>
+          <h2 class="h1"><span class="vh">Veiligheidscultuur, gemeten waar het werk gebeurt.</span><span aria-hidden="true"><span class="w" style="--th:0">Veiligheidscultuur,</span> <span class="w" style="--th:.08">gemeten</span> <span class="w" style="--th:.16">waar</span> <span class="w" style="--th:.24">het</span> <span class="w" style="--th:.32">werk</span> <span class="w" style="--th:.4">gebeurt.</span></span></h2>
+          <p class="sub">Twee vragenlijsten, één kloof en een route naar trede 3 van de Safety Culture Ladder. Door adviseurs die elders zelf als auditor toetsen.</p>
+          <div class="acts">
+            <a class="btn btn-gold" href="#contact">Plan een kennismaking</a>
+            <a class="tlink" href="#scl/zelftoets">Proef de meting in drie vragen</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="gauge" aria-hidden="true">
+        <div class="title">Voorbeeldmeting · trede-indicatie</div>
+        <div class="rail"></div>
+        <div class="tick" style="top:0%"><b>5 · vooruitstrevend</b></div>
+        <div class="tick minor" style="top:12.5%"></div>
+        <div class="tick" style="top:25%"><b>4 · proactief</b></div>
+        <div class="tick minor" style="top:37.5%"></div>
+        <div class="tick" style="top:50%"><b>3 · berekenend</b></div>
+        <div class="tick minor" style="top:62.5%"></div>
+        <div class="tick" style="top:75%"><b>2 · reactief</b></div>
+        <div class="tick minor" style="top:87.5%"></div>
+        <div class="tick" style="top:100%"><b>1 · pathologisch</b></div>
+        <div class="read" style="top:40%">Sturende laag<b>3,4</b></div>
+        <div class="read" style="top:60%">Operationele medewerkers<b>2,6</b></div>
+        <div class="kloof" style="top:40%;height:20%"><b>de kloof · 0,8</b></div>
+        <div class="plumb" style="height:calc(100vh + 40%)"></div>
+        <div class="bob" style="top:40%"><svg viewBox="0 0 20 30" aria-hidden="true"><path d="M10 0v5" stroke="#C8A24B" stroke-width="1.5"/><path d="M5 9l5-5 5 5-5 5z" fill="#E4C87E"/><path d="M3 14h14l-7 16z" fill="#C8A24B"/></svg></div>
+      </div>
+
+      <div class="cue" aria-hidden="true"><span>Scroll naar beneden</span><i></i></div>
+    </div>
+  </section>
+
+  <!-- statische hero: telefoon, staand, reduced motion -->
+  <section class="hero-static" aria-label="Introductie">
+    <div class="container">
+      <div class="eyebrow">Senior QHSE-advies · Nederland en België</div>
+      <h1>Veiligheidscultuur, gemeten waar het werk gebeurt.</h1>
+      <p class="lede">Twee vragenlijsten, één kloof en een route naar trede 3 van de Safety Culture Ladder. Door adviseurs die elders zelf als auditor toetsen.</p>
+      <div class="acts">
+        <a class="btn btn-gold" href="#contact">Plan een kennismaking</a>
+        <a class="tlink" href="#scl/zelftoets">Proef de meting</a>
+      </div>
+      <div class="reads" role="img" aria-label="Voorbeeldmeting: sturende laag 3,4, operationele medewerkers 2,6, de kloof 0,8">
+        <span>Sturende laag <b>3,4</b></span><span>Operationele medewerkers <b>2,6</b></span><span class="k">de kloof <b>0,8</b></span>
+      </div>
+      <div class="poster" aria-hidden="true">
+        <svg viewBox="300 1760 1300 940" preserveAspectRatio="xMidYMax meet">
+          <rect x="0" y="1700" width="1600" height="1000" fill="url(#gSky)"/>
+          <path d="M300 2400 V2330 H420 V2300 H510 V2350 H630 V2280 H680 V2240 H730 V2280 H820 V2320 H940 V2340 H1060 V2290 H1120 V2260 H1180 V2290 H1300 V2340 H1420 V2310 H1560 V2360 H1600 V2400 Z" fill="#D3DBE6"/>
+          <rect x="1470" y="1900" width="30" height="780" fill="#DCE3EE" stroke="#0E2145" stroke-width="2"/>
+          <rect x="1452" y="1866" width="66" height="36" fill="#F7F9FB" stroke="#0E2145" stroke-width="2"/>
+          <path d="M1010 1870 H1560 M1010 1856 H1560 M1010 1856 V1870 M1560 1856 V1870 M1100 1870 V1990 M1090 1990 H1110 L1100 2008 Z" fill="#F7F9FB" stroke="#0E2145" stroke-width="2"/>
+          <use href="#lvl3" x="0" y="1800" width="1600" height="900"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- beide kanten van de audittafel -->
+  <section class="sec" id="beide-kanten">
+    <div class="container">
+      <div class="split">
+        <div class="prose rv">
+          <div class="eyebrow">Waarom KwaliteitsMeesters</div>
+          <h2>Wij kennen de audittafel van beide kanten.</h2>
+          <p class="lede" style="margin-top:18px">Onze adviseurs toetsen zelf als auditor bij certificeringstrajecten. Nooit bij de organisatie die zij adviseren; die scheiding bewaken wij strikt. Wel elke week ergens anders, en die blik nemen zij mee naar uw werk.</p>
+          <p>U weet daardoor wat er moet gebeuren en waarop het straks wordt beoordeeld: op wat is ingericht en geborgd, en op wat op de werkvloer zichtbaar en hoorbaar is. Papier zonder praktijk telt niet. Praktijk zonder borging evenmin.</p>
+          <p>Wij zijn een vaste kern van negen ervaren veiligheidskundigen (HVK en MVK) met achtergronden in bouw, infra, industrie en dienstverlening. Wat u van ons krijgt, moet het zonder ons kunnen: routines die blijven draaien bij drukte, verloop en groei. Bij het familiebedrijf met vijf monteurs net zo goed als bij een organisatie met duizend medewerkers.</p>
+          <p style="margin-top:24px"><a class="tlink" href="#overons">Maak kennis met het team</a></p>
+        </div>
+        <div class="fig rv">
+          <svg class="draw" viewBox="0 0 560 360" fill="none" stroke="#0E2145" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Tekening: adviseur en auditor aan dezelfde tafel">
+            <path d="M150 200 H410 M170 207 V270 M390 207 V270" />
+            <rect x="150" y="193" width="260" height="8" rx="3"/>
+            <rect x="252" y="160" width="56" height="33" rx="3" fill="#F7F9FB"/>
+            <path d="M261 171 H299 M261 178 H288 M261 185 H295" stroke="#6B7A90" stroke-width="1.5"/>
+            <path d="M70 200 H124 M76 200 V262 M118 200 V262 M76 192 V140"/>
+            <circle cx="104" cy="120" r="14"/>
+            <path d="M104 134 C104 154 106 174 108 196 M107 152 C122 160 140 168 158 174 M108 196 H140 M140 196 V256 M140 256 H154"/>
+            <path d="M436 200 H490 M442 200 V262 M484 200 V262 M484 192 V140"/>
+            <circle cx="456" cy="120" r="14"/>
+            <path d="M456 134 C456 154 454 174 452 196 M453 152 C438 160 420 168 402 174 M452 196 H420 M420 196 V256 M420 256 H406"/>
+            <rect x="330" y="166" width="40" height="26" rx="3" transform="rotate(-4 350 179)" fill="#F7F9FB"/>
+            <path d="M338 174 L344 180 L356 169" transform="rotate(-4 350 179)" stroke="#C8A24B" stroke-width="2.5"/>
+            <path d="M104 300 H158 M402 300 H456" stroke="#C8A24B"/>
+            <path d="M126 104 C180 70 232 62 272 64 M434 104 C380 70 328 62 288 64" stroke="#6B7A90" stroke-width="1.5" stroke-dasharray="1 7"/>
+          </svg>
+          <div style="display:flex;justify-content:space-between;margin-top:6px;padding:0 10%"><span class="mono">Adviseur</span><span class="mono">Auditor</span></div>
+        </div>
+      </div>
+      <div class="facts rv-stagger">
+        <div><b>Negen</b><span>senior veiligheidskundigen (HVK en MVK) die allemaal adviseren en auditen</span></div>
+        <div><b>238+</b><span>organisaties in onze recente auditpraktijk op de Safety Culture Ladder</span></div>
+        <div><b>Nooit</b><span>adviseren en auditen bij dezelfde organisatie; getoetst voorafgaand aan elke opdracht</span></div>
+        <div><b>2024</b><span>opgericht door drie veiligheidsprofessionals, werkgebied Nederland en België</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- de ViA-eis -->
+  <section class="sec" id="via-strook">
+    <div class="container">
+      <div class="via rv">
+        <div>
+          <div class="eyebrow">Veiligheid in Aanbestedingen</div>
+          <div class="date">Sinds 1 juli 2026<small>minimaal trede 3 bij aanbestedingen onder de ViA-afspraak</small></div>
+          <p class="src">Van de ruim 2.000 bouwbedrijven met een SCL-product stond eind 2025 ruim een kwart nog onder trede 3 (analyse van het SCL-register door VeiligWerk, november 2025).</p>
+          <p style="margin-top:22px"><a class="tlink" href="#scl/via">Wat de eis precies vraagt</a></p>
+        </div>
+        <dl>
+          <div><dt>De eis</dt><dd>Een veiligheidscultuur op minimaal niveau 3 van de ladder, in de markt nog altijd <b>trede 3</b> genoemd. Tot 1 juli 2026 was dat trede 2.</dd></div>
+          <div><dt>Voor welke opdrachten</dt><dd>Alle opdrachten met een contractwaarde vanaf <b>€ 100.000</b> (exclusief btw) van opdrachtgevers die de Governance Code Veiligheid in de Bouw hebben ondertekend.</dd></div>
+          <div><dt>Voor wie</dt><dd>Organisaties vanaf <b>vijf</b> medewerkers, eigen personeel en ingehuurd personeel samen. Ook onderaannemers en leveranciers die op de bouwplaats werken, en advies- en ingenieursbureaus.</dd></div>
+          <div><dt>Het bewijs</dt><dd>Een certificaat of statement op de Safety Culture Ladder, en voor mkb tot 250 medewerkers sinds 1 juli 2026 ook VCA-MAX. De Approved Self Assessment telt niet meer.</dd></div>
+          <div><dt>De termijn</dt><dd>Als contracteis: het bewijsmiddel uiterlijk <b>drie maanden</b> na de start van de uitvoering. Zonder bewijs kan het werk worden stilgelegd.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- de route -->
+  <section class="sec panel" id="route">
+    <div class="container">
+      <div class="sec-head rv">
+        <div>
+          <div class="eyebrow">Onze aanpak</div>
+          <h2>Eén doorlopende route: meten, verdiepen, verbeteren.</h2>
+        </div>
+        <p class="lede">Rood of oranje in de meting, doorvragen op de werkvloer, verbeteren en borgen met vaste ritmes. Zo weet u op elk moment waar u staat en wat de volgende stap is.</p>
+      </div>
+      <div class="route" data-reveal>
+        <div class="line" aria-hidden="true"></div>
+        <div class="step" data-n="01">
+          <h3>Meten</h3>
+          <div class="tool">Veiligheidscultuur-indicator</div>
+          <p>Een nulmeting met twee gescheiden vragenlijsten: één voor operationele medewerkers, één voor de sturende laag. Elk veertig vragen over wat er meestal gebeurt, met rapportage uitsluitend op groepsniveau. Het verschil tussen beide lagen is uw belangrijkste stuurpunt.</p>
+        </div>
+        <div class="step" data-n="02">
+          <h3>Verdiepen</h3>
+          <div class="tool">Gesprekken zoals een auditor ze voert</div>
+          <p>De cijfers vertellen wat, de gesprekken vertellen waarom. Op de werkvloer, met open vragen en zonder oordeel vooraf. Dan weten we ook waardoor iets zwak scoort.</p>
+        </div>
+        <div class="step" data-n="03">
+          <h3>Verbeteren en borgen</h3>
+          <div class="tool">Verbeterplan op routines</div>
+          <p>Per knelpunt een routine met een eigenaar op naam, een ritme en een meetbaar resultaat. Bewijslast die zich opbouwt tot en met de audit. En daarna blijft draaien.</p>
+        </div>
+      </div>
+      <p class="rv" style="margin-top:40px"><a class="tlink" href="#scl">De volledige route naar trede 3</a></p>
+    </div>
+  </section>
+
+  <!-- de vraag van de auditor -->
+  <section class="sec dark quoteband" id="de-vraag">
+    <div class="container">
+      <div class="split">
+        <div class="rv">
+          <div class="eyebrow">Wat wij aan de audittafel zien</div>
+          <blockquote>Als de mensen die dit nu dragen morgen vertrekken, <em>wat blijft er dan staan?</em></blockquote>
+          <div class="who">De vraag die de auditor werkelijk stelt</div>
+        </div>
+        <div class="side rv">
+          <p>Organisaties zakken zelden op intentie. Ze zakken op borging. Vier patronen komen in onze auditpraktijk telkens terug.</p>
+          <p><b>Doelen zonder eigenaar.</b> Er zijn V&amp;G-doelen, maar niemand kan zeggen wie er wakker van ligt.</p>
+          <p><b>Ritmes die stilvallen zodra het druk wordt.</b> De werkplekinspectie die drie maanden oversloeg vanwege de piek.</p>
+          <p><b>Een leercyclus die halverwege stopt.</b> Een melding, een maatregel, en daar eindigt het. Of het beter werd, weet niemand.</p>
+          <p><b>Alles hangt aan één persoon.</b> De KAM-coördinator die alles weet en alles bijhoudt. Bewonderenswaardig, en de grootste kwetsbaarheid tegelijk.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- de kiezer -->
+  <section class="sec chooser" id="chooser">
+    <div class="container">
+      <div class="sec-head rv">
+        <div>
+          <div class="eyebrow">Direct op weg</div>
+          <h2>Twee vragen, en u ziet wat bij uw situatie past.</h2>
+        </div>
+        <p class="lede">Geen formulier, geen nieuwsbrief. U kiest uw sector en uw vraagstuk, en u krijgt de drie onderdelen van ons werk die daar het meest toe doen.</p>
+      </div>
+      <div class="q rv" data-q="1">
+        <div class="q-label">In welke sector werkt uw organisatie? <span class="mono">vraag 1 van 2</span></div>
+        <div class="chips" role="group" aria-label="Sector">
+          <button class="chip" aria-pressed="false" data-v="Bouw & infra">Bouw &amp; infra</button>
+          <button class="chip" aria-pressed="false" data-v="Installatietechniek">Installatietechniek</button>
+          <button class="chip" aria-pressed="false" data-v="Industrie & productie">Industrie &amp; productie</button>
+          <button class="chip" aria-pressed="false" data-v="Groen & buitenruimte">Groen &amp; buitenruimte</button>
+          <button class="chip" aria-pressed="false" data-v="Maritiem & water">Maritiem &amp; water</button>
+          <button class="chip" aria-pressed="false" data-v="Energie & nuts">Energie &amp; nuts</button>
+          <button class="chip" aria-pressed="false" data-v="een andere sector">Anders</button>
+        </div>
+      </div>
+      <div class="q" data-q="2" id="q2" hidden>
+        <div class="q-label">Wat is uw vraagstuk? <span class="mono">vraag 2 van 2</span></div>
+        <div class="chips" role="group" aria-label="Vraagstuk">
+          <button class="chip" aria-pressed="false" data-v="scl">Safety Culture Ladder</button>
+          <button class="chip" aria-pressed="false" data-v="cultuur">Veiligheidscultuur &amp; gedrag</button>
+          <button class="chip" aria-pressed="false" data-v="iso">ISO 45001 / VCA</button>
+          <button class="chip" aria-pressed="false" data-v="audit">Audit of nulmeting</button>
+          <button class="chip" aria-pressed="false" data-v="interim">QHSE-capaciteit</button>
+        </div>
+      </div>
+      <div class="out" id="sel-out" aria-live="polite">
+        <div class="out-head">
+          <h3>Voor <span id="sel-s">…</span> met een vraag over <span id="sel-v">…</span> doen deze drie onderdelen het meest ter zake.</h3>
+          <button class="reset" type="button">Opnieuw kiezen</button>
+        </div>
+        <div class="recs" id="recs"></div>
+        <div class="sector" id="sector-note"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- slot -->
+  <section class="sec panel" id="home-slot">
+    <div class="container">
+      <div class="slot rv">
+        <div>
+          <div class="eyebrow">Kennismaken</div>
+          <h2>Vertel waar uw organisatie staat. U hoort wat er nodig is, en wat niet.</h2>
+        </div>
+        <div class="acts">
+          <a class="btn btn-gold" href="#contact">Plan een kennismaking</a>
+          <p class="small">U spreekt direct een senior.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================================================ STUBS -->
+<!-- ================================================================ SCL -->
+<div class="page" id="page-scl" hidden>
+  <div class="subhead">
+    <div class="container">
+      <div class="grid">
+        <div>
+          <div class="eyebrow">Safety Culture Ladder</div>
+          <h1>Op weg naar trede&nbsp;3 van de Safety Culture Ladder.</h1>
+          <p class="lede">De audit beoordeelt uw organisatie: wat is ingericht en geborgd, en wat op de werkvloer zichtbaar en hoorbaar is. Wij begeleiden naar trede 3, en wie er staat, verder naar trede 4 en 5.</p>
+        </div>
+        <div>
+          <div class="ladder" data-reveal role="img" aria-label="De vijf tredes van de Safety Culture Ladder: van 1 pathologisch tot 5 vooruitstrevend, met trede 3 als doel">
+            <div class="t"><b>1</b>pathologisch</div>
+            <div class="t"><b>2</b>reactief</div>
+            <div class="t hl"><b>3</b>berekenend</div>
+            <div class="t next"><b>4</b>proactief</div>
+            <div class="t next"><b>5</b>vooruitstrevend</div>
+          </div>
+          <div class="ladder-cap">Tredenamen volgens NEN, normtekst SCL 2.0 · in de ViA-handreiking heet trede 3 "niveau 3"</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="sec" id="via">
+    <div class="container">
+      <div class="sec-head rv">
+        <div>
+          <div class="eyebrow">De ViA-eis</div>
+          <h2>Wat opdrachtgevers sinds 1 juli 2026 vragen.</h2>
+        </div>
+        <p class="lede">Opdrachtgevers die de Governance Code Veiligheid in de Bouw hebben ondertekend, stellen via de afspraak Veiligheid in Aanbestedingen (ViA) een eis aan de veiligheidscultuur van hun opdrachtnemers. Dit is de stand van de Handreiking ViA, versie 3.1 van 23 juni 2026.</p>
+      </div>
+      <div class="split rv">
+        <div class="prose">
+          <p><b>Minimaal trede 3</b> (in de handreiking: volwassenheidsniveau 3) bij alle opdrachten met een contractwaarde vanaf € 100.000 exclusief btw. Bij raamcontracten en meerjarig onderhoud telt de verwachte jaaromzet van het contract.</p>
+          <p><b>Vanaf vijf medewerkers.</b> Eigen personeel en ingeleend of ingehuurd personeel tellen samen. Onder de vijf is geen bewijsmiddel nodig; de opdrachtgever stuurt dan in het project op houding en gedrag.</p>
+          <p><b>Doorlegplicht.</b> Wie delen van het werk uitbesteedt, blijft ervoor verantwoordelijk dat ketenpartners en leveranciers op het vereiste niveau werken, en moet nagaan dat zij een bewijsmiddel van minimaal niveau 3 hebben. De eis geldt ook voor advies- en ingenieursbureaus, en voor leveranciers zodra zij op de bouwplaats werken.</p>
+          <p><b>De termijn.</b> Als contracteis moet het bewijsmiddel uiterlijk drie maanden na de start van de uitvoering zijn overgelegd. Blijft het uit, dan kan de opdrachtnemer in gebreke worden gesteld en het werk worden stilgelegd. Opdrachtgevers controleren in het openbare register van de schemabeheerder of het bewijs geldig is tot het einde van het contract.</p>
+          <p><b>Wat niet meer telt.</b> De Approved Self Assessment (ASA) is als ViA-bewijsmiddel vervallen. De nieuwe Self Assessment van NEN is een ontwikkelinstrument en geen ViA-bewijs.</p>
+          <div class="callout" style="margin-top:24px">Toetsingsklasse en gevraagde trede verschillen per opdrachtgever en per contract. Lees de aanbestedingsleidraad of de contracteisen van uw belangrijkste opdrachtgevers; wij lezen desgewenst mee. Voor werkzaamheden van ProRail gelden eigen eisen, onder meer SCL Original op minimaal trede 3 voor spooraannemers.</div>
+        </div>
+        <div>
+          <div class="mono" style="margin-bottom:12px">Geaccepteerde bewijsmiddelen per omvang</div>
+          <div class="tblwrap">
+          <table class="tbl">
+            <thead><tr><th>Organisatie</th><th>Bewijsmiddel</th></tr></thead>
+            <tbody>
+              <tr><td>Vanaf 250 medewerkers</td><td>SCL Original (certificaat) · SCL (certificaat) · SCL Light (statement)</td></tr>
+              <tr><td>50 tot 250 medewerkers</td><td>SCL Original · SCL · SCL Light · VCA-MAX<span class="mono">VCA-MAX niet voor werkzaamheden van ProRail</span></td></tr>
+              <tr class="hl"><td>5 tot 50 medewerkers</td><td>SCL Original · SCL · SCL Light · SCL Light voor kleine organisaties (statement) · VCA-MAX<span class="mono">VCA-MAX niet voor werkzaamheden van ProRail</span></td></tr>
+              <tr><td>Minder dan 5 medewerkers</td><td class="dim">Geen bewijsmiddel nodig</td></tr>
+            </tbody>
+          </table>
+          </div>
+          <p class="small" style="margin-top:14px">Bron: Handreiking Veiligheid in Aanbestedingen, versie 3.1 (GCVB, 23 juni 2026). Dit overzicht is een hulpmiddel, geen normtekst.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec panel" id="toetsing">
+    <div class="container">
+      <div class="split rev">
+        <div class="prose rv">
+          <div class="eyebrow">De twee dimensies</div>
+          <h2>Twee dimensies, en allebei moeten ze kloppen.</h2>
+          <p class="lede" style="margin-top:18px">Elk thema wordt beoordeeld op <b>randvoorwaardelijk</b> (wat is ingericht en georganiseerd) en op <b>gedrag</b> (wat mensen doen en laten). Papier zonder praktijk telt niet, en praktijk zonder borging evenmin.</p>
+          <p>De beslisregel uit het certificatieschema is streng. Op randvoorwaardelijk moeten minimaal vier van de vijf thema's groen scoren en mag het vijfde hooguit oranje zijn. Op gedrag moeten alle vijf thema's groen zijn. Eén rood thema betekent dat de trede niet is gehaald.</p>
+          <p>Het bewijs komt uit gesprekken. De auditoren interviewen een steekproef uit directie, management en staf en uit de uitvoering, bezoeken altijd minimaal één project en stellen dezelfde vragen op kantoor en op de werkplek. De woorden waarmee zij toetsen zeggen wat er verwacht wordt: aantoonbaar, geborgd, structureel, eenduidig, organisatiebreed en herkenbaar voor medewerkers.</p>
+        </div>
+        <div class="fig rv">
+          <svg class="draw" viewBox="0 0 640 270" fill="none" stroke="#16305C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Tekening: de audit weegt randvoorwaardelijk en gedrag">
+            <rect x="36" y="34" width="248" height="150" rx="6"/>
+            <path d="M62 96 V88 H92 L100 96"/>
+            <rect x="62" y="96" width="76" height="52" rx="3"/>
+            <path d="M158 100 H258 M158 117 H238 M158 134 H258 M158 151 H226" stroke="#6B7A90" stroke-width="1.5"/>
+            <rect x="356" y="34" width="248" height="150" rx="6"/>
+            <path d="M405 152 H545" stroke="#6B7A90" stroke-width="1.5"/>
+            <circle cx="430" cy="92" r="11"/>
+            <path d="M430 103 V152 M430 116 L458 101"/>
+            <circle cx="520" cy="92" r="11"/>
+            <path d="M520 103 V152 M520 116 L496 104"/>
+            <path d="M446 72 C466 58 484 58 504 72" stroke="#6B7A90" stroke-width="1.5" stroke-dasharray="1 6"/>
+            <path d="M296 109 H344 M304 102 L296 109 L304 116 M336 102 L344 109 L336 116" stroke="#C8A24B"/>
+          </svg>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px">
+            <div><span class="mono">R · ingericht en geborgd</span><p class="small" style="margin-top:4px">systemen, ritmes en vastlegging</p></div>
+            <div><span class="mono">G · zichtbaar en hoorbaar</span><p class="small" style="margin-top:4px">wat mensen doen en zeggen</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="themas">
+    <div class="container">
+      <div class="sec-head rv">
+        <div>
+          <div class="eyebrow">De vijf thema's van SCL 2.0</div>
+          <h2>Waar de audit op toetst, en waar organisaties blijven steken.</h2>
+        </div>
+        <p class="lede">Per thema de vragen die een auditor stelt, en de valkuil die wij in onze auditpraktijk het vaakst tegenkomen. Organisaties zakken zelden op intentie. Ze zakken op borging: doelen zonder eigenaar, ritmes die stilvallen bij drukte, leercycli die halverwege stoppen en werk dat aan één persoon hangt.</p>
+      </div>
+      <div class="themes rv">
+        <details>
+          <summary><span class="n">01</span><span>Beleid en leiderschap</span><span class="x"></span></summary>
+          <div class="body">
+            <div><p>Wordt veiligheid gestuurd, met doelen, voorbeeldgedrag en consequenties, of lift het mee op goede bedoelingen? Denk aan maximaal drie concrete V&amp;G-doelen per jaar met een eigenaar op naam, een consequent toegepast sanctie- en waarderingsbeleid, en een expliciet vastgelegde bevoegdheid om het werk stil te leggen.</p></div>
+            <div class="valkuil"><b>Veelvoorkomende valkuil</b>Doelen zonder functievertaling en zonder eigenaar: op de werkvloer kan niemand ze noemen.</div>
+          </div>
+        </details>
+        <details>
+          <summary><span class="n">02</span><span>Kennis en vaardigheden</span><span class="x"></span></summary>
+          <div class="body">
+            <div><p>Functieprofielen gekoppeld aan V&amp;G, opleidingen gericht op de eigen kernrisico's, een geborgd inwerktraject en, het vaakst gemiste punt, een structureel toetsingsmoment van het kennisniveau.</p></div>
+            <div class="valkuil"><b>Veelvoorkomende valkuil</b>Er wordt opgeleid, maar nergens wordt vastgesteld of het gewenste kennisniveau er ook is.</div>
+          </div>
+        </details>
+        <details>
+          <summary><span class="n">03</span><span>Primaire en secundaire processen</span><span class="x"></span></summary>
+          <div class="body">
+            <div><p>Zit veiligheid in het werkproces zelf: van opdrachtacceptatie ("kan het veilig?") via een samenhangend stelsel van risicobeoordelingen tot een vaste werkwijze bij wijzigingen? Kleine projecten zijn geen kleiner risiconiveau.</p></div>
+            <div class="valkuil"><b>Veelvoorkomende valkuil</b>Losse instrumenten (RI&amp;E, TRA, V&amp;G-plan, LMRA) zonder samenhang en zonder vast actualisatieritme.</div>
+          </div>
+        </details>
+        <details>
+          <summary><span class="n">04</span><span>Samenwerken met externen</span><span class="x"></span></summary>
+          <div class="body">
+            <div><p>Behandel inhuur, onderaannemers en zzp'ers als eigen medewerkers: dezelfde onboarding, toolboxen, meldkanalen en beoordelingscriteria. Selecteer op V&amp;G en beoordeel opdrachtnemers formeel en periodiek. Sinds de ViA-handreiking van 2026 bent u er bovendien zelf verantwoordelijk voor dat uw ketenpartners een bewijsmiddel hebben.</p></div>
+            <div class="valkuil"><b>Veelvoorkomende valkuil</b>Geen formele, periodieke beoordeling van opdrachtnemers. "We werken al jaren naar tevredenheid samen" is geen beoordeling.</div>
+          </div>
+        </details>
+        <details>
+          <summary><span class="n">05</span><span>Leren en verbeteren</span><span class="x"></span></summary>
+          <div class="body">
+            <div><p>Eén laagdrempelig meldkanaal voor iedereen, analyse op basisoorzaken en trends, terugkoppeling binnen vaste termijnen en verbeteringen die herleidbaar zijn tot structurele aanpassingen. De auditor zoekt de gesloten cirkel: hij vraagt de melder van drie maanden geleden wat er met zijn melding is gebeurd. En hij verwacht antwoord.</p><p>Twee meldingen per jaar is geen rustig jaar. Veel kleine signalen, snel afgehandeld en zichtbaar teruggekoppeld, naast weinig echte incidenten: dat is het beeld dat u wilt zien.</p></div>
+            <div class="valkuil"><b>Veelvoorkomende valkuil</b>"Wij lossen het gewoon direct op." Opgelost is niet gemeld, en wat niet gemeld is, kan de organisatie niet verbeteren.</div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+  <section class="sec panel" id="vlaggen">
+    <div class="container">
+      <div class="sec-head rv">
+        <div>
+          <div class="eyebrow">Snelle zelftoets</div>
+          <h2>Tien rode vlaggen die in onze auditpraktijk tot bevindingen leiden.</h2>
+        </div>
+        <p class="lede">Herkent u er meerdere? Dan is een nulmeting een verstandige eerste stap, en geen audit die u vlak voor een aanbesteding inplant.</p>
+      </div>
+      <ol class="flags rv">
+        <li>Twee meldingen per jaar, of meldingen die vrijwel alleen van dezelfde paar mensen komen.</li>
+        <li>"Dat lossen wij gewoon direct op", zonder registratie of gedeelde leerpunten.</li>
+        <li>De melder weet niet wat er met zijn melding is gebeurd.</li>
+        <li>Niemand op de werkvloer kan een V&amp;G-doel of gedragsregel in eigen woorden noemen.</li>
+        <li>"Dat hangt ervan af wie het ziet": sancties en aanspreken zijn persoonsafhankelijk.</li>
+        <li>Geen datum te noemen van de laatste formele opdrachtnemersbeoordeling.</li>
+        <li>Alle inspecties scoren "goed", en de laatste bevinding is niemand bijgebleven.</li>
+        <li>De interne audit was vlak voor de (her)certificering, en de werkvloer kent doel noch uitkomst.</li>
+        <li>Externen kennen de meldapp, toolbox of gedragsregels niet, terwijl ze de helft van de handen leveren.</li>
+        <li>Op de vraag "wat heeft veiligheid u dit jaar gekost?" blijft het stil.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec" id="route-detail">
+    <div class="container">
+      <div class="sec-head rv">
+        <div>
+          <div class="eyebrow">De route in detail</div>
+          <h2>Meten, verdiepen, verbeteren. En daarna borgen.</h2>
+        </div>
+        <p class="lede">Een lage score in de meting is het startpunt voor de gesprekken. De uitkomst van de gesprekken vertalen wij per thema in routines. Zo weet u op elk moment waar u staat en wat de volgende stap is.</p>
+      </div>
+      <div class="ledger rv">
+        <div class="row">
+          <div class="no">01</div>
+          <div><h3>Meten</h3><div class="tags"><span>Veiligheidscultuur-indicator</span><span>2 × 40 vragen</span></div></div>
+          <div><p>Twee gescheiden vragenlijsten, één voor operationele medewerkers en één voor de sturende laag, over wat er op het werk meestal gebeurt. Elke antwoordoptie hoort bij een trede. U kiest per licentiejaar de <b>Trede-meting</b> (de vijf SCL-thema's) of de <b>Praktijkmeting</b> (acht praktijkrubrieken). Invullen duurt ongeveer tien minuten, op telefoon of computer, zonder inlog. Wij rapporteren uitsluitend op groepsniveau, over groepen van minimaal vijf, en "weet niet" telt als apart signaal.</p><a class="tlink more" href="#dashboard">Zo werkt het instrument</a></div>
+        </div>
+        <div class="row">
+          <div class="no">02</div>
+          <div><h3>Verdiepen</h3><div class="tags"><span>Duidingssessie</span><span>Gesprekken op de werkvloer</span></div></div>
+          <div><p>Eerst bespreekt een senior de uitkomst mondeling met de sturende laag, in een duidingssessie van vier uur: sterke punten eerst, de kloof als routekaart. Daarna voeren wij gesprekken op de werkvloer zoals een auditor ze voert: open vragen, doorvragen, geen oordeel vooraf. De cijfers vertellen wat; de gesprekken vertellen waarom.</p></div>
+        </div>
+        <div class="row">
+          <div class="no">03</div>
+          <div><h3>Verbeteren en borgen</h3><div class="tags"><span>Verbeterplan-workshop</span><span>Routines</span></div></div>
+          <div><p>In een workshop van zes uur vertalen wij de knelpunten naar routines: per actie een eigenaar op naam, een ritme en een meetbaar resultaat. Ritmes die ook in drukke weken doorlopen, en die een auditor een half jaar later nog kan terugvinden. Het communicatiepakket (pamfletten en toolboxen voor de leidinggevende) helpt de terugkoppeling naar de werkvloer. Aan het eind dragen uw eigen mensen het, en doen wij een generale repetitie voor de audit.</p></div>
+        </div>
+      </div>
+
+      <div class="rv" style="margin-top:clamp(40px,5vw,64px)">
+        <div class="eyebrow">Zo ziet een traject eruit</div>
+        <div class="timeline">
+          <div><span class="wk">Week 1</span><b>Intake</b><span>Doelgroepen afbakenen, e-maillijsten, keuze Trede- of Praktijkmeting, communicatiepakket klaarzetten.</span></div>
+          <div><span class="wk">Week 2</span><b>Aankondiging</b><span>De directie kondigt de meting aan; leidinggevenden geven zelf de toolbox. Uitnodigingen gaan uit.</span></div>
+          <div><span class="wk">Week 2 tot 3</span><b>Meting open</b><span>Twee weken. Respons volgen per groep; herinnering als na een week minder dan 60% heeft ingevuld.</span></div>
+          <div><span class="wk">Week 4</span><b>Analyse</b><span>Sluiten, analyse en conceptrapport. Streefwaarde: rapport binnen vier weken na de eerste uitnodiging.</span></div>
+          <div><span class="wk">Week 5</span><b>Duiding</b><span>Duidingssessie met de sturende laag; daarna wordt het rapport definitief.</span></div>
+          <div><span class="wk">Week 6</span><b>Verbeterplan</b><span>Workshop: van knelpunten naar routines met eigenaren en ritmes.</span></div>
+          <div><span class="wk">Daarna</span><b>Borgen</b><span>Routines draaien, bewijslast bouwt zich op, generale repetitie en de audit door een certificerende instelling.</span></div>
+        </div>
+        <p class="small" style="margin-top:18px">Streefwaarden voor de respons: minimaal 70% bij operationele medewerkers en 85% bij de sturende laag. Onder de 60% respons zijn wij terughoudend met harde conclusies per onderwerp. Hoe lang de weg naar de audit daarna is, hangt af van uw startpunt; routines moeten al enkele maanden draaien voordat een auditor ze kan toetsen.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec panel" id="zelftoets">
+    <div class="container">
+      <div class="split">
+        <div class="rv">
+          <div class="eyebrow">Proef de meting</div>
+          <h2>Drie vragen uit de vragenlijst.</h2>
+          <p class="lede" style="margin-top:18px">Zo stelt onze veiligheidscultuur-indicator zijn vragen: over wat er meestal gebeurt, niet over wat u ervan vindt. Er is geen fout antwoord; elke optie beschrijft een herkenbare praktijk.</p>
+        </div>
+        <div class="fig rv" aria-hidden="true">
+          <svg viewBox="0 0 340 250" fill="none" stroke="#16305C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <text x="104" y="58" fill="#6B7A90" font-size="9.5" letter-spacing="1.6" stroke="none" font-family="IBM Plex Mono, monospace">DE STURENDE LAAG</text>
+            <path d="M52 88 H252"/>
+            <circle cx="80" cy="58" r="9"/>
+            <path d="M80 67 V88 M80 73 L69 81 M80 73 L91 81"/>
+            <path d="M52 192 H252"/>
+            <circle cx="80" cy="162" r="9"/>
+            <path d="M71 159 A9 9 0 0 1 89 159 M68 159 H92"/>
+            <path d="M80 171 V192 M80 177 L69 185 M80 177 L91 185"/>
+            <text x="104" y="216" fill="#6B7A90" font-size="9.5" letter-spacing="1.6" stroke="none" font-family="IBM Plex Mono, monospace">OPERATIONELE MEDEWERKERS</text>
+            <path d="M210 88 V192 M204 88 H216 M204 192 H216" stroke="#C8A24B"/>
+            <path d="M206 97 L210 89 L214 97 M206 183 L210 191 L214 183" stroke="#C8A24B"/>
+            <text x="224" y="136" fill="#16305C" font-size="10.5" letter-spacing="1.6" font-weight="600" stroke="none" font-family="IBM Plex Mono, monospace">DE KLOOF</text>
+            <text x="224" y="152" fill="#6B7A90" font-size="9" stroke="none" font-family="Source Sans 3, sans-serif">het belangrijkste stuurpunt</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="check rv" id="check">
+        <div class="q" data-i="0">
+          <div class="mono">Vraag 1 van 3 · wat er meestal gebeurt</div>
+          <div class="qt">Een medewerker ziet iets onveiligs op het werk. Wat gebeurt er daarna meestal?</div>
+          <div class="opts">
+            <button class="opt" aria-pressed="false" data-t="2">Er wordt iets van gezegd als het echt moet; een melding volgt alleen bij een echt incident.</button>
+            <button class="opt" aria-pressed="false" data-t="4">Melden en elkaar aanspreken zijn normaal, ook richting leidinggevenden.</button>
+            <button class="opt" aria-pressed="false" data-t="1">Er wordt omheen gewerkt; het hoort er een beetje bij.</button>
+            <button class="opt" aria-pressed="false" data-t="5">Medewerkers pakken het zelf op, delen het breder en betrekken zo nodig ook opdrachtgever of keten.</button>
+            <button class="opt" aria-pressed="false" data-t="3">Het wordt gemeld via de vaste weg en er komt zichtbaar opvolging op.</button>
+            <button class="opt dn" aria-pressed="false" data-t="x">Weet ik niet, of dat wisselt sterk.</button>
+          </div>
+        </div>
+        <div class="q" data-i="1">
+          <div class="mono">Vraag 2 van 3 · wat er meestal gebeurt</div>
+          <div class="qt">De planning staat onder druk en er speelt een veiligheidsknelpunt. Wat gebeurt er meestal?</div>
+          <div class="opts">
+            <button class="opt" aria-pressed="false" data-t="3">Er is een vaste afweging: het knelpunt wordt eerst beheerst, daarna gaat het werk verder.</button>
+            <button class="opt" aria-pressed="false" data-t="1">De klus gaat voor; veiligheid komt later wel.</button>
+            <button class="opt" aria-pressed="false" data-t="5">Het wordt vooraf met opdrachtgever en keten besproken, zodat de druk niet bij de uitvoerder terechtkomt.</button>
+            <button class="opt" aria-pressed="false" data-t="2">We lossen het op zodra de opdrachtgever of een inspectie erom vraagt.</button>
+            <button class="opt" aria-pressed="false" data-t="4">Ook onder druk wordt stilgelegd als het niet veilig kan, en de leiding staat daar zichtbaar achter.</button>
+            <button class="opt dn" aria-pressed="false" data-t="x">Weet ik niet, of dat wisselt sterk.</button>
+          </div>
+        </div>
+        <div class="q" data-i="2">
+          <div class="mono">Vraag 3 van 3 · wat er meestal gebeurt</div>
+          <div class="qt">Een paar maanden na een incident of bijna-ongeval: wat merkt de werkvloer er nog van?</div>
+          <div class="opts">
+            <button class="opt" aria-pressed="false" data-t="4">De les is actief gedeeld, in een toolbox of werkoverleg, en collega's letten er samen op.</button>
+            <button class="opt" aria-pressed="false" data-t="2">Er ligt een rapport en er is iets van gezegd; daarna zakte het weg.</button>
+            <button class="opt" aria-pressed="false" data-t="1">Weinig; er wordt liever niet meer over gepraat.</button>
+            <button class="opt" aria-pressed="false" data-t="3">De oorzaken zijn onderzocht en de werkwijze is aangepast; dat is terug te vinden.</button>
+            <button class="opt" aria-pressed="false" data-t="5">Ook vergelijkbare situaties op andere projecten zijn aangepakt, samen met de keten.</button>
+            <button class="opt dn" aria-pressed="false" data-t="x">Weet ik niet, of dat wisselt sterk.</button>
+          </div>
+        </div>
+        <div class="foot">
+          <div class="mono" id="mc-prog">0 van 3 beantwoord</div>
+          <button class="reset" type="button" id="mc-reset" hidden>Opnieuw</button>
+        </div>
+        <div class="result" id="mc-result" aria-live="polite">
+          <div class="rgrid">
+            <div>
+              <div class="score"><b id="mc-score">–</b><span id="mc-chip">…</span></div>
+              <div class="meter">
+                <span class="mk" id="mc-mk">▼</span>
+                <div class="zone"><i style="width:25%;background:var(--rood-bg)"></i><i style="width:17.5%;background:var(--oranje-bg)"></i><i style="width:17.5%;background:var(--lgroen-bg)"></i><i style="width:40%;background:var(--groen-bg)"></i></div>
+                <div class="lbl"><span style="left:0">1,0</span><span style="left:25%">2,0</span><span style="left:42.5%">2,7</span><span style="left:60%">3,4</span><span style="left:100%">5,0</span></div>
+              </div>
+              <div class="legend">rood &lt; 2,0 · oranje 2,0 tot 2,7 · lichtgroen 2,7 tot 3,4 · groen &gt; 3,4</div>
+            </div>
+            <div>
+              <h3 class="vt" id="mc-vt">…</h3>
+              <p class="vx" id="mc-vx">…</p>
+            </div>
+          </div>
+          <div class="note">Indicatie op basis van drie vragen, ingevuld vanuit één perspectief. De volledige nulmeting bestaat uit twee lijsten van veertig vragen, gescheiden voor operationele medewerkers en de sturende laag, met per thema een trede-indicatie en de kloof tussen beide lagen. De indicator is ons eigen instrument en geeft een indicatieve trede, geen officiële SCL-uitslag.</div>
+          <div class="acts">
+            <a class="btn btn-gold" href="#contact">Plan een kennismaking</a>
+            <a class="tlink" href="#dashboard">Zo werkt de volledige meting</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="sec" id="klassen">
+    <div class="container">
+      <div class="sec-head rv">
+        <div>
+          <div class="eyebrow">Toetsingsklassen</div>
+          <h2>Eén ladder, vier bewijsmiddelen.</h2>
+        </div>
+        <p class="lede">NEN beheert de Safety Culture Ladder. Vier producten leveren een certificaat of statement op; daarnaast bestaat de Self Assessment als ontwikkelinstrument. Welke vorm past, hangt af van uw omvang, uw opdrachtgevers en hoe hoog u wilt klimmen. Wij adviseren over de keuze en begeleiden elke vorm.</p>
+      </div>
+      <div class="tblwrap rv">
+        <table class="tbl">
+          <thead><tr><th>Product</th><th>Bewijs</th><th>Hoe de toetsing werkt</th><th>Tot en met</th></tr></thead>
+          <tbody>
+            <tr><td>SCL Original</td><td>Certificaat, 3 jaar</td><td>Elk jaar een volledige audit door een certificerende instelling, met interviews op kantoor en op de werkplek.</td><td>Trede 5</td></tr>
+            <tr><td>SCL</td><td>Certificaat, 3 jaar</td><td>Volledige audit in jaar 1; in de twee tussenliggende jaren een beoordeling met 40% van het aantal interviews.</td><td>Trede 4</td></tr>
+            <tr class="hl"><td>SCL Light</td><td>Statement, 3 jaar</td><td>Zelfbeoordeling met de verplichte vragenlijst van NEN, een gapanalyse en een actieplan; de certificerende instelling beoordeelt die stukken en bezoekt een locatie.</td><td>Trede 3</td></tr>
+            <tr><td>SCL Light voor kleine organisaties</td><td>Statement, 3 jaar</td><td>Dezelfde bouwstenen, toegesneden op organisaties van 5 tot en met 50 medewerkers. Ingevoerd op 1 juni 2025.</td><td>Trede 3</td></tr>
+            <tr><td class="dim">Approved Self Assessment</td><td class="dim">Vervallen</td><td class="dim">Vervangen door de Self Assessment (SA): een ontwikkelinstrument zonder trede-uitspraak, en geen ViA-bewijsmiddel.</td><td class="dim">n.v.t.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small rv" style="margin-top:16px">Bron: Certificatieschema SCL 2.0 en productpagina's van NEN. Onze eigen veiligheidscultuur-indicator is een ontwikkelinstrument naast deze producten en vervangt de NEN-vragenlijst niet.</p>
+    </div>
+  </section>
+
+  <section class="sec panel" id="vcamax">
+    <div class="container">
+      <div class="split">
+        <div class="prose rv">
+          <h2 class="eyebrow">VCA-MAX</h2>
+          <h2>De andere route: VCA met de Module Gedrag.</h2>
+          <p class="lede" style="margin-top:18px">VCA-MAX is de combinatie van een VCA-certificaat (sinds 1 juli 2026 versie 2026/6.1) met de aanvullende Module Gedrag. Daarmee laat een organisatie naast het veiligheidssysteem ook zichtbaar veiligheidsgedrag zien.</p>
+          <p><b>Wat er sinds juni 2026 geldt.</b> De Governance Code Veiligheid in de Bouw heeft VCA-MAX op 17 juni 2026 erkend als bewijsmiddel voor niveau 3, alleen voor organisaties tot 250 medewerkers en niet voor werkzaamheden van ProRail. Het onderzoek van TNO en de Universiteit Antwerpen dat daaraan ten grondslag ligt, doet volgens de GCVB geen uitspraak over gelijkwaardigheid; met SSVV is afgesproken dat VCA-MAX de komende twee jaar wordt doorontwikkeld naar een instrument met meerdere niveaus.</p>
+          <p><b>De vuistregel.</b> Werkt u voor ProRail, wilt u boven niveau 3 uitkomen of heeft u 250 medewerkers of meer, dan is de Safety Culture Ladder de route. Heeft u een goed draaiend VCA-huis, minder dan 250 medewerkers en opdrachtgevers die VCA-MAX accepteren, dan is de Module Gedrag een herkenbare stap. Controleer altijd wat uw eigen opdrachtgevers in de aanbestedingsstukken vragen.</p>
+        </div>
+        <div class="rv">
+          <div class="callout"><b>Ons VCA-MAX-advies is in ontwikkeling.</b> Gedrag zichtbaar maken en borgen is ons werkveld; de meting en de gesprekken op de werkvloer werken voor de Module Gedrag niet anders dan voor de ladder. Interesse kunt u nu al melden via het <a href="#contact">contactformulier</a>; u hoort als eerste wanneer wij starten.</div>
+          <dl class="dl" style="margin-top:24px">
+            <div><dt>Schema</dt><dd>VCA 2026/6.1 plus VCA Module Gedrag (VCA-MG), beheerd door SSVV; audits op de module sinds 1 juli 2025.</dd></div>
+            <div><dt>ViA-status</dt><dd>Geaccepteerd voor niveau 3, mkb tot 250 medewerkers; niet voor ProRail-werk. Handreiking ViA 3.1, 23 juni 2026.</dd></div>
+            <div><dt>Let op</dt><dd>Een opdrachtgever kan in specifieke situaties nog steeds een SCL-certificaat verlangen.</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="vormen">
+    <div class="container">
+      <div class="sec-head rv">
+        <div>
+          <div class="eyebrow">Drie manieren om samen te werken</div>
+          <h2>Van alleen het meetinstrument tot volledige begeleiding.</h2>
+        </div>
+        <p class="lede">De passende vorm volgt uit de QHSE-capaciteit die u zelf in huis heeft. Opschalen of afschalen kan altijd; beginnen met een meting en daarna beslissen is een prima volgorde.</p>
+      </div>
+      <div class="cols3 rv-stagger">
+        <div>
+          <div class="mono">01 · Zelf aan de slag</div>
+          <h3>Alleen het meetinstrument</h3>
+          <p>U zet de veiligheidscultuur-indicator zelfstandig in: twee vragenlijsten, dashboard, rapport en communicatiepakket. Een senior licht de opzet en uw resultaten toe in een online gesprek van een uur.</p>
+          <div class="price">Jaarlicentie Basis vanaf € 500 (tot en met 25 medewerkers) tot € 2.000 (501 tot 1.000)<small>conceptprijzen 2026, exclusief btw</small></div>
+        </div>
+        <div>
+          <div class="mono">02 · Uw mensen, onze auditblik</div>
+          <h3>Coaching van uw KAM-verantwoordelijke</h3>
+          <p>Uw eigen KAM- of VGM-verantwoordelijke trekt het traject. Wij kijken mee: wekelijks anderhalf uur online, of één tot twee dagen per maand op locatie. Minimaal drie maanden, daarna maandelijks opzegbaar.</p>
+          <div class="price">€ 795 per maand online · € 1.050 per maand op locatie (één dag) · € 2.000 intensief (twee dagen per maand)<small>conceptprijzen 2026, exclusief btw</small></div>
+        </div>
+        <div>
+          <div class="mono">03 · Wij dragen het traject</div>
+          <h3>Volledige begeleiding</h3>
+          <p>Van nulmeting tot en met de voorbereiding op de audit, met een vast team: meting, duiding, verbeterplan-workshop, gesprekken per vestiging en een generale repetitie. Uw mensen doen het werk, met ons ernaast.</p>
+          <div class="price">Vanaf € 7.500 (5 tot 50 medewerkers), € 12.500 (51 tot 250) of € 18.500 (251 tot 1.000), na intake<small>conceptprijzen 2026, exclusief btw, jaarlicentie Basis inbegrepen</small></div>
+        </div>
+      </div>
+      <p class="small rv" style="margin-top:20px">Advieswerk kent één seniortarief van € 140 per uur. Geen junioruren, geen accountmanagers. Wij geven een inspanningsverplichting, geen garantie op een trede, een certificaat of een aanbestedingsresultaat.</p>
+    </div>
+  </section>
+
+  <section class="sec panel">
+    <div class="container">
+      <div class="slot rv">
+        <div>
+          <div class="eyebrow">Kennismaken</div>
+          <h2>Bespreek uw route naar trede 3 met een adviseur die de audit van binnenuit kent.</h2>
+        </div>
+        <div class="acts">
+          <a class="btn btn-gold" href="#contact">Plan een kennismaking</a>
+          <p class="small">Een gesprek van een half uur, op locatie of online. U hoort welke toetsingsklasse past en wat een eerste stap is.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- ========================================================== DASHBOARD -->
+<div class="page" id="page-dashboard" hidden>
+  <div class="subhead">
+    <div class="container">
+      <div class="grid">
+        <div>
+          <div class="eyebrow">Het meetinstrument</div>
+          <h1>Twee lijsten, één kloof.</h1>
+          <p class="lede">De veiligheidscultuur-indicator vraagt operationele medewerkers en de sturende laag apart wat er op het werk meestal gebeurt. Het verschil tussen beide antwoorden is in onze auditpraktijk de sterkste voorspeller die wij kennen voor het oordeel van een auditor.</p>
+        </div>
+        <div class="aside"><b>Goed om te weten</b>De indicator is ons eigen instrument en geeft een indicatieve trede. Het is geen officiële SCL-uitslag en geen product van NEN, en het loopt daar ook niet op vooruit.</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="sec" id="meet">
+    <div class="container">
+      <div class="split">
+        <div class="prose rv">
+          <div class="eyebrow">Wat het meet</div>
+          <h2>Geen meningen, geen kennis. Wat er gebeurt.</h2>
+          <p class="lede" style="margin-top:18px">Veertig vragen per lijst, elk met antwoordopties die een herkenbare praktijk beschrijven, van "er wordt omheen gewerkt" tot "de keten wordt erbij betrokken". Elke optie hoort bij een trede van 1 tot 5.</p>
+          <p>U kiest per licentiejaar een van twee metingen. De <b>Trede-meting</b> volgt de vijf thema's van SCL 2.0 en is de nulmeting voor een certificeringstraject. De <b>Praktijkmeting</b> volgt acht praktijkrubrieken uit het dagelijkse werk en past bij organisaties die vooral willen weten waar het knelt. Een extra meting binnen het jaar, bijvoorbeeld een hermeting na een verbetertraject, kost de helft van de Basis-jaarlicentie.</p>
+          <p>Scores zijn gemiddelden per onderwerp en per thema. "Weet niet" telt niet mee in het gemiddelde, maar wordt apart geteld: een hoog aandeel is zelf een bevinding, meestal wel geregeld maar niet bekend bij de mensen om wie het gaat. Het middelen van ordinale antwoorden is een praktische indicator, geen formele normscore; daarom bespreken wij elke uitkomst mondeling voordat het rapport wordt rondgestuurd.</p>
+        </div>
+        <div class="rv">
+          <div class="mono" style="margin-bottom:12px">De vier kleurbanden</div>
+          <div class="bands">
+            <div><span><i style="background:var(--rood)"></i>Rood</span><b>&lt; 2,0</b><span>Reactieve trekken: reageren na incidenten; melden en leren komen niet op gang.</span></div>
+            <div><span><i style="background:var(--oranje)"></i>Oranje</span><b>2,0 tot 2,7</b><span>Geregeld op papier, kwetsbaar in de praktijk; borging en samenhang ontbreken nog.</span></div>
+            <div><span><i style="background:var(--lgroen)"></i>Lichtgroen</span><b>2,7 tot 3,4</b><span>Het fundament voor trede 3 staat; leercyclus sluiten en bewijslast op orde brengen.</span></div>
+            <div><span><i style="background:var(--groen)"></i>Groen</span><b>&gt; 3,4</b><span>Sterk beeld; aantoonbaar en persoonsonafhankelijk maken, richting trede 4 en 5.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec panel" id="voorbeeld">
+    <div class="container">
+      <div class="sec-head rv">
+        <div>
+          <div class="eyebrow">Voorbeeldweergave · fictieve cijfers</div>
+          <h2>Wat u in het dashboard ziet.</h2>
+        </div>
+        <p class="lede">Per thema een indicatieve trede met kleur, de verdeling binnen de groep, en het verschil tussen de sturende laag en de werkvloer. De cijfers hieronder zijn een gefingeerd voorbeeld, geen klantresultaat.</p>
+      </div>
+      <div class="dash rv" data-reveal role="img" aria-label="Voorbeeld van het dashboard met fictieve cijfers: sturende laag 3,4, operationele medewerkers 2,6, kloof 0,8">
+        <div class="top"><svg viewBox="0 0 240 240" width="28" height="28" aria-hidden="true"><use href="#mark"/></svg><div><b>Trede-meting · voorbeeldorganisatie</b><br><span>Fictief: 112 van 131 operationele medewerkers (85%) en 16 van 18 in de sturende laag (89%) hebben ingevuld</span></div><span class="chipx">Voorbeeldweergave</span></div>
+        <div class="kpis">
+          <div class="kp"><small>Indicatieve trede · totaal</small><b>2,7</b><span class="pill" style="background:var(--lgroen-bg);color:#3E6B2A">lichtgroen · ondergrens</span></div>
+          <div class="kp"><small>Operationele medewerkers</small><b>2,6</b><span class="pill" style="background:var(--oranje-bg);color:#8A5A12">oranje</span></div>
+          <div class="kp"><small>De sturende laag</small><b>3,4</b><span class="pill" style="background:var(--lgroen-bg);color:#3E6B2A">lichtgroen</span></div>
+          <div class="kp"><small>De kloof</small><b>0,8</b><span class="pill" style="background:var(--canvas-2);color:var(--text-2)">belangrijkste stuurpunt</span></div>
+        </div>
+        <div class="two">
+          <div class="box">
+            <small>Per thema · sturende laag en operationele medewerkers</small>
+            <div class="legend-row"><span><i style="background:var(--ink-2)"></i>Sturende laag</span><span><i style="background:var(--gold)"></i>Operationele medewerkers</span></div>
+            <div class="layers">
+              <div class="lr"><div><span>Beleid en leiderschap</span><div class="t1"><i style="--w:72%"></i></div><div class="t2"><i style="--w:56%"></i></div></div><b>3,6 · 2,8</b></div>
+              <div class="lr"><div><span>Kennis en vaardigheden</span><div class="t1"><i style="--w:66%"></i></div><div class="t2"><i style="--w:54%"></i></div></div><b>3,3 · 2,7</b></div>
+              <div class="lr"><div><span>Primaire en secundaire processen</span><div class="t1"><i style="--w:68%"></i></div><div class="t2"><i style="--w:52%"></i></div></div><b>3,4 · 2,6</b></div>
+              <div class="lr"><div><span>Samenwerken met externen</span><div class="t1"><i style="--w:64%"></i></div><div class="t2"><i style="--w:46%"></i></div></div><b>3,2 · 2,3</b></div>
+              <div class="lr"><div><span>Leren en verbeteren</span><div class="t1"><i style="--w:70%"></i></div><div class="t2"><i style="--w:52%"></i></div></div><b>3,5 · 2,6</b></div>
+            </div>
+          </div>
+          <div class="box">
+            <small>Signalen</small>
+            <div class="brow"><span>Kloof · samenwerken met externen</span><div class="tr"><i style="--w:.9" class="o"></i></div><b>0,9</b></div>
+            <div class="brow"><span>Kloof · leren en verbeteren</span><div class="tr"><i style="--w:.9" class="o"></i></div><b>0,9</b></div>
+            <div class="brow"><span>Kloof · beleid en leiderschap</span><div class="tr"><i style="--w:.8" class="o"></i></div><b>0,8</b></div>
+            <div class="brow"><span>"Weet niet" · sanctie- en waarderingsbeleid</span><div class="tr"><i style="--w:.18"></i></div><b>18%</b></div>
+            <div class="brow"><span>"Weet niet" · gemiddeld</span><div class="tr"><i style="--w:.07"></i></div><b>7%</b></div>
+            <div class="gapnote">Lezing: de sturende laag scoort op elk thema hoger dan de werkvloer. Het beleid bestaat, maar leeft nog niet overal. Het hoge aandeel "weet niet" bij het sanctie- en waarderingsbeleid wijst op iets dat <b>wel is ingericht maar niet is geland</b>; dat is het eerste gespreksonderwerp met de sturende laag.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="weergaven">
+    <div class="container">
+      <div class="sec-head rv">
+        <div>
+          <div class="eyebrow">Zes weergaven</div>
+          <h2>Van losse antwoorden naar één beeld waar u op kunt sturen.</h2>
+        </div>
+      </div>
+      <div class="feat rv-stagger">
+        <div><div class="mono">01</div><h3 class="h4">Indicatieve trede per thema</h3><p>Per thema en per onderwerp een trede met kleur, plus de verdeling: welk deel van de groep zit waar. Zo ziet u het gemiddelde en de spreiding erachter.</p></div>
+        <div><div class="mono">02</div><h3 class="h4">Kloof-analyse</h3><p>De sturende laag en de operationele medewerkers naast elkaar, per thema. De drie grootste verschillen komen met een verificatievraag in het rapport: hoe weet u dat dit echt gebeurt, en zou de monteur dat bevestigen?</p></div>
+        <div><div class="mono">03</div><h3 class="h4">Weet-niet-signaal</h3><p>"Weet niet" telt apart. Een hoog aandeel op een onderwerp waar de sturende laag vol vertrouwen scoort, wijst precies aan waar beleid wel bestaat maar niet is aangekomen.</p></div>
+        <div><div class="mono">04</div><h3 class="h4">Respons en deelnamelinks</h3><p>Persoonlijke deelnamelinks zonder inlog, op telefoon of computer. U volgt de respons per groep en ziet wanneer een herinnering nodig is, zonder te zien wie nog niet heeft ingevuld. <span class="tag ok">beschikbaar</span></p></div>
+        <div><div class="mono">05</div><h3 class="h4">Rapport</h3><p>Managementsamenvatting, respons en representativiteit, resultaten per thema met status, de drie grootste kloven, knelpunten gekoppeld aan de best practice "Op weg naar trede 3", en een voorzet voor het verbeterplan met eigenaar, deadline en meetbaar resultaat. Printklaar, in huisstijl, voor intern gebruik.</p></div>
+        <div><div class="mono">06</div><h3 class="h4">Herinneringen</h3><p>Het systeem herinnert automatisch wie nog niet heeft ingevuld, zonder dat uw beheerder ziet om wie het gaat. Herinneringen voor toolboxen en werkplekinspecties horen bij de app-modules die in ontwikkeling zijn. <span class="tag dev">deels in ontwikkeling</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec panel" id="privacy">
+    <div class="container">
+      <div class="split">
+        <div class="prose rv">
+          <div class="eyebrow">Hoe de antwoorden beschermd zijn</div>
+          <h2>Eerlijk invullen moet veilig zijn. Anders meet u wensen.</h2>
+          <p class="lede" style="margin-top:18px">Medewerkers schrijven alleen op wat er werkelijk gebeurt als ze zeker weten dat het niet op hen terugslaat. Daarom is de bescherming van antwoorden ingebouwd in het instrument, en niet een belofte achteraf.</p>
+          <p>Het communicatiepakket bij de meting zegt het tegen de collega's zo: "Jij ziet dingen die het kantoor nooit ziet. Daarom vragen we jou, niet het handboek, hoe veilig we hier echt werken."</p>
+        </div>
+        <dl class="dl rv">
+          <div><dt>Groepsniveau</dt><dd>Wij rapporteren uitsluitend over groepen van <b>minimaal vijf</b> respondenten. Kleinere groepen krijgen geen eigen uitkomst.</dd></div>
+          <div><dt>Losgekoppeld</dt><dd>Antwoorden worden direct na verzending losgekoppeld van de deelnamelink en zijn niet herleidbaar tot een persoon.</dd></div>
+          <div><dt>Nooit individueel</dt><dd>Wij rapporteren nooit individuele antwoorden aan werkgevers, ook niet op verzoek. De meting wordt niet gebruikt voor beoordelingen of disciplinaire besluiten.</dd></div>
+          <div><dt>Geen bijzondere gegevens</dt><dd>De vragenlijst vraagt niet naar gezondheid of andere bijzondere persoonsgegevens; vrije tekstvelden worden vermeden.</dd></div>
+          <div><dt>E-mailadressen</dt><dd>Alleen gebruikt voor de deelnamelink en herinneringen, nooit voor marketing, en uiterlijk drie maanden na afronding van de meting verwijderd.</dd></div>
+          <div><dt>Rollen</dt><dd>Uw organisatie is verwerkingsverantwoordelijke, KwaliteitsMeesters is verwerker. Per meting gelden een verwerkersovereenkomst en een privacyverklaring voor respondenten.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="beheer">
+    <div class="container">
+      <div class="sec-head rv">
+        <div>
+          <div class="eyebrow">Wat het van uw organisatie vraagt</div>
+          <h2>Een beheerder, een directie die het aankondigt, en leidinggevenden die de toolbox zelf geven.</h2>
+        </div>
+        <p class="lede">De meting vraagt weinig tijd, maar wel de juiste afzender. Een meting die door de KAM-afdeling wordt rondgemaild, haalt de keet niet.</p>
+      </div>
+      <div class="two-col rv">
+        <p><b>De beheerder</b> bakent de doelgroepen af (wie hoort bij de sturende laag, wie bij de operationele medewerkers), levert de e-maillijsten aan, kiest de Trede- of de Praktijkmeting, zet het communicatiepakket klaar en volgt de respons in het portaal. Nodig ook vaste inhuur en onderaannemers uit: de meting is er ook voor hen, en de auditor rekent hen mee.</p>
+        <p><b>Het communicatiepakket</b> zit bij elke licentie: een pamflet voor de eerste meting en een voor de periodieke meting, en twee toolboxen van tien minuten voor de leidinggevende. Kernregels uit die toolbox: geef hem zelf, niet de KAM-afdeling; benadruk dat er geen foute antwoorden zijn; spreek de datum af waarop de groepsresultaten worden gedeeld, en houd u eraan. Meten zonder terugkoppelen breekt vertrouwen af.</p>
+        <p><b>Bij een hermeting</b> begint de toolbox met de terugblik: wat is er na de vorige meting veranderd, en wat is blijven liggen en waarom. Eerst terugkoppelen, dan pas opnieuw meten.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec panel" id="licenties">
+    <div class="container">
+      <div class="sec-head rv">
+        <div>
+          <div class="eyebrow">Licenties</div>
+          <h2>Basis, Plus of Compleet.</h2>
+        </div>
+        <p class="lede">Licenties gelden per organisatie per jaar, met een staffel naar het aantal medewerkers (vaste kern plus structurele inhuur). Instappen kan altijd vanaf € 500 per jaar. Alle bedragen zijn conceptprijzen 2026, exclusief btw, ter vaststelling door de partners.</p>
+      </div>
+      <div class="tblwrap rv">
+        <table class="tbl">
+          <thead><tr><th>Medewerkers</th><th>Basis</th><th>Plus</th><th>Compleet</th></tr></thead>
+          <tbody>
+            <tr><td>tot en met 25</td><td class="num">€ 500</td><td class="num">€ 950</td><td class="num">€ 1.400</td></tr>
+            <tr><td>26 tot 50</td><td class="num">€ 700</td><td class="num">€ 1.300</td><td class="num">€ 1.950</td></tr>
+            <tr><td>51 tot 100</td><td class="num">€ 950</td><td class="num">€ 1.750</td><td class="num">€ 2.650</td></tr>
+            <tr><td>101 tot 250</td><td class="num">€ 1.250</td><td class="num">€ 2.350</td><td class="num">€ 3.500</td></tr>
+            <tr><td>251 tot 500</td><td class="num">€ 1.600</td><td class="num">€ 3.000</td><td class="num">€ 4.500</td></tr>
+            <tr><td>501 tot 1.000</td><td class="num">€ 2.000</td><td class="num">€ 3.750</td><td class="num">€ 5.600</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="feat rv-stagger" style="margin-top:32px">
+        <div><div class="mono">Basis</div><p>Eén meting per jaar (Trede- of Praktijkmeting), onbeperkt respondenten binnen de staffel, deelnamelinks, portaal met dashboard, kloof-analyse en weet-niet-signaal, printklaar rapport, communicatiepakket, een uur online toelichting, support op werkdagen.</p></div>
+        <div><div class="mono">Plus</div><p>Basis plus drie app-modules naar keuze. Circa 15% voordeliger dan los.</p></div>
+        <div><div class="mono">Compleet</div><p>Basis plus alle app-modules en één hermeting per jaar. Circa 35% voordeliger dan los.</p></div>
+      </div>
+      <div class="rv" style="margin-top:40px">
+        <div class="eyebrow">App-modules <span class="tag dev" style="margin-left:8px">in ontwikkeling</span></div>
+        <p class="lede">Dezelfde omgeving groeit stap voor stap uit tot één plek voor het dagelijkse veiligheids- en kwaliteitswerk. Uitgangspunt van elke module: gegevens verzamelen zonder dat het als last voelt, maximaal twee tikken op een telefoon. Introductieprijs per module € 200 tot € 800 per jaar, naar omvang.</p>
+        <div class="feat" style="margin-top:24px">
+          <div><h3 class="h4">Meldingssysteem</h3><p>Melden in twee tikken, met foto. De melder ziet wat ermee gebeurt.</p></div>
+          <div><h3 class="h4">Incidentenregister en opvolging</h3><p>Van melding naar maatregel naar geleerde les, herleidbaar.</p></div>
+          <div><h3 class="h4">Werkplekinspecties</h3><p>Digitale rondes met foto's en acties, en een signaal als een ronde blijft liggen.</p></div>
+          <div><h3 class="h4">Toolboxen</h3><p>Bibliotheek, planning en registratie: wie waarbij was, is terug te vinden.</p></div>
+          <div><h3 class="h4">Interne gedragsaudits</h3><p>Kijken zoals een auditor kijkt: zichtbaar gedrag vastleggen per thema.</p></div>
+          <div><h3 class="h4">Projectevaluaties en safety walks</h3><p>Veiligheid en kwaliteit per project geëvalueerd; directie zichtbaar op de werkvloer, met vastgelegde observaties.</p></div>
+        </div>
+        <p class="small" style="margin-top:20px">Gepland voor later: hermeting en trend als abonnement, en een brancheniveau-benchmark op geaggregeerd groepsniveau.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="container">
+      <div class="slot rv">
+        <div>
+          <div class="eyebrow">Zien hoe het werkt</div>
+          <h2>Bekijk het demoportaal met voorbeeldcijfers, of laat een adviseur het in een half uur met u doorlopen, aan de hand van uw situatie.</h2>
+        </div>
+        <div class="acts">
+          <a class="btn btn-gold" href="#contact">Plan een kennismaking</a>
+          <a class="tlink" href="kwaliteitsmeesters-portaal.html" target="_blank" rel="noopener">Open het demoportaal</a>
+          <p class="small">Het portaal is een prototype; tot de definitieve versie live is, verzorgen wij de meting met dezelfde vragenlijsten en hetzelfde rapport.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- ========================================================== EXPERTISE -->
+<div class="page" id="page-diensten" hidden>
+  <div class="subhead">
+    <div class="container">
+      <div class="grid">
+        <div>
+          <div class="eyebrow">Expertise</div>
+          <h1>Zes domeinen, één soort adviseur.</h1>
+          <p class="lede">Elke opdracht wordt uitgevoerd door een senior veiligheidskundige (HVK of MVK) die ook als auditor voor certificerende instellingen werkt. Geen juniors, geen accountmanagers.</p>
+        </div>
+        <div class="aside"><b>Werkgebied</b>Nederland en België. Bouw en infra, installatietechniek, industrie en productie, groen, maritiem, energie en nuts.</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="sec">
+    <div class="container">
+      <h2 class="vh">Onze diensten</h2>
+      <div class="ledger rv">
+        <div class="row">
+          <div class="no">01</div>
+          <div><h3>Veiligheidscultuur en Safety Culture Ladder</h3><div class="tags"><span>SCL 2.0</span><span>Nulmeting</span><span>Verbeterplan</span><span>Auditvoorbereiding</span></div></div>
+          <div><p>Nulmeting met onze veiligheidscultuur-indicator, verdieping in gesprekken op de werkvloer en een verbeterplan dat stuurt op routines. Begeleiding tot en met de voorbereiding op certificering of statement, in elke toetsingsklasse. Ook voor de stap van trede 3 naar 4 en van 4 naar 5.</p><a class="tlink more" href="#scl">De route naar trede 3</a></div>
+        </div>
+        <div class="row">
+          <div class="no">02</div>
+          <div><h3>Audits, nulmetingen en risicoanalyses</h3><div class="tags"><span>Interne audit</span><span>Gedragsaudit</span><span>GAP-analyse</span><span>RI&amp;E en TRA</span></div></div>
+          <div><p>Interne audits met een gedragscomponent, GAP-analyses, RI&amp;E's en TRA's. Een interne audit van ons beoordeelt beide dimensies die een certificerende instelling ook weegt: wat is ingericht en geborgd, en wat op de werkplek zichtbaar en hoorbaar is. U krijgt bevindingen die kloppen en waar u iets mee kunt.</p></div>
+        </div>
+        <div class="row">
+          <div class="no">03</div>
+          <div><h3>Managementsystemen</h3><div class="tags"><span>ISO 45001</span><span>VCA</span><span>Geïntegreerde systemen</span></div></div>
+          <div><p>Opzet, herstructurering en onderhoud van systemen voor veiligheid, kwaliteit en milieu: ISO 45001, VCA en geïntegreerde systemen. Slank ingericht op uw werkelijke processen, zodat het systeem de praktijk dient in plaats van andersom.</p></div>
+        </div>
+        <div class="row">
+          <div class="no">04</div>
+          <div><h3>Cultuur, gedrag en leiderschap</h3><div class="tags"><span>Meldcultuur</span><span>Gedragsobservaties</span><span>Leiderschap</span><span>Toolboxen</span></div></div>
+          <div><p>Programma's die veiligheidsbewustzijn omzetten in zichtbaar gedrag: gedragsobservaties, werkplekinspecties met een leerdoel, aanspreekcultuur en leiderschapsontwikkeling. Juist ook voor uitvoerders en voormannen, want daar wordt het dagelijkse klimaat bepaald. Meldcultuur krijgt altijd aandacht: maak melden licht, reageer op alles zichtbaar en waardeer de melder om het signaal.</p></div>
+        </div>
+        <div class="row">
+          <div class="no">05</div>
+          <div><h3>V&amp;G-projectmanagement</h3><div class="tags"><span>V&amp;G-plan</span><span>Ontwerp en uitvoering</span><span>Ketenregie</span></div></div>
+          <div><p>Coördinatie van veiligheid en gezondheid in de ontwerp- en uitvoeringsfase: V&amp;G-plannen, afstemming met opdrachtgevers en onderaannemers, en toezicht dat de uitvoering echt bereikt.</p></div>
+        </div>
+        <div class="row">
+          <div class="no">06</div>
+          <div><h3>Senior QHSE-capaciteit</h3><div class="tags"><span>Interim</span><span>Detachering</span><span>Coaching</span></div></div>
+          <div><p>Tijdelijke of structurele invulling van QHSE-functies: veiligheidskundigen (MVK/HVK), KAM-coördinatoren, kwaliteitsmanagers en V&amp;G-projectmanagers, gematcht op inhoud en op de cultuur van uw organisatie. Tarief per profiel op aanvraag. Liever uw eigen mensen sterker maken? Dan coachen wij uw KAM-verantwoordelijke. <span class="tag plan">detachering groeiend</span></p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec panel" id="onderdelen">
+    <div class="container">
+      <div class="split">
+        <div class="prose rv">
+          <div class="eyebrow">Losse onderdelen</div>
+          <h2>Ook los af te nemen.</h2>
+          <p class="lede" style="margin-top:18px">Wie al meet, of een eigen KAM-verantwoordelijke heeft, hoeft geen traject af te nemen. Deze onderdelen leveren wij ook apart.</p>
+          <p class="small">Conceptprijzen 2026, exclusief btw. Reiskosten € 0,45 per kilometer buiten een straal van 50 kilometer van de consultant; reistijd brengen wij niet in rekening.</p>
+        </div>
+        <dl class="dl rv">
+          <div><dt>Duidingssessie</dt><dd><b>€ 560</b> · vier uur inclusief voorbereiding, op locatie of online. De uitkomst van uw meting besproken met de sturende laag.</dd></div>
+          <div><dt>Verbeterplan-workshop</dt><dd><b>€ 840</b> · zes uur. Van knelpunten naar routines met eigenaren en ritmes.</dd></div>
+          <div><dt>Verdiepingsgesprekken</dt><dd><b>dagtarief € 1.050</b> · gesprekken op de werkvloer zoals een auditor ze voert; het aantal per dag hangt af van de locatie.</dd></div>
+          <div><dt>Toolbox of training op maat</dt><dd><b>€ 840</b> · per dagdeel, inclusief materiaal in huisstijl.</dd></div>
+          <div><dt>Advies per uur</dt><dd><b>€ 140</b> · één seniortarief. Dagdeel op locatie € 550, dag op locatie € 1.050.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="werkwijze">
+    <div class="container">
+      <div class="sec-head rv">
+        <div>
+          <div class="eyebrow">Zo werken wij</div>
+          <h2>Vier stappen.</h2>
+        </div>
+        <p class="lede">Wij beginnen op de werkvloer en in de directiekamer tegelijk. Het verschil tussen die twee verhalen is meestal de kern van de opgave.</p>
+      </div>
+      <div class="route" data-reveal style="grid-template-columns:repeat(4,minmax(0,1fr))">
+        <div class="line" aria-hidden="true"></div>
+        <div class="step" data-n="01"><h3>Luisteren op elke laag</h3><p>Intake met de directie, gesprekken in de keet en op de werkvloer. Wat is ingericht, wat leeft er werkelijk, en wat hangt aan één persoon?</p></div>
+        <div class="step" data-n="02"><h3>Meten zonder wensdenken</h3><p>Een nulmeting die de kloof tussen kantoor en werkvloer zichtbaar maakt, per thema. De uitkomst bespreken wij mondeling voordat er een rapport wordt rondgestuurd.</p></div>
+        <div class="step" data-n="03"><h3>Verbeteren op routines</h3><p>Per knelpunt een routine met een eigenaar, een ritme en een meetbaar resultaat. Klein genoeg om ook in drukke weken vol te houden.</p></div>
+        <div class="step" data-n="04"><h3>Borgen en loslaten</h3><p>Uw eigen mensen dragen het, aantoonbaar en persoonsonafhankelijk. Een opdracht is klaar als wij niet meer nodig zijn.</p></div>
+      </div>
+      <div class="callout rv" style="margin-top:clamp(32px,4vw,48px)"><b>Wat buiten ons werk valt.</b> Wij certificeren niet en geven geen formeel trede-oordeel; dat doet een certificerende instelling. Wij adviseren en auditen nooit bij dezelfde organisatie. En wij geven een inspanningsverplichting, geen garantie op een trede, een certificaat of een aanbestedingsresultaat.</div>
+    </div>
+  </section>
+
+  <section class="sec panel">
+    <div class="container">
+      <div class="slot rv">
+        <div>
+          <div class="eyebrow">Kennismaken</div>
+          <h2>Leg uw vraagstuk voor aan een senior die het vak van twee kanten kent.</h2>
+        </div>
+        <div class="acts">
+          <a class="btn btn-gold" href="#contact">Plan een kennismaking</a>
+          <p class="small">U hoort in één gesprek welke onderdelen zinvol zijn, en welke u zelf kunt doen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- ============================================================= KENNIS -->
+<div class="page" id="page-kennis" hidden>
+  <div class="subhead">
+    <div class="container">
+      <div class="grid">
+        <div>
+          <div class="eyebrow">Kennis uit de auditpraktijk</div>
+          <h1>Wat wij aan de audittafel zien.</h1>
+          <p class="lede">Drie stukken uit onze auditpraktijk bij 238+ organisaties. Patronen die telkens terugkomen, geanonimiseerd en niet herleidbaar tot organisaties, met een concreet handvat.</p>
+        </div>
+        <div class="aside"><b>Leestijd</b>Ongeveer drie minuten per stuk. Nieuwe stukken volgen in een vast ritme; de onderwerpen komen uit wat wij aan de audittafel en in metingen tegenkomen.</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="sec tight">
+    <div class="container">
+      <nav class="kennis-nav rv" aria-label="Artikelen">
+        <a href="#kennis/art-borging"><span class="mono">01 · Borging en leercyclus</span><b>Organisaties zakken zelden op intentie. Ze zakken op borging.</b><span>De vier patronen die wij het vaakst zien, en wat er wel werkt.</span></a>
+        <a href="#kennis/art-kloof"><span class="mono">02 · De kloof</span><b>De kloof tussen kantoor en keet is uw belangrijkste stuurpunt.</b><span>Beide gesprekken waren eerlijk. Dat is precies het punt.</span></a>
+        <a href="#kennis/art-meldcultuur"><span class="mono">03 · Meldcultuur</span><b>Twee meldingen per jaar is geen rustig jaar. Het is een rode vlag.</b><span>Hoe een gezonde meldstroom eruitziet en hoe u hem op gang krijgt.</span></a>
+      </nav>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="container">
+      <article class="article" id="art-borging">
+        <div class="meta"><span class="mono">Insight 01</span><span class="tag">Borging en leercyclus</span></div>
+        <h2>Organisaties zakken zelden op intentie. Ze zakken op borging.</h2>
+        <p class="intro">De directeur meende elk woord. De betrokkenheid was echt. En toch kwam trede 3 er niet. Wie vaak genoeg aan de audittafel zit, herkent het patroon, en weet waar het wel op vastloopt.</p>
+        <div class="body">
+          <p>Het gesprek aan het begin van een audit is bijna altijd goed. De directeur vertelt met overtuiging waarom veiligheid boven productie gaat. Er hangt een bord bij de ingang, er is een jaarplan, er zijn toolboxen. Niemand aan tafel speelt toneel; de intentie is oprecht. En toch valt het oordeel een dag later lager uit dan iedereen verwachtte.</p>
+          <p>Dat komt vrijwel nooit doordat mensen het niet menen. Het komt doordat de audit niet op mening toetst, maar op twee dimensies: wat is ingericht en geborgd (randvoorwaardelijk) en wat in de praktijk zichtbaar en hoorbaar is (gedrag). Papier zonder praktijk telt niet. Praktijk zonder borging evenmin, en daar gaat het meestal mis.</p>
+          <h3>De vier patronen die wij telkens terugzien</h3>
+          <p><b>Doelen zonder eigenaar.</b> Er zijn V&amp;G-doelen, maar niemand kan zeggen wie er wakker van ligt. "De boodschap is herkenbaar, de doelen zijn dat niet", noteerde een auditor ooit treffend. Drie doelen met een eigenaar op naam verslaan tien doelen in een jaarplan.</p>
+          <p><b>Ritmes die stilvallen zodra het druk wordt.</b> De werkplekinspectie die drie maanden oversloeg "vanwege de piek". Precies dat moment (druk, deadline, krapte) is waar cultuur zich bewijst. Een ritme dat alleen in rustige weken draait, is geen ritme; het is een goed voornemen.</p>
+          <p><b>De leercyclus die halverwege stopt.</b> Een melding wordt gedaan, een maatregel bedacht, en daar eindigt het. Of de maatregel werkt, of hetzelfde elders ook speelt, of de melder ooit iets terughoorde: onbekend. De cirkel is pas rond als iemand controleert of het beter werd, en dat zichtbaar deelt.</p>
+          <p><b>Alles hangt aan één persoon.</b> De KAM-coördinator die alles weet, alles bijhoudt, iedereen kent. Bewonderenswaardig, en de grootste kwetsbaarheid van de organisatie tegelijk.</p>
+          <div class="pull">De vraag die de auditor werkelijk stelt, is niet "meent u het?" maar: als de mensen die dit nu dragen morgen vertrekken, wat blijft er dan staan?</div>
+          <p>Het goede nieuws: borging is geen kwestie van meer papier, maar van minder en beter. Kies maximaal drie doelen en geef ze een eigenaar. Maak ritmes klein genoeg om ook in drukke weken vol te houden. En sluit elke cirkel zichtbaar: wie meldt, hoort wat ermee gebeurd is. Intentie is de voorwaarde. Borging is het oordeel.</p>
+        </div>
+        <div class="foot">Weten waar uw borging staat? Een nulmeting laat per thema zien wat er al staat en wat de audit straks gaat vragen. <a href="#contact">Plan een kennismaking</a>.</div>
+      </article>
+
+      <article class="article" id="art-kloof">
+        <div class="meta"><span class="mono">Insight 02</span><span class="tag">De kloof · sturende laag en werkvloer</span></div>
+        <h2>De kloof tussen kantoor en keet is uw belangrijkste stuurpunt.</h2>
+        <p class="intro">Ochtend: de sturende laag legt uit hoe het meldsysteem werkt, hoe de toolboxen zijn ingepland, hoe het sanctie- en waarderingsbeleid in elkaar zit. Middag, drie kilometer verderop: "Geen idee. Wij doen het gewoon zoals we het altijd doen."</p>
+        <div class="body">
+          <p>Beide gesprekken waren eerlijk. Dat is precies het punt: niemand loog. Op kantoor bestaat het systeem echt, en op de werkvloer bestaat het niet, tegelijkertijd, in dezelfde organisatie. Dit is de kloof, en in onze auditpraktijk is hij de meest voorspellende factor voor het trede-oordeel.</p>
+          <p>De kloof ontstaat niet door onwil, maar door een aanname: dat wat is ingericht, vanzelf ook wordt geleefd. Beleid wordt gezonden (een mail, een poster, een toolbox) en zenden wordt verward met aankomen. Niemand toetst of de boodschap de keet haalde, en de keet heeft geen reden om terug te roepen dat er niets aankwam.</p>
+          <h3>Meet hem, hij is meetbaar</h3>
+          <p>Wij leggen daarom altijd twee gescheiden vragenlijsten voor: één aan operationele medewerkers, één aan de sturende laag, over dezelfde onderwerpen, gevraagd naar wat er meestal gebeurt, niet naar wat men vindt. Het verschil per thema is het eerlijkste beeld van uw organisatie dat er bestaat. Scoort de sturende laag structureel hoger, dan bestaat het beleid wel, maar leeft het daar nog niet.</p>
+          <p>Let daarbij vooral op het aandeel "weet niet" bij operationele medewerkers. Dat is zelden onwetendheid als karaktertrek; het is meestal het bewijs dat iets wel is ingericht maar nooit is geland. Hoog "weet niet" op een onderwerp waar de sturende laag vol vertrouwen scoort: daar zit uw werk.</p>
+          <div class="pull">De verificatievraag die elke leidinggevende zichzelf zou moeten stellen: "Hoe weet ik dat dit ook echt gebeurt, en zou de monteur dat bevestigen?"</div>
+          <h3>Wat te doen met een gemeten kloof</h3>
+          <p>Ga kijken. Niet controleren, maar vragen. Een leidinggevende die op de werkplek vraagt "wat zou jij hier anders doen?" haalt meer op dan drie inspectierondes. Toets communicatie voortaan op aankomst in plaats van verzending: vraag een week later op de vloer wat er van de toolbox is blijven hangen. En bouw oplossingen mét de werkvloer in plaats van vóór de werkvloer; wat mensen mee hebben gemaakt, hoeven ze niet meer aangeleerd te krijgen.</p>
+          <p>De kloof is geen verwijt aan wie dan ook. Hij is uw routekaart: hij wijst exact aan welk onderwerp als eerste aandacht verdient, en hij krimpt zichtbaar wanneer u het goed doet.</p>
+        </div>
+        <div class="foot">Onze veiligheidscultuur-indicator meet beide lagen apart en maakt de kloof per thema zichtbaar. <a href="#dashboard">Zo werkt de meting</a>.</div>
+      </article>
+
+      <article class="article" id="art-meldcultuur">
+        <div class="meta"><span class="mono">Insight 03</span><span class="tag">Meldcultuur</span></div>
+        <h2>Twee meldingen per jaar is geen rustig jaar. Het is een rode vlag.</h2>
+        <p class="intro">"We hebben bijna geen meldingen gehad dit jaar", zegt het MT, met iets van trots. De auditor aan de andere kant van de tafel leest in datzelfde getal iets heel anders.</p>
+        <div class="body">
+          <p>Op elke werkvloer gebeuren dingen die net goed gingen. De lading die schoof, de steiger die wankelde, de machine die eigenlijk te vroeg weer aan stond. Dat is geen teken van een slechte organisatie; het is de werkelijkheid van fysiek werk. De vraag is niet of die momenten er zijn, maar of uw organisatie ze ziet.</p>
+          <p>Twee meldingen per jaar betekent vrijwel nooit dat er maar twee dingen gebeurden. Het betekent dat de andere signalen ergens onderweg zijn gestrand: omdat melden moeite kost, omdat er toch nooit iets mee gebeurt, of omdat het voelt als een collega verraden. In alle drie de gevallen is het lage getal geen prestatie. Het is een gordijn.</p>
+          <h3>Hoe een gezonde meldstroom eruitziet</h3>
+          <p>Veel kleine signalen, snel afgehandeld, zichtbaar teruggekoppeld. Gezonde organisaties melden juist meer naarmate de cultuur sterker wordt; niet omdat het onveiliger wordt, maar omdat mensen durven en omdat het loont. De verhouding vertelt het verhaal: veel bijna-ongevallen en kleine onveiligheden naast weinig echte incidenten is precies wat u wilt zien. Andersom, nauwelijks meldingen en dan ineens een zwaar incident, is het klassieke beeld van een organisatie die haar eigen signalen niet ophaalde.</p>
+          <div class="pull">De echte vraag aan een managementteam is niet "hoeveel meldingen wilt u minder?" maar: hoeveel signalen durft uw organisatie te zien?</div>
+          <h3>Zo krijgt u de stroom op gang</h3>
+          <p><b>Maak melden licht.</b> Een foto en twee tikken op een telefoon moeten genoeg zijn. Elk formulierveld dat u toevoegt, kost u meldingen; het beste meldformulier is er bijna geen.</p>
+          <p><b>Reageer op alles, zichtbaar.</b> Niet elke melding verdient een projectgroep, maar elke melder verdient binnen enkele dagen te horen wat ermee gebeurt, al is het "bewust nog niet". Eén onbeantwoorde melding kost er tien.</p>
+          <p><b>Behandel de melder als bron, niet als risico.</b> Wie meldt, geeft de organisatie een cadeau. Een consequent sanctie- en waarderingsbeleid maakt het verschil: waardeer het signaal openlijk, ook als de inhoud ongemakkelijk is.</p>
+          <p>En reken uzelf niet rijk aan een leeg register. Op trede 3 en hoger hoort de vraag andersom te staan: waar bleven de signalen die er dit kwartaal niet waren?</p>
+        </div>
+        <div class="foot">In onze nulmeting is meldgedrag een van de onderwerpen waar de kloof tussen kantoor en werkvloer het grootst blijkt. <a href="#scl/zelftoets">Proef drie vragen uit de meting</a>.</div>
+      </article>
+    </div>
+  </section>
+</div>
+
+<!-- =========================================================== OVER ONS -->
+<div class="page" id="page-overons" hidden>
+  <div class="subhead">
+    <div class="container">
+      <div class="grid">
+        <div>
+          <div class="eyebrow">Over ons</div>
+          <h1>Voor het werk, vanuit het werkveld.</h1>
+          <p class="lede">KwaliteitsMeesters is in 2024 opgericht door drie veiligheidsprofessionals met één overtuiging: QHSE-advies moet gedragen worden door mensen die het vak van binnenuit kennen: de werkvloer, de directiekamer en de audittafel.</p>
+        </div>
+        <div class="aside"><b>In het kort</b>Opgericht in 2024. Uitsluitend QHSE, geen ander vakgebied ernaast. Werkgebied Nederland en België.</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="sec">
+    <div class="container">
+      <div class="split">
+        <div class="prose rv">
+          <div class="eyebrow">Wie wij zijn</div>
+          <h2>Een vaste kern van negen. Allemaal adviseur én auditor.</h2>
+          <p class="lede" style="margin-top:18px">De vaste kern telt negen ervaren veiligheidskundigen, met uiteenlopende achtergronden in bouw, infra, industrie en dienstverlening. Zo staat er voor elke organisatie en elke situatie een passende senior.</p>
+          <p>Al onze adviseurs adviseren en auditen. Zij kennen de audit uit honderden interviews op de werkplek en weten daardoor waarop het straks werkelijk wordt beoordeeld. Via ons platform delen zij auditinzichten, instrumenten en casuïstiek.</p>
+          <p>Onze opdracht aan onszelf: veiligheidscultuur meetbaar, bespreekbaar en geborgd maken, zonder dat het als last voelt voor de mensen die het werk doen.</p>
+        </div>
+        <div class="rv">
+          <dl class="dl">
+            <div><dt>Opgericht</dt><dd>2024, door drie veiligheidsprofessionals</dd></div>
+            <div><dt>Kern</dt><dd>Negen senior veiligheidskundigen (HVK en MVK), allemaal adviseur en auditor</dd></div>
+            <div><dt>Vakgebied</dt><dd>Uitsluitend QHSE: veiligheid, kwaliteit, gezondheid en milieu</dd></div>
+            <div><dt>Auditpraktijk</dt><dd>238+ organisaties in onze recente auditpraktijk op de Safety Culture Ladder</dd></div>
+            <div><dt>Werkgebied</dt><dd>Nederland en België</dd></div>
+            <div><dt>Organisaties</dt><dd>Van 5 tot 1.000 medewerkers; het zwaartepunt ligt bij het mkb dat de ViA-eis voelt en geen eigen QHSE-staf heeft</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec dark" id="onafhankelijk">
+    <div class="container">
+      <div class="split">
+        <div class="rv">
+          <div class="eyebrow">Onafhankelijkheid</div>
+          <h2>Wij adviseren en auditen nooit bij dezelfde organisatie.</h2>
+          <p class="lede" style="margin-top:18px;color:var(--on-dark-2)">Dat is de basis onder de dubbelrol, en wij bewaken hem met een protocol in plaats van met goede bedoelingen.</p>
+        </div>
+        <div class="rv">
+          <dl class="dl" style="border-top-color:rgba(237,240,244,.4)">
+            <div style="border-bottom-color:rgba(237,240,244,.16)"><dt style="color:var(--on-dark-2)">Toets vooraf</dt><dd style="color:var(--on-dark-2)">Elke opdracht wordt voorafgaand aan de start getoetst aan een centraal register van advies- en auditrelaties.</dd></div>
+            <div style="border-bottom-color:rgba(237,240,244,.16)"><dt style="color:var(--on-dark-2)">Bij twijfel</dt><dd style="color:var(--on-dark-2)">Beslist een partner die niet bij de opdracht betrokken is.</dd></div>
+            <div style="border-bottom-color:rgba(237,240,244,.16)"><dt style="color:var(--on-dark-2)">Transparant</dt><dd style="color:var(--on-dark-2)">Wij melden de scheiding actief aan klanten en certificerende instellingen. Wij presenteren ons nooit als certificerende instelling; in een audit treden wij op als auditor namens de instelling die ons inschakelt.</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="spelregels">
+    <div class="container">
+      <div class="sec-head rv">
+        <div>
+          <div class="eyebrow">Zo houden wij de kwaliteit vast</div>
+          <h2>Eén methodiek, en elkaar scherp houden.</h2>
+        </div>
+        <p class="lede">Een bureau van seniors heeft geen handboek nodig om goed werk te leveren. Het heeft wel afspraken nodig die voorkomen dat ieder zijn eigen methode ontwikkelt.</p>
+      </div>
+      <div class="feat two rv-stagger">
+        <div><div class="mono">Methodiek</div><h3 class="h4">Eén indicator, één gespreksleidraad, één best practice</h3><p>Afwijken mag, na intervisie. Elke rapportage volgt het sjabloon en de scoringsregels, met steekproefsgewijze review door een tweede partner.</p></div>
+        <div><div class="mono">Intervisie</div><h3 class="h4">Maandelijks casuïstiek, jaarlijks een schaduw-audit</h3><p>Elke maand bespreken wij geanonimiseerde casuïstiek. Elk jaar loopt een collega mee bij een opdracht van een ander en toetst die zoals een auditor dat zou doen.</p></div>
+        <div><div class="mono">Spelregels</div><h3 class="h4">Geen juniors op adviesopdrachten</h3><p>De kern blijft senior. Wij groeien met hooguit enkele partners per jaar, met hetzelfde profiel.</p></div>
+        <div><div class="mono">Spelregels</div><h3 class="h4">Geen verzonnen claims, logo's of testimonials</h3><p>U ziet op deze site geen klantnamen en geen citaten van klanten. Die komen er pas met schriftelijke toestemming, na afgeronde trajecten.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec panel" id="team">
+    <div class="container">
+      <div class="sec-head rv">
+        <div>
+          <div class="eyebrow">Het team</div>
+          <h2>De oprichters.</h2>
+        </div>
+        <p class="lede">Drie veiligheidsprofessionals, één werkopvatting. Namen, profielen en foto's worden aangevuld zodra de teampagina is vastgesteld.</p>
+      </div>
+      <div class="team rv-stagger">
+        <div class="p"><div class="ph"><svg viewBox="0 0 200 250" fill="none" stroke="#B6C1D0" stroke-width="1.6" aria-hidden="true"><circle cx="100" cy="92" r="34"/><path d="M40 220 C40 160 160 160 160 220"/></svg><span>Foto volgt</span></div><h3>Oprichter</h3><div class="role">Profiel volgt</div><p>Senior veiligheidskundige, adviseur en auditor.</p></div>
+        <div class="p"><div class="ph"><svg viewBox="0 0 200 250" fill="none" stroke="#B6C1D0" stroke-width="1.6" aria-hidden="true"><circle cx="100" cy="92" r="34"/><path d="M40 220 C40 160 160 160 160 220"/></svg><span>Foto volgt</span></div><h3>Oprichter</h3><div class="role">Profiel volgt</div><p>Senior veiligheidskundige, adviseur en auditor.</p></div>
+        <div class="p"><div class="ph"><svg viewBox="0 0 200 250" fill="none" stroke="#B6C1D0" stroke-width="1.6" aria-hidden="true"><circle cx="100" cy="92" r="34"/><path d="M40 220 C40 160 160 160 160 220"/></svg><span>Foto volgt</span></div><h3>Oprichter</h3><div class="role">Profiel volgt</div><p>Senior veiligheidskundige, adviseur en auditor.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="koers">
+    <div class="container">
+      <div class="sec-head rv">
+        <div>
+          <div class="eyebrow">Waar wij naartoe bouwen</div>
+          <h2>Vier pijlers, met dezelfde maat voor alles wat wij maken: eenvoud voor de gebruiker, diepgang in de analyse.</h2>
+        </div>
+      </div>
+      <div class="feat two rv-stagger">
+        <div><div class="mono">Veiligheidscultuur-instrument <span class="tag ok">beschikbaar</span></div><h3 class="h4">Meten, duiden en verbeteren rond de Safety Culture Ladder</h3><p>De veiligheidscultuur-indicator met klantportaal, communicatiepakket en rapport.</p></div>
+        <div><div class="mono">Adviespraktijk <span class="tag ok">beschikbaar</span></div><h3 class="h4">De vaste kern van negen seniors</h3><p>Advies, coaching en auditvoorbereiding op alle QHSE-domeinen.</p></div>
+        <div><div class="mono">Kwaliteitsmanagement-tool <span class="tag plan">gepland</span></div><h3 class="h4">Dezelfde eenvoud voor uw managementsysteem</h3><p>Meldingen, inspecties, evaluaties en audits in één omgeving; op termijn meegroeiend met VCA, ISO 9001, ISO 45001 en ISO 27001. Wij bouwen er pas aan als de meting zich heeft bewezen.</p></div>
+        <div><div class="mono">Detachering <span class="tag plan">groeiend</span></div><h3 class="h4">Geselecteerde QHSE-professionals</h3><p>Veiligheidskundigen en KAM-professionals, ondersteund door onze instrumenten en kennisdeling.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec panel">
+    <div class="container">
+      <div class="slot rv">
+        <div>
+          <div class="eyebrow">Kennismaken</div>
+          <h2>U spreekt met een van de oprichters. Als wij denken dat u ons niet nodig heeft, zeggen wij dat.</h2>
+        </div>
+        <div class="acts">
+          <a class="btn btn-gold" href="#contact">Plan een kennismaking</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ========================================================= WERKEN BIJ -->
+<div class="page" id="page-professionals" hidden>
+  <div class="subhead">
+    <div class="container">
+      <div class="grid">
+        <div>
+          <div class="eyebrow">Werken bij</div>
+          <h1>Voor de senior die aan beide kanten van de audittafel wil zitten.</h1>
+          <p class="lede">KwaliteitsMeesters is een partnermodel van ervaren veiligheidskundigen. Partners brengen opdrachten en uren in; het platform brengt de methodiek, de instrumenten, de casuïstiek en het merk. Groei gaat langzaam en alleen met hetzelfde profiel.</p>
+        </div>
+        <div class="aside"><b>Profiel</b>HVK of MVK, jaren in de uitvoering, het management of als auditor, en de wens om te adviseren en te toetsen.</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="sec">
+    <div class="container">
+      <div class="sec-head rv">
+        <div>
+          <div class="eyebrow">Wie wij zoeken</div>
+          <h2>Drie profielen.</h2>
+        </div>
+        <p class="lede">Geen juniors op adviesopdrachten; dat is een van onze spelregels. Je hebt je vak al bewezen, en je wilt het verdiepen.</p>
+      </div>
+      <div class="cols3 rv-stagger">
+        <div><div class="mono">MVK / HVK</div><h3>Veiligheidskundige</h3><p>Je staat tussen de mensen. Je vertaalt risico's naar werkbare routines en bouwt aan cultuur, bij mkb en bij grote organisaties.</p></div>
+        <div><div class="mono">Senior · lead</div><h3>QHSE-consultant en auditor</h3><p>Je kent beide kanten van de audittafel. Je begeleidt certificeringstrajecten (ISO 45001, VCA, Safety Culture Ladder) van nulmeting tot auditvoorbereiding en toetst elders als auditor.</p></div>
+        <div><div class="mono">Lange termijn</div><h3>Kwaliteits- of V&amp;G-projectmanager</h3><p>Je bent de architect van kwaliteit binnen een organisatie, of je leidt V&amp;G op complexe projecten waar leiderschap en uitvoering samenkomen.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec panel">
+    <div class="container">
+      <div class="split">
+        <div class="prose rv">
+          <div class="eyebrow">Hoe het werkt</div>
+          <h2>Zelfstandig, met een platform achter je.</h2>
+          <p class="lede" style="margin-top:18px">Je werkt als zelfstandig professional op basis van een overeenkomst van opdracht en blijft vrij om voor anderen te werken. Wat je van ons krijgt, is wat een eenling niet zelf kan bouwen.</p>
+          <p><b>Eén methodiek.</b> De veiligheidscultuur-indicator, de gespreksleidraad, de best practice "Op weg naar trede 3", rapport- en offertesjablonen in huisstijl. Afwijken mag, na intervisie.</p>
+          <p><b>Collega's die hetzelfde vak verstaan.</b> Maandelijks een casuïstiek-sessie, jaarlijks een schaduw-audit op elkaars opdrachten, en een vast aanspreekpunt.</p>
+          <p><b>Opdrachten met inhoud.</b> Trajecten waar je iets achterlaat: routines die blijven staan als je weg bent.</p>
+        </div>
+        <dl class="dl rv">
+          <div><dt>Wat wij vragen</dt><dd>Geldige relevante diploma's en certificaten (HVK of MVK), aantoonbare ervaring, naleving van de veiligheidsregels van klanten, een beroeps- en bedrijfsaansprakelijkheidsverzekering.</dd></div>
+          <div><dt>Onafhankelijkheid</dt><dd>Je meldt voorafgaand aan elke opdracht alle relaties die de onafhankelijkheid kunnen raken, zoals eerder advies- of auditwerk bij dezelfde organisatie en werk voor certificerende instellingen. De onafhankelijkheidscheck gaat aan de start vooraf.</dd></div>
+          <div><dt>Gegevens</dt><dd>Unieke accounts met tweestapsverificatie, geen klantgegevens naar privé-accounts, en nooit proberen respondenten van een meting te herleiden.</dd></div>
+          <div><dt>Tarief en betaling</dt><dd>Eén senior tarief naar de klant; de verdeling en de betalingstermijn staan in de samenwerkingsovereenkomst, die in het eerste gesprek op tafel komt.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="container">
+      <div class="slot rv">
+        <div>
+          <div class="eyebrow">Kennismaken</div>
+          <h2>Stuur je cv of LinkedIn-profiel en vertel kort waar je naartoe wilt.</h2>
+        </div>
+        <div class="acts">
+          <a class="btn btn-gold" href="#contact">Stel jezelf voor</a>
+          <p class="small">Je krijgt een gesprek met een vakgenoot, over inhoud en niet alleen over de eerstvolgende opdracht.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- ================================================================ FAQ -->
+<div class="page" id="page-faq" hidden>
+  <div class="subhead">
+    <div class="container">
+      <div class="grid">
+        <div>
+          <div class="eyebrow">Veelgestelde vragen</div>
+          <h1>Eerst weten, dan beginnen.</h1>
+          <p class="lede">De vragen die wij aan de audittafel en in gesprekken met directeuren en KAM-coördinatoren het vaakst horen. Staat uw vraag er niet tussen? Bel of mail; u krijgt een adviseur aan de lijn.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="sec">
+    <div class="container">
+      <div class="faq-grid">
+        <div class="sticky rv">
+          <nav aria-label="Onderwerpen">
+            <a href="#faq/faq-via">Safety Culture Ladder en ViA</a>
+            <a href="#faq/faq-meting">De meting en het dashboard</a>
+            <a href="#faq/faq-samen">Samenwerken en kosten</a>
+            <a href="#faq/faq-vcamax">VCA-MAX</a>
+          </nav>
+        </div>
+        <div>
+          <div id="faq-via" class="rv">
+            <h2 class="eyebrow">Safety Culture Ladder en ViA</h2>
+            <div class="faq">
+              <details name="fq-a"><summary>Is de Safety Culture Ladder verplicht?<span class="x"></span></summary><div class="a"><p>Niet wettelijk. Wel contractueel: opdrachtgevers die de Governance Code Veiligheid in de Bouw hebben ondertekend, eisen sinds 1 juli 2026 via de ViA-afspraak een veiligheidscultuur op minimaal niveau 3 (trede 3) bij opdrachten vanaf € 100.000, voor organisaties vanaf vijf medewerkers. Zonder bewijsmiddel komt u bij die opdrachtgevers niet in aanmerking, of kan het werk worden stilgelegd.</p></div></details>
+              <details name="fq-a"><summary>Welk bewijsmiddel hoort bij onze omvang?<span class="x"></span></summary><div class="a"><p>Vanaf 250 medewerkers: een SCL-certificaat (SCL of SCL Original) of een SCL Light-statement. Van 50 tot 250: dezelfde producten, plus VCA-MAX. Van 5 tot 50: ook SCL Light voor kleine organisaties en VCA-MAX. Onder de vijf medewerkers is geen bewijsmiddel nodig. VCA-MAX geldt niet voor werkzaamheden van ProRail, en de Approved Self Assessment telt niet meer.</p><p>De tabel staat op de <a href="#scl/via">SCL-pagina</a>. Welke vorm bij u past, zoeken wij in één gesprek uit.</p></div></details>
+              <details name="fq-a"><summary>Geldt de eis ook voor inhuur, zzp'ers en onderaannemers?<span class="x"></span></summary><div class="a"><p>Ja. Voor de omvang tellen eigen personeel en ingehuurd personeel samen, en de gedragsaudit kijkt naar iedereen die het werk uitvoert. Wie werk uitbesteedt, blijft er bovendien zelf verantwoordelijk voor dat ketenpartners een bewijsmiddel van minimaal niveau 3 hebben. Behandel inhuur en onderaannemers dus als eigen mensen: dezelfde onboarding, toolboxen en meldkanalen.</p></div></details>
+              <details name="fq-a"><summary>Hoe lang duurt het om trede 3 te halen?<span class="x"></span></summary><div class="a"><p>Dat hangt af van uw startpunt; een standaardtermijn bestaat niet. Wat zeker is: een auditor toetst in gesprekken met uw medewerkers, dus routines moeten al enkele maanden draaien voordat ze aantoonbaar zijn. De meest gemaakte fout is de externe audit te vroeg inplannen. Begin met een nulmeting; dan kent u het gat, de route en een realistische termijn.</p></div></details>
+              <details name="fq-a"><summary>Waarop zakken organisaties bij een trede 3-audit?<span class="x"></span></summary><div class="a"><p>Zelden op intentie of betrokkenheid, vrijwel altijd op borging, samenhang en een gesloten leercyclus: melding, analyse, maatregel, terugkoppeling, en controle dat het blijft staan. Eén thema dat terugvalt of één ritme dat aan één persoon hangt, kan het oordeel kosten. Op gedrag moeten alle vijf thema's groen zijn.</p></div></details>
+              <details name="fq-a"><summary>Wat gebeurt er als wij het niet halen?<span class="x"></span></summary><div class="a"><p>U krijgt een rapport met bevindingen waarmee u verder kunt. Denkt u dat de uitkomst een meetfout bevat, dan kent het certificatieschema de mogelijkheid om binnen dertien weken een extra audit te laten uitvoeren; klachten over de gang van zaken lopen via de schemabeheerder. In alle andere gevallen geldt: verbeteren, en een nieuwe audit plannen zodra de routines aantoonbaar draaien. Daarom bereiden wij u voor met een generale repetitie, door adviseurs die elders zelf als auditor toetsen.</p></div></details>
+              <details name="fq-a"><summary>Kan de SCL-audit worden gecombineerd met onze ISO- of VCA-audit?<span class="x"></span></summary><div class="a"><p>Nee. Het certificatieschema staat niet toe dat SCL-audits worden gecombineerd met of geïntegreerd in systeemcertificatie-audits. Het zijn aparte auditdagen. Uw managementsysteem en uw cultuurtraject kunnen wel op elkaar worden afgestemd, en dat scheelt dubbel werk.</p></div></details>
+              <details name="fq-a"><summary>Kunnen jullie ons adviseren en daarna zelf auditen?<span class="x"></span></summary><div class="a"><p>Nee, bewust niet. Adviseren en auditen bij dezelfde organisatie gaat niet samen; die onafhankelijkheid bewaken wij met een register dat vóór elke opdracht wordt geraadpleegd. U profiteert er wel van dat onze adviseurs elders als auditor toetsen: u wordt voorbereid door mensen die weten hoe er beoordeeld wordt.</p></div></details>
+              <details name="fq-a"><summary>Trede 3 of niveau 3: wat is het verschil?<span class="x"></span></summary><div class="a"><p>Geen inhoudelijk verschil. NEN spreekt in de norm van tredes (1 pathologisch, 2 reactief, 3 berekenend, 4 proactief, 5 vooruitstrevend). De ViA-handreiking spreekt sinds 2026 van volwassenheidsniveaus, en "niveau 3" is dus de ViA-naam voor trede 3. In de markt is "trede 3" nog altijd het gangbare woord.</p></div></details>
+            </div>
+          </div>
+
+          <div id="faq-meting" class="rv" style="margin-top:clamp(40px,5vw,64px)">
+            <h2 class="eyebrow">De meting en het dashboard</h2>
+            <div class="faq">
+              <details name="fq-b"><summary>Wat meet de veiligheidscultuur-indicator precies?<span class="x"></span></summary><div class="a"><p>De vragen gaan over wat er feitelijk gebeurt: "wat zie je om je heen, wat gebeurt er meestal". Twee gescheiden vragenlijsten, één voor operationele medewerkers en één voor de sturende laag, van elk veertig herkenbare praktijkvragen. Per thema en per onderwerp krijgt u een indicatieve trede en de verdeling binnen de groep.</p><p>De indicator is ons eigen instrument. Het geeft een indicatieve trede, geen officiële SCL-uitslag, en het is geen product van NEN. Het vervangt niet de vragenlijst die NEN bij SCL Light verplicht stelt.</p></div></details>
+              <details name="fq-b"><summary>Wat is het verschil tussen de Trede-meting en de Praktijkmeting?<span class="x"></span></summary><div class="a"><p>De Trede-meting volgt de vijf thema's van SCL 2.0 en is de nulmeting voor een certificeringstraject. De Praktijkmeting volgt acht praktijkrubrieken uit het dagelijkse werk en past bij organisaties die vooral willen weten waar het knelt, los van een audit. Per licentiejaar kiest u er een; een extra meting kost de helft van de Basis-jaarlicentie.</p></div></details>
+              <details name="fq-b"><summary>Kunnen antwoorden naar een persoon worden herleid?<span class="x"></span></summary><div class="a"><p>Zo is het instrument niet gebouwd. Antwoorden worden direct na verzending losgekoppeld van de deelnamelink, wij rapporteren uitsluitend op groepsniveau over groepen van minimaal vijf respondenten, en wij rapporteren nooit individuele antwoorden aan werkgevers, ook niet op verzoek. Er is altijd een "weet niet"-optie, zodat niemand hoeft te gokken. Juist die bescherming maakt de uitkomst betrouwbaar: mensen schrijven op wat er werkelijk gebeurt.</p></div></details>
+              <details name="fq-b"><summary>Hoeveel tijd kost het?<span class="x"></span></summary><div class="a"><p>Per persoon ongeveer tien minuten, op de eigen telefoon of computer, via een persoonlijke link zonder inlog. Tussentijds stoppen en later verdergaan kan. Voor de organisatie: doelgroepen afbakenen, deelnamelinks verspreiden met het communicatiepakket, en de respons volgen. De meting staat twee weken open; streefwaarde is het rapport binnen vier weken na de eerste uitnodiging.</p></div></details>
+              <details name="fq-b"><summary>Hoe halen we een hoge respons?<span class="x"></span></summary><div class="a"><p>Laat de directie de meting aankondigen en laat leidinggevenden zelf de toolbox van tien minuten geven, niet de KAM-afdeling. Benadruk dat er geen foute antwoorden zijn en spreek de datum af waarop de groepsresultaten worden gedeeld. Nodig ook vaste inhuur en onderaannemers uit. Onze streefwaarden: minimaal 70% bij operationele medewerkers en 85% bij de sturende laag; onder de 60% zijn wij terughoudend met harde conclusies.</p></div></details>
+              <details name="fq-b"><summary>Wat betekent "weet niet" in de uitkomst?<span class="x"></span></summary><div class="a"><p>"Weet niet" telt niet mee in het gemiddelde, maar wordt apart geteld. Een hoog aandeel op een onderwerp waar de sturende laag vol vertrouwen scoort, betekent meestal: het is wel geregeld, maar het leeft niet bij de mensen om wie het gaat. Dat is een andere opgave dan beleid schrijven; het is communiceren, herhalen en voorleven.</p></div></details>
+              <details name="fq-b"><summary>Wat staat er in het rapport?<span class="x"></span></summary><div class="a"><p>Een managementsamenvatting (indicatieve trede totaal en per laag, de kloof, het aandeel "weet niet", de respons), een hoofdstuk over respons en representativiteit, de resultaten per thema met status, de drie grootste kloven met een verificatievraag, knelpunten gekoppeld aan de best practice "Op weg naar trede 3", en een voorzet voor het verbeterplan met per actie een eigenaar, een deadline en een meetbaar resultaat. Het rapport is vertrouwelijk en bedoeld als interne nulmeting, niet als certificatiebewijs.</p></div></details>
+              <details name="fq-b"><summary>Wat gebeurt er na de meting?<span class="x"></span></summary><div class="a"><p>Een senior bespreekt de uitkomst eerst mondeling met de sturende laag: sterke punten eerst, de kloof als routekaart. Daarna vertaalt u de bevindingen, zelf of met ons, in een verbeterplan dat stuurt op routines. Met een hermeting maakt u de voortgang later zichtbaar; de toolbox voor de periodieke meting begint dan met wat er sinds de vorige keer is veranderd.</p></div></details>
+              <details name="fq-b"><summary>Wie is verantwoordelijk voor de gegevens?<span class="x"></span></summary><div class="a"><p>Uw organisatie is verwerkingsverantwoordelijke, KwaliteitsMeesters is verwerker. Per meting gelden een verwerkersovereenkomst en een privacyverklaring voor respondenten. E-mailadressen gebruiken wij alleen voor de deelnamelink en herinneringen en verwijderen wij uiterlijk drie maanden na afronding. Wij adviseren om de ondernemingsraad of personeelsvertegenwoordiging vooraf te betrekken.</p></div></details>
+            </div>
+          </div>
+
+          <div id="faq-samen" class="rv" style="margin-top:clamp(40px,5vw,64px)">
+            <h2 class="eyebrow">Samenwerken en kosten</h2>
+            <div class="faq">
+              <details name="fq-c"><summary>Moeten we meteen een heel begeleidingstraject afnemen?<span class="x"></span></summary><div class="a"><p>Nee. U kiest de vorm die past: alleen het meetinstrument (met online toelichting van de resultaten), coaching van uw KAM-verantwoordelijke (wekelijks online of één tot twee dagen per maand op locatie), of volledige begeleiding. Opschalen of afschalen kan altijd. Beginnen met een meting en daarna beslissen is een prima volgorde.</p></div></details>
+              <details name="fq-c"><summary>Wat kost het?<span class="x"></span></summary><div class="a"><p>Het meetinstrument kost als jaarlicentie € 500 (tot en met 25 medewerkers) tot € 2.000 (501 tot 1.000). Advieswerk kent één seniortarief van € 140 per uur; coaching is een maandabonnement van € 795 tot € 2.000. Volledige begeleiding begint bij € 7.500 voor organisaties tot 50 medewerkers. Alle bedragen zijn conceptprijzen 2026, exclusief btw, en worden na een intakegesprek in een voorstel vastgelegd dat dertig dagen geldig is. De volledige prijzenlijst staat bij de <a href="#downloads">downloads</a>.</p></div></details>
+              <details name="fq-c"><summary>Garanderen jullie trede 3?<span class="x"></span></summary><div class="a"><p>Nee. Wij geven een inspanningsverplichting, geen garantie op een trede, een certificaat, ViA-toelating of een aanbestedingsresultaat. Een auditor toetst uw organisatie, niet ons werk, en wij adviseren nooit bij een organisatie die wij zelf auditen. Wat wij wel doen: u voorbereiden op wat er op de auditdag werkelijk wordt gevraagd.</p></div></details>
+              <details name="fq-c"><summary>Werkt dit ook voor een klein familiebedrijf?<span class="x"></span></summary><div class="a"><p>Ja. Meting, taal en aanpak zijn gemaakt voor klein en groot, van 5 tot 1.000 medewerkers. Voor kleinere organisaties is de route vaak lichter (SCL Light voor kleine organisaties, of VCA-MAX als uw opdrachtgevers dat accepteren) en de begeleiding compacter. Wat uw opdrachtgevers vragen, blijft leidend; daar kijken wij als eerste naar.</p></div></details>
+              <details name="fq-c"><summary>Komen jullie op locatie, of werken jullie online?<span class="x"></span></summary><div class="a"><p>Allebei, in Nederland en België. De toelichting van een meting kan online. Verdiepingsgesprekken en gedragsrondes doen wij op de werkvloer; cultuur is door een scherm niet te zien, en voor een auditor straks ook niet. Reiskosten: € 0,45 per kilometer buiten een straal van 50 kilometer van de consultant; reistijd brengen wij niet in rekening.</p></div></details>
+              <details name="fq-c"><summary>Wat hebben jullie van ons nodig?<span class="x"></span></summary><div class="a"><p>Een contactpersoon, de indeling van de doelgroepen met e-mailadressen, tijd voor de aankondiging en de toolbox, en de beoordeling van de privacygrondslag aan uw kant, bij voorkeur met de ondernemingsraad. Bij volledige begeleiding daarnaast de agenda van de sturende laag voor de duidingssessie en de verbeterplan-workshop.</p></div></details>
+            </div>
+          </div>
+
+          <div id="faq-vcamax" class="rv" style="margin-top:clamp(40px,5vw,64px)">
+            <h2 class="eyebrow">VCA-MAX</h2>
+            <div class="faq">
+              <details name="fq-d"><summary>Wat is VCA-MAX?<span class="x"></span></summary><div class="a"><p>De combinatie van een VCA-certificaat (sinds 1 juli 2026 versie 2026/6.1) met de aanvullende Module Gedrag (VCA-MG), beheerd door SSVV. Daarmee toont een organisatie naast het veiligheidssysteem ook zichtbaar veiligheidsgedrag aan, in een vorm die iedereen die VCA kent direct herkent.</p></div></details>
+              <details name="fq-d"><summary>Telt VCA-MAX als bewijsmiddel voor ViA?<span class="x"></span></summary><div class="a"><p>Sinds 1 juli 2026 ja, onder voorwaarden. De Governance Code Veiligheid in de Bouw heeft VCA-MAX op 17 juni 2026 erkend als bewijsmiddel voor niveau 3, alleen voor organisaties tot 250 medewerkers en niet voor werkzaamheden van ProRail (Handreiking ViA 3.1). Een opdrachtgever kan in specifieke situaties nog steeds een SCL-certificaat verlangen, dus lees de aanbestedingsstukken.</p></div></details>
+              <details name="fq-d"><summary>Kies ik nu voor de Safety Culture Ladder of voor VCA-MAX?<span class="x"></span></summary><div class="a"><p>Werkt u voor ProRail, heeft u 250 medewerkers of meer, of wilt u boven niveau 3 uitkomen, dan is de ladder de route. Heeft u een goed draaiend VCA-huis, minder dan 250 medewerkers en opdrachtgevers die VCA-MAX accepteren, dan is de Module Gedrag een logische stap. Ons VCA-MAX-advies is in ontwikkeling; interesse kunt u nu al melden via het <a href="#contact">contactformulier</a>.</p></div></details>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec panel">
+    <div class="container">
+      <div class="slot rv">
+        <div>
+          <div class="eyebrow">Uw vraag staat er niet tussen</div>
+          <h2>Eén vraag is genoeg om te weten of wij iets voor u kunnen betekenen.</h2>
+        </div>
+        <div class="acts">
+          <a class="btn btn-gold" href="#contact">Plan een kennismaking</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- ========================================================== DOWNLOADS -->
+<div class="page" id="page-downloads" hidden>
+  <div class="subhead">
+    <div class="container">
+      <div class="grid">
+        <div>
+          <div class="eyebrow">Downloads en documentatie</div>
+          <h1>Alles wat wij op papier hebben.</h1>
+          <p class="lede">Vraag aan wat u nodig heeft; u ontvangt het per e-mail. Aanvragen opent uw e-mailprogramma met een voorbereid bericht. Op de definitieve website worden de documenten direct downloadbaar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="sec">
+    <div class="container">
+      <h2 class="vh">Documenten</h2>
+      <div class="docs rv-stagger">
+        <div><div class="ic" data-t="A4"></div><div><div class="mono">One-pager</div><h3>De ViA-eis in het kort</h3><p>Wat de eis sinds 1 juli 2026 vraagt, welk bewijsmiddel bij welke omvang hoort, waarom trede 3 de maat is en welke route daarbij past. Eén A4 om intern door te sturen.</p><a class="tlink" href="mailto:info@kwaliteitsmeesters.eu?subject=Aanvraag%20ViA-one-pager&amp;body=Graag%20ontvang%20ik%20de%20ViA-one-pager.%0A%0ANaam%3A%0AOrganisatie%3A">Vraag de one-pager aan</a></div></div>
+        <div><div class="ic" data-t="4 p."></div><div><div class="mono">Brochure</div><h3>Informatiebrochure KwaliteitsMeesters</h3><p>Het bureau, de SCL-route, de diensten en de vooruitblik: wie wij zijn, hoe meten, verdiepen en verbeteren werkt, de drie samenwerkingsvormen en waar wij naartoe bouwen.</p><a class="tlink" href="mailto:info@kwaliteitsmeesters.eu?subject=Aanvraag%20informatiebrochure&amp;body=Graag%20ontvang%20ik%20de%20informatiebrochure.%0A%0ANaam%3A%0AOrganisatie%3A">Vraag de brochure aan</a></div></div>
+        <div><div class="ic" data-t="2 p."></div><div><div class="mono">Prijzenlijst · concept</div><h3>Prijzenlijst meetinstrument en advies</h3><p>De volledige staffel van de jaarlicenties, de app-modules, de coachingsabonnementen en de trajectprijzen. Conceptversie 2026, ter vaststelling door de partners; alle bedragen exclusief btw.</p><a class="tlink" href="mailto:info@kwaliteitsmeesters.eu?subject=Aanvraag%20prijzenlijst&amp;body=Graag%20ontvang%20ik%20de%20prijzenlijst.%0A%0ANaam%3A%0AOrganisatie%3A%0AAantal%20medewerkers%20(circa)%3A">Vraag de prijzenlijst aan</a></div></div>
+        <div><div class="ic" data-t="set"></div><div><div class="mono">Voor klanten</div><h3>Communicatiepakket bij de meting</h3><p>Een pamflet voor de eerste en voor de periodieke meting, en twee toolboxen van tien minuten voor de leidinggevende, met de QR-code van de deelnamelink. Inbegrepen in elke licentie; uw KAM-verantwoordelijke hoeft niets zelf te schrijven.</p><a class="tlink" href="#dashboard/beheer">Wat erin zit</a></div></div>
+        <div><div class="ic" data-t="web"></div><div><div class="mono">Kennis</div><h3>Drie artikelen uit de auditpraktijk</h3><p>Waarom organisaties zakken op borging, waarom de kloof tussen kantoor en keet het eerste stuurpunt is, en waarom een leeg meldregister een rode vlag is. Op de site te lezen.</p><a class="tlink" href="#kennis">Naar de artikelen</a></div></div>
+        <div><div class="ic" data-t="volgt"></div><div><div class="mono">Volgt</div><h3>Methodiek- en privacyverklaring</h3><p>De methodiek-, gebruiks- en beperkingenverklaring van de indicator en de privacyverklaring voor website, portaal en respondenten worden gepubliceerd na juridische review.</p><a class="tlink" href="mailto:info@kwaliteitsmeesters.eu?subject=Interesse%20methodiek-%20en%20privacyverklaring">Houd mij op de hoogte</a></div></div>
+      </div>
+    </div>
+  </section>
+  <section class="sec panel">
+    <div class="container">
+      <div class="slot rv">
+        <div>
+          <div class="eyebrow">Liever een gesprek</div>
+          <h2>In een half uur bespreken wij uw situatie, de eisen van uw opdrachtgevers en een eerste stap.</h2>
+        </div>
+        <div class="acts"><a class="btn btn-gold" href="#contact">Plan een kennismaking</a></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================================================ CONTACT -->
+<div class="page" id="page-contact" hidden>
+  <div class="subhead">
+    <div class="container">
+      <div class="grid">
+        <div>
+          <div class="eyebrow">Contact</div>
+          <h1>Vertel waar uw organisatie staat.</h1>
+          <p class="lede">Uw bericht wordt beantwoord door een van onze adviseurs, binnen één werkdag. Vertel kort welke trede of eis er speelt, wanneer een (her)audit gepland staat en waar u zich zorgen over maakt; dan kunnen wij meteen inhoudelijk reageren.</p>
+        </div>
+        <div class="aside"><b>Wat er daarna gebeurt</b>Een kennismaking van een half uur, op locatie of online. Daarna, als dat zinvol is, een voorstel dat dertig dagen geldig is. Meer- of minderwerk stemmen wij vooraf af.</div>
+      </div>
+    </div>
+  </div>
+  <section class="sec">
+    <div class="container">
+      <div class="contact">
+        <form class="form rv" id="contactform" novalidate>
+          <h2 class="vh">Stuur ons een bericht</h2>
+          <div class="row2">
+            <div><label for="f-naam">Naam</label><input id="f-naam" name="naam" required autocomplete="name"></div>
+            <div><label for="f-org">Organisatie</label><input id="f-org" name="organisatie" autocomplete="organization"></div>
+          </div>
+          <div class="row2">
+            <div><label for="f-email">E-mailadres</label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
+            <div><label for="f-tel">Telefoon (optioneel)</label><input id="f-tel" name="telefoon" type="tel" autocomplete="tel"></div>
+          </div>
+          <label for="f-onderwerp">Onderwerp</label>
+          <select id="f-onderwerp" name="onderwerp">
+            <option>Kennismaking over de Safety Culture Ladder</option>
+            <option>Nulmeting veiligheidscultuur</option>
+            <option>Demonstratie van het klantportaal</option>
+            <option>Audit, nulmeting of risicoanalyse</option>
+            <option>Managementsysteem (ISO 45001, VCA)</option>
+            <option>Interim of detachering van een QHSE-professional</option>
+            <option>VCA-MAX-advies (in ontwikkeling)</option>
+            <option>Ik ben een QHSE-professional</option>
+            <option>Anders</option>
+          </select>
+          <label for="f-bericht">Bericht</label>
+          <textarea id="f-bericht" name="bericht" required placeholder="Welke trede of eis speelt er, en door wie gevraagd? Wanneer is de (her)audit? Wat is eerder gemeten of gecertificeerd?"></textarea>
+          <button class="btn btn-gold" type="submit" style="margin-top:24px">Verstuur bericht</button>
+          <div class="note">Versturen opent uw e-mailprogramma met het bericht ingevuld. Wij gebruiken uw naam, e-mailadres, organisatie en bericht alleen om uw vraag te beantwoorden en bewaren de correspondentie maximaal twee jaar na het laatste contact.</div>
+          <div class="done" tabindex="-1"><b>Uw e-mailprogramma is geopend.</b> Staat het bericht daar niet klaar? Mail dan rechtstreeks naar info@kwaliteitsmeesters.eu. U hoort binnen één werkdag van ons.</div>
+        </form>
+        <div class="cinfo rv">
+          <div class="item"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="m22 6-10 7L2 6"/></svg><div><b>E-mail</b><a href="mailto:info@kwaliteitsmeesters.eu">info@kwaliteitsmeesters.eu</a></div></div>
+          <div class="item"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.6 2.81.72A2 2 0 0 1 22 16.92z"/></svg><div><b>Telefoon</b><a href="tel:+31611790017">+31 6 11 79 00 17</a></div></div>
+          <div class="item"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg><div><b>LinkedIn</b><span>KwaliteitsMeesters (bedrijfspagina volgt bij de lancering)</span></div></div>
+          <div class="item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg><div><b>Werkgebied</b><span>Nederland en België. Wij komen naar u toe, van het eerste gesprek tot en met de generale repetitie voor de audit.</span></div></div>
+          <div class="item"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg><div><b>Bedrijfsgegevens</b><span>KwaliteitsMeesters · KvK-nummer en vestigingsadres volgen bij de lancering</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<footer class="site-foot">
+  <div class="container">
+    <div class="cols">
+      <div>
+        <a class="brand" href="#home" aria-label="KwaliteitsMeesters"><svg viewBox="0 0 240 240" aria-hidden="true"><use href="#mark"/></svg><span class="wm">Kwaliteits<span>Meesters</span></span></a>
+        <p>Senior QHSE-adviseurs en auditoren voor organisaties die veiligheid, kwaliteit en cultuur aantoonbaar beter willen doen. Voor het werk, vanuit het werkveld.</p>
+      </div>
+      <div>
+        <h4>Expertise</h4>
+        <a href="#scl">Safety Culture Ladder</a>
+        <a href="#dashboard">Meting &amp; dashboard</a>
+        <a href="#diensten">Audits &amp; nulmetingen</a>
+        <a href="#diensten">Managementsystemen</a>
+        <a href="#diensten">Senior QHSE-capaciteit</a>
+      </div>
+      <div>
+        <h4>Organisatie</h4>
+        <a href="#overons">Over ons</a>
+        <a href="#kennis">Kennis uit de auditpraktijk</a>
+        <a href="#professionals">Werken bij</a>
+        <a href="#faq">Veelgestelde vragen</a>
+        <a href="#downloads">Downloads</a>
+        <a href="kwaliteitsmeesters-portaal.html" target="_blank" rel="noopener">Klantportaal (demo)</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:info@kwaliteitsmeesters.eu">info@kwaliteitsmeesters.eu</a>
+        <a href="tel:+31611790017">+31 6 11 79 00 17</a>
+        <a href="#contact">Nederland en België</a>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 KwaliteitsMeesters · KvK-nummer volgt · conceptversie</span>
+      <span>Geen tracking-cookies · privacyverklaring volgt na juridische review</span>
+    </div>
+  </div>
+  <div class="rule" aria-hidden="true"></div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
